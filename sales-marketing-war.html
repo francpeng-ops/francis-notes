@@ -241,6 +241,38 @@
     thead th, tbody td{ padding:0.5rem 0.6rem; }
   }
 
+  /* ---------- stage spectrum ---------- */
+  .chart-cap{ font-family:var(--mono); font-size:0.63rem; letter-spacing:0.2em; color:var(--accent); margin:0.4rem 0 0.9rem; }
+  .stages{ display:grid; grid-template-columns:repeat(4,1fr); gap:0.6rem; margin:0.3rem 0 0.6rem; }
+  .stage{ border:1px solid var(--hair); border-top:3px solid var(--accent); border-radius:6px; padding:0.85rem 0.8rem; background:rgba(33,107,120,0.03); }
+  .stage:nth-child(1){ border-top-color:rgba(33,107,120,0.32); }
+  .stage:nth-child(2){ border-top-color:rgba(33,107,120,0.52); }
+  .stage:nth-child(3){ border-top-color:rgba(33,107,120,0.76); }
+  .stage .st-h{ display:flex; align-items:center; gap:0.4rem; margin-bottom:0.2rem; }
+  .stage .num{ font-family:var(--mono); font-size:0.68rem; width:1.3rem; height:1.3rem; display:flex; align-items:center; justify-content:center; border-radius:50%; background:var(--accent); color:#F5F0E7; flex:none; }
+  .stage .nm{ font-family:var(--serif); font-weight:600; font-size:1rem; }
+  .stage ul{ margin:0.45rem 0 0; padding-left:1.05rem; }
+  .stage li{ font-size:0.8rem; line-height:1.55; color:var(--ink-soft); margin-bottom:0.25rem; }
+  @media (max-width:560px){ .stages{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:380px){ .stages{ grid-template-columns:1fr; } }
+
+  /* ---------- roadmap ---------- */
+  .roadmap{ margin:0.3rem 0 0.6rem; }
+  .leg{ border:1px solid var(--hair); border-left:3px solid var(--accent); border-radius:6px; padding:1rem 1.05rem; background:rgba(33,107,120,0.03); }
+  .leg + .leg{ margin-top:0.55rem; }
+  .leg-h{ font-family:var(--serif); font-weight:600; font-size:1.04rem; margin-bottom:0.7rem; display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap; }
+  .leg-h .arrow,.leg-h .to{ color:var(--accent); }
+  .leg-cols{ display:grid; grid-template-columns:1fr 1fr; gap:0.9rem; }
+  .leg .lab{ font-family:var(--mono); font-size:0.6rem; letter-spacing:0.14em; color:var(--accent); margin:0 0 0.4rem; }
+  .leg ul{ margin:0; padding-left:1.05rem; }
+  .leg li{ font-size:0.85rem; line-height:1.6; color:var(--ink-soft); margin-bottom:0.35rem; }
+  .leg li:last-child{ margin-bottom:0; }
+  @media (max-width:520px){ .leg-cols{ grid-template-columns:1fr; gap:0.55rem; } }
+
+  /* ---------- aside ---------- */
+  .aside{ margin:1.3rem 0; padding:0.9rem 1.1rem; border:1px dashed rgba(33,107,120,0.4); border-radius:6px; background:rgba(33,107,120,0.04); font-size:0.92rem; line-height:1.8; color:var(--ink-soft); }
+  .aside .lab{ font-weight:600; color:var(--accent); }
+
   /* ---------- top nav + pager (auto-added) ---------- */
   .topnav{ padding-top:1.6rem; }
   .topnav a{ font-family:var(--mono); font-size:0.72rem; letter-spacing:0.16em; color:var(--accent); text-decoration:none; }
@@ -252,6 +284,22 @@
   .pager .dir{ font-family:var(--mono); font-size:0.66rem; letter-spacing:0.14em; }
   .pager .pt{ display:block; font-family:var(--serif); font-weight:500; font-size:0.95rem; line-height:1.45; color:var(--ink-soft); margin-top:0.35rem; }
   .pager a:hover .pt{ color:var(--ink); }
+
+  :root{ color-scheme: light dark; }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --paper:#1A1712; --ink:#ECE6D9; --ink-soft:#B7AF9F; --faint:#8C8474;
+      --hair:rgba(236,230,217,0.14); --accent:#5AA8B5; --accent-soft:#6FB8C4;
+    }
+    .hl{ background:linear-gradient(transparent 62%, rgba(90,168,181,0.32) 62%); }
+    thead th{ color:#15120D; }
+    tbody tr:nth-child(even){ background:rgba(90,168,181,0.10); }
+    .tldr{ background:rgba(90,168,181,0.10); border-color:rgba(90,168,181,0.30); }
+    .stage,.leg,.aside{ background:rgba(90,168,181,0.06); }
+    .stage .num{ color:#15120D; }
+    .closing::before{ background:radial-gradient(circle, rgba(90,168,181,0.20) 0%, rgba(90,168,181,0.08) 32%, rgba(26,23,18,0) 68%); }
+    .foot a{ color:var(--accent) !important; }
+  }
 </style>
 </head>
 <body>
@@ -262,12 +310,12 @@
   <header class="hero">
     <div class="kicker">知識解碼</div>
     <h1>業務與行銷，為什麼總是開戰？</h1>
-    <p class="sub">拆解一篇經典 HBR——衝突的兩個根源、四階段框架，<br>與我自己的一點補充</p>
+    <p class="sub">拆解一篇經典 HBR——衝突的根源、四階段診斷、往上走的具體做法，<br>與我的一點補充</p>
   </header>
 
   <div class="tldr">
     <p class="label">三句話看懂</p>
-    <p>這篇 2006 年的《哈佛商業評論》在講一件每間公司都會遇到的事：業務和行銷天生不對盤。作者 Kotler 等人說，這不是誰人品問題，而是「結構問題」——來自<span class="strong">預算</span>和<span class="strong">文化</span>兩個根源。他們給了一套四階段量表，讓公司先診斷現狀、再對症下藥。核心一句話：先看清關係，再決定要整合到什麼程度。</p>
+    <p>這篇 2006 年的《哈佛商業評論》在講一件每間公司都會遇到的事：業務和行銷天生不對盤。作者 Kotler 等人說，這不是誰人品問題，而是「結構問題」——來自<span class="strong">預算</span>和<span class="strong">文化</span>兩個根源。他們給了一套四階段量表，讓公司先診斷現狀、再對症下藥。核心一句話：先看清關係，再決定要整合到什麼程度——而且每一步，都有可執行的做法。</p>
   </div>
 
   <section>
@@ -289,36 +337,122 @@
   </section>
 
   <section>
-    <h2>二、先診斷，再開藥</h2>
-    <p>這篇文章我覺得最實用的，不是給你解法，而是先給你一把尺。作者把業務與行銷的關係分成四個階段：</p>
+    <h2>二、先診斷：你在哪一格？</h2>
+    <p>這篇文章最實用的地方，不是給解法，而是先給你一把尺。作者把業務與行銷的關係，分成由疏到密的四個階段——先找出自己在哪，才知道接下來該不該動、要動多少。</p>
 
-    <div class="framework">
-      <table>
-        <thead>
-          <tr><th>階段</th><th>長什麼樣子</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>未定義</td><td>各做各的，只有出事了才碰面。</td></tr>
-          <tr><td>已定義</td><td>有基本規則和共同語言（例如先講好「什麼算一條 lead」）。</td></tr>
-          <tr><td>對齊</td><td>界線清楚但有彈性，會一起規劃、一起受訓。</td></tr>
-          <tr><td>整合</td><td>共享目標、指標、獎勵，「一起好、一起壞」。</td></tr>
-        </tbody>
-      </table>
+    <p class="chart-cap">四階段診斷光譜</p>
+    <div class="stages">
+      <div class="stage">
+        <div class="st-h"><span class="num">1</span><span class="nm">未定義</span></div>
+        <ul>
+          <li>各有各的目標和議程</li>
+          <li>兩個團隊各自長大</li>
+          <li>只在出事時碰面救火</li>
+        </ul>
+      </div>
+      <div class="stage">
+        <div class="st-h"><span class="num">2</span><span class="nm">已定義</span></div>
+        <ul>
+          <li>有一套避免糾紛的規則</li>
+          <li>對灰色地帶有共同語言（如何謂一條 lead）</li>
+          <li>開會用來釐清彼此期待</li>
+        </ul>
+      </div>
+      <div class="stage">
+        <div class="st-h"><span class="num">3</span><span class="nm">對齊</span></div>
+        <ul>
+          <li>界線清楚但有彈性</li>
+          <li>業務用行銷術語、行銷下場參與成交</li>
+          <li>一起規劃、一起受訓</li>
+        </ul>
+      </div>
+      <div class="stage">
+        <div class="st-h"><span class="num">4</span><span class="nm">整合</span></div>
+        <ul>
+          <li>共用系統、指標、獎酬</li>
+          <li>行為上「一起好、一起壞」</li>
+        </ul>
+      </div>
     </div>
 
-    <p>他還附了一份二十題問卷，讓公司測出自己落在哪一格。重點是順序：<span class="strong">沒先看清現在的關係，就急著改，通常改錯。</span></p>
+    <p>作者還附了一份約二十題的問卷，從文化、流程、組織、指標幾個面向打分，幫公司測出落在哪一格。重點是順序：<span class="strong">沒先看清現在的關係，就急著改，通常改錯。</span></p>
     <p>有個細節很有意思：同一段關係，業務和行銷自己打的分數，常常差很多——那個落差本身，就是最值得注意的訊號。</p>
   </section>
 
   <section>
-    <h2>三、要往上走，怎麼走</h2>
-    <p>如果診斷完發現需要更緊密，文章給了一條清楚的路。</p>
+    <h2>三、要往上走，每一步怎麼走</h2>
+    <p>診斷完，如果發現需要更緊密，文章給了一條很具體的路。但動之前，先記住一個前提——</p>
 
-    <h3>從「未定義」到「對齊」</h3>
-    <p>溝通先行，而且要「有紀律地」溝通：固定開會、訂清楚誰決定什麼。例如「兩百萬以上的案子要找品牌經理」「行銷文宣要業務看過才能印」。再來是讓兩邊一起做事——合辦活動、輪調職務，甚至實體坐近一點。文章提到有家銀行，乾脆把業務和行銷放進一個空的購物商場，各給一個店面，逼他們多互動。</p>
+    <div class="aside"><span class="lab">不是越緊密越好。</span>如果公司還小、兩邊各自運作但私下關係良好，就別硬去動它。整合是「對症」，不是「越多越好」。下面這張表，是給「確實需要往上走」的公司看的。</div>
 
-    <h3>從「對齊」到「整合」</h3>
-    <p>真要走到最緊密的整合，文章建議：設一位扛整體營收的高階主管（CRO，像 Coca-Cola、FedEx 都有），把行銷拆成「上游」（管長期策略）和「下游」（直接支援業務開發），再用共同的指標和獎勵，把兩邊綁成「一起好、一起壞」。</p>
+    <p class="chart-cap">往上走的路徑：什麼時候動、具體怎麼做</p>
+    <div class="roadmap">
+      <div class="leg">
+        <div class="leg-h"><span class="from">未定義</span><span class="arrow">→</span><span class="to">已定義</span></div>
+        <div class="leg-cols">
+          <div class="when">
+            <p class="lab">什麼時候該動</p>
+            <ul>
+              <li>兩邊常起衝突、互搶資源</li>
+              <li>工作重複做，或事情掉在中間沒人接</li>
+            </ul>
+          </div>
+          <div class="how">
+            <p class="lab">具體怎麼做</p>
+            <ul>
+              <li>訂出清楚的「交戰規則」</li>
+              <li>明訂重要任務的交接點——例如一條 lead 進來，由誰、在多久內跟進</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="leg">
+        <div class="leg-h"><span class="from">已定義</span><span class="arrow">→</span><span class="to">對齊</span></div>
+        <div class="leg-cols">
+          <div class="when">
+            <p class="lab">什麼時候該動</p>
+            <ul>
+              <li>市場正在商品化或客製化</li>
+              <li>產品生命週期變短</li>
+              <li>角色講清楚了，工作還是重複或被忽略</li>
+            </ul>
+          </div>
+          <div class="how">
+            <p class="lab">具體怎麼做</p>
+            <ul>
+              <li>建立定期會議，討論重大機會與問題</li>
+              <li>明訂哪些決策要找誰參與（如兩百萬以上的案子要找品牌經理）</li>
+              <li>創造合作機會——合辦研討會，或互相輪調職務</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="leg">
+        <div class="leg-h"><span class="from">對齊</span><span class="arrow">→</span><span class="to">整合</span></div>
+        <div class="leg-cols">
+          <div class="when">
+            <p class="lab">什麼時候該動</p>
+            <ul>
+              <li>環境又複雜又快速變動</li>
+              <li>行銷已分成「上游（策略）」與「下游（戰術）」</li>
+            </ul>
+          </div>
+          <div class="how">
+            <p class="lab">具體怎麼做</p>
+            <ul>
+              <li>下游行銷負責開發銷售工具、幫業務篩 leads、把現有產品賣進新客群</li>
+              <li>用共同指標一起評核、一起獎酬——設一個兩邊都要扛的業績目標</li>
+              <li>再往上：設一位扛整體營收的主管（CRO）、共用預算、實體坐在一起</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p>文章裡有個畫面很生動：有家銀行乾脆把業務和行銷放進一個空的購物商場、各給一個店面，逼他們天天碰面。而真正走到整合的大公司（像 Coca-Cola、FedEx），會設一位專責整體營收的高階主管，把這兩股力量綁在同一個目標上。</p>
+    <p>把整條路濃縮成一句：<span class="hl">先用規則止血，再用溝通對齊，最後用共同的指標與獎酬綁在一起。</span>每一步要解決的問題不同，順序錯了，藥就白吃。</p>
   </section>
 
   <section>

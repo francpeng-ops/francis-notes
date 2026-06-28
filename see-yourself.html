@@ -215,6 +215,18 @@
   .pager .dir{ font-family:var(--mono); font-size:0.66rem; letter-spacing:0.14em; }
   .pager .pt{ display:block; font-family:var(--serif); font-weight:500; font-size:0.95rem; line-height:1.45; color:var(--ink-soft); margin-top:0.35rem; }
   .pager a:hover .pt{ color:var(--ink); }
+
+  :root{ color-scheme: light dark; }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --paper:#1A1712; --ink:#ECE6D9; --ink-soft:#B7AF9F; --faint:#8C8474;
+      --hair:rgba(236,230,217,0.14); --accent:#D9A24B;
+    }
+    .hl{ background:linear-gradient(transparent 62%, rgba(217,162,75,0.30) 62%); }
+    .dek{ color:var(--ink-soft); }
+    .closing::before{ background:radial-gradient(circle, rgba(217,162,75,0.20) 0%, rgba(217,162,75,0.08) 32%, rgba(26,23,18,0) 68%); }
+    .foot a{ color:var(--accent) !important; }
+  }
 </style>
 </head>
 <body>

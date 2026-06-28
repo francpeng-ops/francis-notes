@@ -68,6 +68,19 @@
   .subscribe p{ font-size:0.9rem; color:var(--ink-soft); margin:0 0 1.2rem; line-height:1.8; }
   .subscribe iframe{ width:100%; max-width:480px; border:1px solid #E0DACE; border-radius:8px; background:#fff; }
   .subscribe .note{ font-size:0.72rem; color:var(--faint); margin:0.9rem 0 0; }
+
+  :root{ color-scheme: light dark; }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --paper:#1A1712; --ink:#ECE6D9; --ink-soft:#B7AF9F; --faint:#8C8474;
+      --hair:rgba(236,230,217,0.14);
+      --knowledge:#5AA8B5; --growth:#D9A24B; --invest:#8093CC;
+    }
+    .series-head .tag{ color:#15120D; }
+    a.post:hover{ background:rgba(236,230,217,0.05); }
+    .subscribe{ background:rgba(90,168,181,0.10); border-color:rgba(90,168,181,0.28); }
+    .subscribe iframe{ border-color:rgba(236,230,217,0.18); }
+  }
 </style>
 </head>
 <body>
@@ -92,7 +105,7 @@
       <li>
         <a class="post" href="sales-marketing-war.html">
           <p class="t">業務與行銷，為什麼總是開戰？</p>
-          <p class="d">拆解一篇經典 HBR——衝突的兩個根源、四階段框架，與我的一點補充。</p>
+          <p class="d">拆解一篇經典 HBR：衝突的根源、四階段診斷，與往上走的具體做法。</p>
           <p class="meta">2026.06.28</p>
         </a>
       </li>
