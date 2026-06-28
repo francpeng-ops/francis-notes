@@ -138,6 +138,14 @@
     .closing::before{ background:radial-gradient(circle, rgba(128,147,204,0.20) 0%, rgba(128,147,204,0.08) 32%, rgba(22,22,27,0) 68%); }
     .foot a{ color:var(--accent) !important; }
   }
+
+  /* ---------- pager ---------- */
+  .pager{ display:flex; justify-content:space-between; gap:1.2rem; margin-top:4rem; padding-top:1.6rem; border-top:1px solid var(--hair); }
+  .pager a{ text-decoration:none; color:var(--accent); max-width:48%; }
+  .pager .next{ text-align:right; margin-left:auto; }
+  .pager .dir{ font-family:var(--mono); font-size:0.66rem; letter-spacing:0.14em; }
+  .pager .pt{ display:block; font-family:var(--serif); font-weight:500; font-size:0.95rem; line-height:1.45; color:var(--ink-soft); margin-top:0.35rem; }
+  .pager a:hover .pt{ color:var(--ink); }
 </style>
 </head>
 <body>
@@ -348,6 +356,10 @@
       槓桿放大的，是你的紀律，也是你的脆弱。
     </p>
   </div>
+
+  <nav class="pager">
+    <a class="prev" href="fed-rate-hikes-cuts.html"><span class="dir">← 上一篇</span><span class="pt">升息降息，Fed 到底在幹嘛？</span></a>
+  </nav>
 
   <div class="foot">
     <div class="dot"></div>
