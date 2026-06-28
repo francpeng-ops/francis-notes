@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HR79WVR1T3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HR79WVR1T3');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>借錢投資前，先算清楚這三件事｜投資筆記</title>
+<link rel="canonical" href="https://francpeng-ops.github.io/francis-notes/leverage-before-you-borrow.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F5F0E7;
+    --ink:#23262B;
+    --ink-soft:#4E545E;
+    --faint:#8C909A;
+    --accent:#3A4D7A;          /* 投資筆記：靛藍 */
+    --accent-soft:#4F6098;
+    --hair:rgba(35,38,43,0.12);
+    --serif:"Noto Serif TC",serif;
+    --sans:"Noto Sans TC",sans-serif;
+    --mono:ui-monospace,"SF Mono",Menlo,monospace;
+  }
+
+  *{box-sizing:border-box;}
+  html{ -webkit-text-size-adjust:100%; }
+
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--sans); font-weight:400; line-height:2.0;
+    letter-spacing:0.02em; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+
+  .wrap{ max-width:39rem; margin:0 auto; padding:0 1.5rem 5rem; opacity:0; animation:rise 0.9s ease-out 0.05s forwards; }
+  @keyframes rise{ from{opacity:0;transform:translateY(10px);} to{opacity:1;transform:translateY(0);} }
+  @media (prefers-reduced-motion:reduce){ .wrap{animation:none;opacity:1;} }
+
+  /* ---------- hero ---------- */
+  .hero{ padding:5rem 0 2.75rem; text-align:center; }
+  .hero .kicker{ font-family:var(--sans); font-weight:500; font-size:0.74rem; letter-spacing:0.26em; color:var(--accent); margin:0 0 1.7rem; }
+  .hero h1{ font-family:var(--serif); font-weight:700; font-size:2.0rem; line-height:1.5; letter-spacing:0.03em; margin:0 0 1.1rem; }
+  .hero .sub{ font-size:0.92rem; color:var(--ink-soft); letter-spacing:0.06em; font-weight:300; line-height:1.85; margin:0; }
+
+  /* ---------- TL;DR box ---------- */
+  .tldr{ margin:2.5rem 0 0; padding:1.4rem 1.5rem 1.5rem; background:rgba(58,77,122,0.06); border:1px solid rgba(58,77,122,0.18); border-left:4px solid var(--accent); border-radius:4px; }
+  .tldr .label{ font-family:var(--mono); font-size:0.66rem; letter-spacing:0.24em; color:var(--accent); margin:0 0 0.7rem; }
+  .tldr p{ font-size:0.99rem; line-height:1.95; margin:0; color:var(--ink); }
+
+  /* ---------- sections ---------- */
+  section{ margin-top:3.5rem; }
+  h2{ font-family:var(--serif); font-weight:600; font-size:1.3rem; line-height:1.6; letter-spacing:0.03em; margin:0 0 1.25rem; padding-bottom:0.5rem; border-bottom:1px solid var(--hair); }
+  h3{ font-family:var(--sans); font-weight:500; font-size:1.02rem; letter-spacing:0.04em; color:var(--accent); margin:1.6rem 0 0.4rem; }
+
+  p{ font-size:1.0625rem; margin:0 0 1.4em; color:var(--ink); }
+  p:last-child{ margin-bottom:0; }
+
+  .en{ font-family:var(--serif); font-style:italic; letter-spacing:0.01em; }
+  .strong{ font-weight:500; color:var(--ink); }
+  .hl{ font-style:normal; font-weight:500; color:var(--ink); background:linear-gradient(transparent 62%, rgba(58,77,122,0.16) 62%); }
+
+  /* ---------- callout (illustrative example) ---------- */
+  .calc{ margin:1.3rem 0; padding:1rem 1.15rem; border:1px solid var(--hair); border-left:3px solid var(--accent-soft); border-radius:6px; background:rgba(58,77,122,0.04); font-size:0.95rem; line-height:1.85; color:var(--ink-soft); }
+  .calc .lab{ font-family:var(--mono); font-size:0.6rem; letter-spacing:0.16em; color:var(--accent); display:block; margin-bottom:0.4rem; }
+  .calc b{ color:var(--ink); font-weight:600; }
+
+  /* ---------- allocation bar ---------- */
+  .alloc{ margin:1.4rem 0 0.6rem; }
+  .alloc-bar{ display:flex; height:2.5rem; border-radius:6px; overflow:hidden; border:1px solid var(--hair); }
+  .alloc-bar span{ display:flex; align-items:center; justify-content:center; color:#F5F0E7; font-size:0.82rem; font-weight:600; min-width:0; }
+  .alloc-bar .a1{ background:var(--accent); flex:40; }
+  .alloc-bar .a2{ background:var(--accent-soft); flex:30; }
+  .alloc-bar .a3{ background:rgba(58,77,122,0.45); flex:30; }
+  .alloc-legend{ display:flex; flex-wrap:wrap; gap:0.4rem 1.2rem; margin-top:0.75rem; font-size:0.82rem; color:var(--ink-soft); }
+  .alloc-legend span{ display:inline-flex; align-items:center; }
+  .alloc-legend i{ display:inline-block; width:0.7rem; height:0.7rem; border-radius:2px; margin-right:0.4rem; }
+  .alloc-legend .c1{ background:var(--accent); } .alloc-legend .c2{ background:var(--accent-soft); } .alloc-legend .c3{ background:rgba(58,77,122,0.45); }
+
+  /* ---------- framework table ---------- */
+  .framework{ margin:1.6rem 0 1.5rem; overflow-x:auto; }
+  table{ width:100%; border-collapse:collapse; font-size:0.94rem; line-height:1.7; }
+  thead th{ background:var(--accent); color:#F5F0E7; font-weight:500; text-align:left; padding:0.55rem 0.85rem; letter-spacing:0.04em; }
+  tbody td{ padding:0.6rem 0.85rem; border-bottom:1px solid var(--hair); vertical-align:top; }
+  tbody td:first-child{ font-weight:600; color:var(--ink); }
+  tbody tr:nth-child(even){ background:rgba(58,77,122,0.05); }
+
+  /* ---------- pull quote ---------- */
+  .pull{ margin:2.5rem 0; padding:0 0 0 1.2rem; border-left:3px solid var(--accent-soft); }
+  .pull p{ font-family:var(--serif); font-weight:500; font-size:1.24rem; line-height:1.8; letter-spacing:0.02em; color:var(--ink); margin:0; }
+
+  /* ---------- closing ---------- */
+  .closing{ position:relative; margin-top:4.5rem; padding:5rem 1rem; text-align:center; overflow:hidden; }
+  .closing::before{ content:""; position:absolute; left:50%; top:46%; width:min(120%,30rem); height:30rem; transform:translate(-50%,-50%);
+    background:radial-gradient(circle, rgba(150,165,210,0.50) 0%, rgba(150,165,210,0.20) 32%, rgba(245,240,231,0) 68%); z-index:0; }
+  .closing .grace{ position:relative; z-index:1; font-family:var(--serif); font-weight:600; font-size:1.6rem; line-height:1.7; letter-spacing:0.08em; margin:0; }
+  .closing .grace .small{ display:block; font-family:var(--mono); font-size:0.66rem; letter-spacing:0.26em; color:var(--accent); margin-bottom:1.3rem; font-weight:400; }
+
+  /* ---------- foot ---------- */
+  .foot{ margin-top:3rem; text-align:center; color:var(--faint); font-size:0.76rem; letter-spacing:0.1em; line-height:1.9; }
+  .foot .dot{ width:4px; height:4px; border-radius:50%; background:var(--accent); opacity:0.7; margin:0 auto 1.3rem; }
+  .foot a{ color:var(--accent); text-decoration:none; }
+  .disclaimer{ margin-top:1.4rem; font-size:0.72rem; color:var(--faint); line-height:1.8; }
+
+  @media (max-width:430px){
+    .hero{ padding:3.75rem 0 2.25rem; } .hero h1{ font-size:1.7rem; }
+    .pull p{ font-size:1.14rem; } .closing .grace{ font-size:1.42rem; } .closing{ padding:4rem 0.5rem; }
+    table{ font-size:0.88rem; } thead th, tbody td{ padding:0.5rem 0.6rem; }
+  }
+
+  /* ---------- top nav ---------- */
+  .topnav{ padding-top:1.6rem; }
+  .topnav a{ font-family:var(--mono); font-size:0.72rem; letter-spacing:0.16em; color:var(--accent); text-decoration:none; }
+  .topnav a:hover{ opacity:0.65; }
+  .topnav + .hero{ padding-top:2.5rem; }
+
+  /* ---------- dark mode ---------- */
+  :root{ color-scheme: light dark; }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --paper:#16161B; --ink:#E8E6DF; --ink-soft:#B2B0AA; --faint:#85838C;
+      --hair:rgba(232,230,223,0.14); --accent:#8093CC; --accent-soft:#93A4D6;
+    }
+    .hl{ background:linear-gradient(transparent 62%, rgba(128,147,204,0.32) 62%); }
+    thead th{ color:#15151A; }
+    tbody tr:nth-child(even){ background:rgba(128,147,204,0.10); }
+    .tldr{ background:rgba(128,147,204,0.10); border-color:rgba(128,147,204,0.30); }
+    .calc{ background:rgba(128,147,204,0.07); }
+    .alloc-bar span{ color:#15151A; }
+    .alloc-bar .a3{ background:rgba(128,147,204,0.40); }
+    .alloc-legend .c3{ background:rgba(128,147,204,0.40); }
+    .closing::before{ background:radial-gradient(circle, rgba(128,147,204,0.20) 0%, rgba(128,147,204,0.08) 32%, rgba(22,22,27,0) 68%); }
+    .foot a{ color:var(--accent) !important; }
+  }
+</style>
+</head>
+<body>
+<article class="wrap">
+  <div class="topnav"><a href="index.html">← 回目錄</a></div>
+
+
+  <header class="hero">
+    <div class="kicker">投資筆記</div>
+    <h1>借錢投資前，先算清楚這三件事</h1>
+    <p class="sub">一份入門版的槓桿思考框架，<br>最後用一個實際案例示範怎麼套</p>
+  </header>
+
+  <div class="tldr">
+    <p class="label">三句話看懂</p>
+    <p>借錢投資不是「好」或「壞」，是「划不划算」加上「撐不撐得住」。動手前先算三件事：<span class="strong">利差</span>（借錢成本 vs 打過折的合理報酬，以及你扛不扛得過「利息先到、報酬慢來」）、<span class="strong">波動承受</span>（配置能不能讓你在回檔時不被迫賣）、<span class="strong">稅與隱形成本</span>（把帳面利差吃掉的那些東西）。這只是<span class="strong">入門框架</span>——每個人條件不同，文末用一個實際案例示範怎麼套。</p>
+  </div>
+
+  <section>
+    <p>常有人問我類似的問題：手上有一筆閒置資產，或一間沒貸款的房子，要不要把它增貸、質押出來，拿去投資、放大報酬？</p>
+    <p>關於借錢投資（槓桿），網路上的說法通常只有兩種：一種叫你「千萬別碰」，一種秀出報酬叫你「快上車」。我覺得兩種都太懶。槓桿只是個工具——它把報酬放大，也把你的脆弱放大。能不能用、該用多少，取決於你動手前，有沒有把下面三個數字算清楚。</p>
+    <p>先說清楚：這篇是一個<span class="hl">簡易版的思考框架</span>，幫你抓住重點；它<span class="strong">不是</span>一套能套用在所有人身上的配置。每個人的利率、稅務、能承受的波動都不同。文末我會用一個實際整理過的案例來示範——但那也只是「一種情況」，不是標準答案。</p>
+  </section>
+
+  <section>
+    <h2>一、利差，以及「利息先到、報酬慢來」</h2>
+    <p>第一個直覺，大家都會：借錢的利率，要低於你預期的報酬，利差為正才有得賺。這沒錯，但這只是<span class="hl">紙上划算</span>。</p>
+    <p>真正會弄垮人的，不是利差的方向，是利差的<span class="strong">時間差</span>。利息是每個月、準時、確定地流出；報酬卻是長期、波動、不保證的。如果頭幾年市場剛好盤整或下跌，你就是純粹的淨流出——錢一直出去，帳面卻在縮水。</p>
+
+    <div class="calc">
+      <span class="lab">舉例（假設）</span>
+      借 <b>500 萬</b>、年利率 <b>3%</b>，一年就是 <b>15 萬</b>利息。你真正要回答的，不是「長期年化有沒有 6%」這種安慰；而是：<b>就算頭兩年報酬是 0、甚至 −20%，我每年那 15 萬利息照樣付得出來，而且不會被迫賣掉部位嗎？</b>
+    </div>
+
+    <p>所以算利差時，給自己兩個清醒的紀律：預期報酬<span class="strong">別用歷史平均</span>，打折、再打折；利率要用<span class="strong">升息後</span>的情境去壓力測試。利差要在「悲觀情境下」都還站得住，才算數。</p>
+  </section>
+
+  <section>
+    <h2>二、配置，決定你撐不撐得過回檔</h2>
+    <p>借來的錢，最怕兩件事：<span class="hl">押在單一標的</span>，以及用<span class="hl">會被強制平倉的工具</span>（高維持率的融資、質押）。這兩件事湊在一起，就是斷頭的標準配方。</p>
+    <p>這裡有個關鍵觀念：槓桿投資真正的風險，不是「下跌」，是<span class="strong">在低點被迫賣出</span>。市場跌一跌再漲回來，沒槓桿的人可以閉著眼睛等；但槓桿開太滿、又沒有緩衝的人，會在最痛的位置被斷頭或自己嚇到停損——把帳面虧損，變成永久虧損。</p>
+    <p>資產配置（分散持股，再加一部分波動較低的資產，例如債券或現金緩衝）的意義，不是把報酬衝到最高，而是<span class="strong">讓你在回檔時還睡得著、不斷頭、不恐慌賣</span>。</p>
+
+    <blockquote class="pull">
+      <p>槓桿的勝負，常常不是輸在看錯方向，是輸在撐不過波動、賣在最低點。</p>
+    </blockquote>
+
+    <p>還有一件容易被忽略的事：槓桿會連你的情緒一起放大。同樣跌 20%，沒借錢的人覺得是機會，借滿的人會夜不能寐、做出最糟的決定。配置，某種程度上是在替「未來那個會慌的自己」先繫好安全帶。</p>
+  </section>
+
+  <section>
+    <h2>三、稅與隱形成本，別只看帳面利差</h2>
+    <p>很多人算到利差為正就收手了，但帳面上那條利差，會被一堆「隱形成本」一層一層吃掉：<span class="strong">借款端</span>的開辦費、帳管費、提前清償違約金，還有機動利率升息時悄悄變貴；<span class="strong">報酬端</span>的股息稅、海外所得、賣出價差的稅；以及<span class="strong">匯率</span>——如果你借台幣、買美元資產，匯率本身就是一個你沒主動下注、卻一直在波動的變數。</p>
+    <p>把這些加回去之後，原本看起來 3% 的漂亮利差，很可能只剩 1% 出頭。這時候要問自己：<span class="hl">為了這剩下的一點點報酬，去扛那麼大的波動與被迫賣出風險，配得上嗎？</span></p>
+  </section>
+
+  <section>
+    <h2>三道檢查，先過再說</h2>
+    <p>把上面三件事，濃縮成動手前的三道關卡——三關都過，再考慮；任一關卡住，就先別開槓桿。</p>
+
+    <div class="framework">
+      <table>
+        <thead>
+          <tr><th>檢查</th><th>動手前先問自己</th><th>過關標準</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>利差</td><td>借款利率 vs 我打折後的合理報酬？升息情境下還正嗎？</td><td>壓力測試後，利差仍明顯為正</td></tr>
+          <tr><td>波動</td><td>市場回檔 30%、頭兩年沒報酬，我撐得住、不被迫賣嗎？</td><td>有配置與現金流，不斷頭、不恐慌賣</td></tr>
+          <tr><td>成本與稅</td><td>把開辦費、稅、匯率等隱形成本加回去，還划算嗎？</td><td>稅後淨利差，配得上承擔的風險</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>最後一個更根本的提醒：槓桿適合拿來<span class="strong">放大一個你本來就會做、而且做得穩的決定</span>；不適合拿來<span class="strong">賭一個你還沒把握的方向</span>。工具會忠實地放大一切——包括你的紀律，也包括你的僥倖。</p>
+  </section>
+
+  <section>
+    <h2>案例示範：一筆 1,000 萬的理財型房貸</h2>
+    <p>觀念講完，來看一個我實際整理過的案例，把上面三道檢查走一遍。<span class="strong">再強調一次：這只是「一種情況」</span>，數字、標的都會因人而異，不是建議照抄。</p>
+    <p>情境大概是這樣：有人有一筆 <span class="strong">1,000 萬的「理財型房貸」</span>（隨借隨還、只繳息不還本、按日計息，年息約 2.7% 機動利率）。他看好台股、想盡量避開匯率麻煩，最在意的是「<span class="hl">看得到現金進帳、用配息直接蓋掉房貸利息</span>」這種安心感。先看他的基本盤：</p>
+
+    <div class="framework">
+      <table>
+        <thead><tr><th>項目</th><th>內容</th></tr></thead>
+        <tbody>
+          <tr><td>貸款總額</td><td>1,000 萬（理財型，隨借隨還、只繳息）</td></tr>
+          <tr><td>貸款利率</td><td>年息約 2.7%（機動，會隨央行調整）</td></tr>
+          <tr><td>每月利息</td><td>全額動用約 2.25 萬，一年約 27 萬</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="calc">
+      <span class="lab">一個重要前提</span>
+      因為房貸撥下來的是<b>台幣</b>，而他不想為了投資去承擔換匯的麻煩與成本，所以整個配置<b>刻意以台幣計價的商品為主</b>。但要記得：<b>台幣計價 ≠ 沒有匯率風險</b>——這點等一下會專門講。
+    </div>
+
+    <h3>配置：把錢分成三個角色</h3>
+    <p>核心思路不是「壓最會漲的」，而是讓三種角色各司其職：一個負責<span class="strong">領息</span>（製造現金流）、一個負責<span class="strong">長線成長</span>、一個負責<span class="strong">股災時的防護</span>。三檔都選台幣計價、在台股市場就能買賣的 ETF。</p>
+
+    <div class="alloc">
+      <div class="alloc-bar">
+        <span class="a1">40%</span><span class="a2">30%</span><span class="a3">30%</span>
+      </div>
+      <div class="alloc-legend">
+        <span><i class="c1"></i>高股息 ETF　400 萬（領息）</span>
+        <span><i class="c2"></i>市值型 ETF　300 萬（成長）</span>
+        <span><i class="c3"></i>美國公債 ETF　300 萬（防禦）</span>
+      </div>
+    </div>
+
+    <div class="framework">
+      <table>
+        <thead><tr><th>角色</th><th>標的（舉例）</th><th>任務</th></tr></thead>
+        <tbody>
+          <tr><td>領息主力</td><td>高股息 ETF（如 0056）</td><td>季季配息，提供看得到的現金流</td></tr>
+          <tr><td>成長核心</td><td>市值型 ETF（如 0050）</td><td>跟著整體台股長線增值，主要靠價差</td></tr>
+          <tr><td>防空洞</td><td>美國公債 ETF</td><td>股災時抗跌，同時月月配息、現金流平滑</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>這裡有個常被做錯的細節：很多人以為買一檔「平衡型基金」就是避險，但平衡型基金本身可能六成是股票，<span class="hl">股災時自己也大跌，根本擋不住</span>。真正能在股市崩盤時抗跌、甚至逆勢上漲的，是美國政府公債——這才是名副其實的「防空洞」。</p>
+
+    <h3>現金流：用配息蓋掉利息</h3>
+    <p>這個設計的安心感，來自「<span class="strong">以息養息</span>」——用組合的配息，穩穩蓋過房貸利息，剩下的才是淨賺。下面是概估（請注意：這是「配息」不是「總報酬」，數字僅供感受節奏，每年會變動、不保證）：</p>
+
+    <div class="framework">
+      <table>
+        <thead><tr><th>來源</th><th>概估年配息</th></tr></thead>
+        <tbody>
+          <tr><td>高股息 ETF（400 萬）</td><td>約 28 萬（以保守殖利率約 7% 估）</td></tr>
+          <tr><td>市值型 ETF（300 萬）</td><td>約 8 萬（配息少，主要靠增值）</td></tr>
+          <tr><td>美債 ETF（300 萬）</td><td>約 13 萬（殖利率約 4.5%、月配）</td></tr>
+          <tr><td>配息合計（A）</td><td>約 49 萬</td></tr>
+          <tr><td>房貸利息（B）</td><td>約 27 萬</td></tr>
+          <tr><td>覆蓋利息後餘裕（A−B）</td><td>約 22 萬</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>配息蓋過利息、還有餘裕，這就是安心感的來源。但<span class="strong">餘裕不是純利潤</span>——還要再扣稅與基金費用，配息也會隨市場變動。把它當成「緩衝」，不是「穩賺」。</p>
+
+    <h3>把「隨借隨還」用到極致</h3>
+    <p>理財型房貸最值錢的，是「<span class="strong">不動用就不計息</span>」這個特性，有三個聰明用法：</p>
+    <p>一、<span class="strong">閒置配息先回沖房貸</span>：暫時用不到的配息匯回房貸帳戶，等於穩穩省下 2.7% 利息，而且這筆「省下的利息」不算所得、完全免稅，需要時再隨時提領。二、<span class="strong">不必第一天就借滿</span>：先借一部分把部位建好，剩下額度留著不計息，分批進場、壓低成本。三、<span class="strong">留一把銀彈</span>：當台股大跌 20% 以上，這筆隨時可動用的額度，就是你逢低加碼的子彈。</p>
+
+    <h3>最容易誤會的一點：台幣計價 ≠ 沒有匯率風險</h3>
+    <p>同樣是「台幣計價、在台股買賣」，這三檔的匯率與稅其實差很多。關鍵只有一句話：<span class="hl">真正決定差異的，不是你用什麼幣別買賣，而是這檔 ETF 裡面實際裝了什麼。</span></p>
+    <p>高股息與市值型 ETF 裝的是台灣公司股票，本來就是台幣資產，<span class="strong">沒有匯率風險</span>；美債 ETF 裝的是美元資產，雖然你用台幣下單，淨值仍會隨美元／台幣匯率波動，有「隱藏」的匯率風險。但有意思的是——每逢全球股災，美元通常走強、台幣偏弱，這時美債 ETF 換算回台幣的價值反而上升。<span class="strong">這層匯率，放在防禦角色上，常常是在你最需要時幫你一把。</span></p>
+    <p>稅的差別也很大（以下為<span class="strong">現行（2026）規定</span>，台灣稅制與健保法都可能修法調整，實際請以最新法規為準）：</p>
+
+    <div class="framework">
+      <table>
+        <thead><tr><th>項目</th><th>台股 ETF（0056 / 0050）</th><th>美債 ETF（美元資產）</th></tr></thead>
+        <tbody>
+          <tr><td>配息身分</td><td>國內股利，併入綜所稅</td><td>海外所得，不併綜所稅</td></tr>
+          <tr><td>二代健保補充保費</td><td>單筆逾 2 萬，扣 2.11%</td><td>免扣（屬海外所得）</td></tr>
+          <tr><td>賣出價差</td><td>目前停徵證所稅，免稅</td><td>同左，免稅</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>兩個要特別留意的地方：一是<span class="strong">二代健保補充保費正在研議修法</span>——目前是「單筆逾 2 萬」才扣，但主管機關曾預告未來可能改成「全年累計逾 2 萬」、單筆上限也調高（行政院已宣布暫緩，最快 2027 年才可能上路）；換句話說，現在用月配把單筆壓到 2 萬以下來避繳的做法，將來不一定有效。二是海外所得的免稅空間其實很大：<span class="strong">同一申報戶全年海外所得合計未達 100 萬，不必計入</span>；就算超過，基本所得額還有 <span class="strong">750 萬的免稅額</span>，多數人其實課不到。</p>
+
+    <p>這裡藏著一個關鍵啟示：因為<span class="hl">賣出價差目前免稅、配息卻要課稅</span>，對「不缺現金流」的人來說，靠資產增值、需要時賣一小部分來繳息，其實比一直領息更省稅。案例裡的人重視領息的安心感，所以仍以領息為主軸；但他可以知道：未來心態更穩之後，把一部分慢慢往成長型移，會更有效率。</p>
+
+    <h3>那「美債 ETF」到底怎麼選？</h3>
+    <p>台股掛牌的美債 ETF 很多檔，差別主要在兩件事：<span class="strong">天期長短</span>，和<span class="strong">公債還是公司債</span>。先記住一個前提——這塊的任務是「降低波動、股災抗跌」，它的配息是債息，不會像高股息股票那麼高。把它當成「保險＋穩定領息」，不是衝報酬的主角。</p>
+
+    <div class="framework">
+      <table>
+        <thead><tr><th>類型</th><th>殖利率（約）</th><th>波動／避險</th><th>適合誰</th></tr></thead>
+        <tbody>
+          <tr><td>長天期公債<br>（20 年以上）</td><td>4.5–4.9%</td><td>波動大、避險力最強</td><td>受得了波動、想要最強的股災保護</td></tr>
+          <tr><td>中短天期公債</td><td>約 3.5–4%</td><td>波動小、避險溫和</td><td>求穩，把它當「現金加強版」</td></tr>
+          <tr><td>投資級公司債</td><td>略高於<br>同期公債</td><td>波動中等、有信用風險</td><td>想配息高一點、可接受一點信用風險</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>怎麼挑，看你的心臟和目的：</p>
+    <p><span class="strong">最簡單一檔解法：</span>直接選一檔長天期公債，股災保護力最強——但要先有心理準備，它平時淨值就會明顯上下跳，別被嚇到砍在低點。<span class="strong">想睡得更安穩：</span>用「長＋短」槓鈴——防禦這塊裡，一半放長天期（負責避險），一半放短天期或投資級公司債（負責穩定、壓低整體波動）。<span class="strong">想配息再高一點：</span>把一部分換成投資級公司債，殖利率會高一些，代價是多扛一層信用風險。</p>
+    <p>不論選哪一檔，它的配息都屬海外所得、免二代健保；而且雖然台幣計價，淨值仍受美元／台幣匯率影響——但這層匯率在股災時通常反而幫你抗跌，是防禦角色的加分。</p>
+
+    <h3>這個案例的風險清單</h3>
+    <p>最後，把這個方案會踩到的雷，誠實列出來——這也是任何槓桿方案都該先想清楚的：</p>
+
+    <div class="framework">
+      <table>
+        <thead><tr><th>風險</th><th>提醒</th></tr></thead>
+        <tbody>
+          <tr><td>賺賠都放大</td><td>組合跌 20%＝實虧 200 萬，但欠銀行的 1,000 萬一毛不會少</td></tr>
+          <tr><td>配息 ≠ 賺錢</td><td>配息可能來自本金，要看「淨值有沒有同步成長」</td></tr>
+          <tr><td>機動利率會升</td><td>預留升到 3.5–4% 仍繳得起的空間</td></tr>
+          <tr><td>別在恐慌時砍倉</td><td>按時繳息銀行不會逼你賣；留足 1–2 年利息（約 27–54 萬）預備金</td></tr>
+          <tr><td>做最壞打算</td><td>若一度跌 35%、配息腰斬、利率升到 4%，撐得住才適合</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>你會發現，這個案例其實就是把前面三道檢查走了一遍：用配息覆蓋利息（<span class="strong">利差／現金流</span>）、三角色配置加留銀彈（<span class="strong">撐過波動</span>）、把匯率與稅務算進去（<span class="strong">隱形成本</span>）。換成你，數字一定不同，配置也會長得不一樣——但<span class="hl">那三道檢查，放到哪個版本都適用。</span></p>
+  </section>
+
+  <div class="closing">
+    <p class="grace">
+      <span class="small">LEVERAGE AMPLIFIES EVERYTHING</span>
+      槓桿放大的，是你的紀律，也是你的脆弱。
+    </p>
+  </div>
+
+  <div class="foot">
+    <div class="dot"></div>
+    <a href="index.html">← 回目錄</a>　法蘭的學習筆記｜投資筆記
+    <p class="disclaimer">本文為觀念與現金流規劃之分享，文中案例已去識別化、數字與標的僅為概估示範，並非針對任何特定人的投資、稅務或法律建議，也不構成買賣任何商品的招攬或推薦；撰寫者非持牌理財顧問、會計師或律師。文中稅務、二代健保與貸款規定為撰文時（2026）之理解，日後可能修法變動，實際請以主管機關公告為準。投資一定有風險，以槓桿（借款）投資的風險更高；做任何決定前，請對照自己的狀況、查證最新法規，並諮詢往來銀行、會計師或合格專業人士。</p>
+  </div>
+
+</article>
+</body>
+</html>
