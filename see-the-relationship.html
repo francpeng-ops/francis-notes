@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>看清關係，再決定距離｜從一場銷售與行銷的戰爭，到人與人的距離</title>
+<link rel="canonical" href="https://francpeng-ops.github.io/francis-notes/see-the-relationship.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F5F0E7;
+    --ink:#2A2520;
+    --ink-soft:#5A5247;
+    --faint:#9A9082;
+    --accent:#B07A2E;
+    --hair:rgba(42,37,32,0.12);
+    --serif:"Noto Serif TC",serif;
+    --sans:"Noto Sans TC",sans-serif;
+    --mono:ui-monospace,"SF Mono",Menlo,monospace;
+  }
+
+  *{box-sizing:border-box;}
+
+  html{ -webkit-text-size-adjust:100%; }
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-weight:400;
+    line-height:2.0;
+    letter-spacing:0.02em;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+
+  .wrap{
+    max-width:39rem;
+    margin:0 auto;
+    padding:0 1.5rem 5rem;
+    opacity:0;
+    animation:rise 0.9s ease-out 0.05s forwards;
+  }
+
+  @keyframes rise{
+    from{opacity:0;transform:translateY(10px);}
+    to{opacity:1;transform:translateY(0);}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .wrap{animation:none;opacity:1;}
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    padding:5rem 0 3.25rem;
+    text-align:center;
+  }
+  .hero .kicker{
+    font-family:var(--sans);
+    font-weight:500;
+    font-size:0.74rem;
+    letter-spacing:0.26em;
+    color:var(--accent);
+    margin:0 0 1.7rem;
+  }
+  .hero h1{
+    font-family:var(--serif);
+    font-weight:700;
+    font-size:2.05rem;
+    line-height:1.45;
+    letter-spacing:0.04em;
+    margin:0 0 1.1rem;
+  }
+  .hero .sub{
+    font-size:0.92rem;
+    color:var(--ink-soft);
+    letter-spacing:0.12em;
+    font-weight:300;
+    margin:0;
+  }
+
+  /* ---------- lead ---------- */
+  .lead p{
+    font-size:1.06rem;
+    margin:0 0 1.55em;
+  }
+  .lead p:first-child{ margin-top:0; }
+  .lead .opening{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:1.5rem;
+    line-height:1.6;
+    letter-spacing:0.03em;
+    color:var(--ink);
+    margin-bottom:1.55em;
+  }
+
+  /* ---------- sections ---------- */
+  section{ margin-top:3.75rem; }
+
+  h2{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:1.32rem;
+    line-height:1.6;
+    letter-spacing:0.03em;
+    margin:0 0 1.3rem;
+  }
+
+  p{
+    font-size:1.0625rem;
+    margin:0 0 1.5em;
+    color:var(--ink);
+  }
+  p:last-child{ margin-bottom:0; }
+
+  .en{ font-family:var(--serif); font-style:italic; letter-spacing:0.01em; }
+
+  .strong{ font-weight:500; color:var(--ink); }
+
+  .hl{
+    font-style:normal;
+    font-weight:500;
+    color:var(--ink);
+    background:linear-gradient(transparent 62%, rgba(176,122,46,0.18) 62%);
+  }
+
+  /* ---------- single pull quote ---------- */
+  .pull{
+    margin:2.75rem 0;
+    padding:0;
+    text-align:center;
+  }
+  .pull p{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:1.42rem;
+    line-height:1.75;
+    letter-spacing:0.04em;
+    color:var(--ink);
+    margin:0;
+  }
+
+  /* ---------- closing (signature glow) ---------- */
+  .closing{
+    position:relative;
+    margin-top:5rem;
+    padding:5.5rem 1rem;
+    text-align:center;
+    overflow:hidden;
+  }
+  .closing::before{
+    content:"";
+    position:absolute;
+    left:50%;top:46%;
+    width:min(120%,30rem);height:30rem;
+    transform:translate(-50%,-50%);
+    background:radial-gradient(circle,
+      rgba(243,219,165,0.85) 0%,
+      rgba(243,219,165,0.35) 32%,
+      rgba(245,240,231,0) 68%);
+    z-index:0;
+  }
+  .closing .grace{
+    position:relative;z-index:1;
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:1.72rem;
+    line-height:1.7;
+    letter-spacing:0.1em;
+    margin:0;
+  }
+  .closing .grace .small{
+    display:block;
+    font-family:var(--mono);
+    font-size:0.68rem;
+    letter-spacing:0.28em;
+    color:var(--accent);
+    margin-bottom:1.4rem;
+    font-weight:400;
+  }
+
+  /* ---------- foot ---------- */
+  .foot{
+    margin-top:3.5rem;
+    text-align:center;
+    color:var(--faint);
+    font-size:0.78rem;
+    letter-spacing:0.16em;
+  }
+  .foot .dot{
+    width:4px;height:4px;border-radius:50%;
+    background:var(--accent);opacity:0.7;
+    margin:0 auto 1.4rem;
+  }
+
+  @media (max-width:430px){
+    .hero{ padding:3.75rem 0 2.75rem; }
+    .hero h1{ font-size:1.78rem; }
+    .pull p{ font-size:1.26rem; }
+    .closing .grace{ font-size:1.5rem; }
+    .closing{ padding:4.5rem 0.5rem; }
+  }
+
+  /* ---------- top nav + pager (auto-added) ---------- */
+  .topnav{ padding-top:1.6rem; }
+  .topnav a{ font-family:var(--mono); font-size:0.72rem; letter-spacing:0.16em; color:var(--accent); text-decoration:none; }
+  .topnav a:hover{ opacity:0.65; }
+  .topnav + .hero{ padding-top:2.5rem; }
+  .pager{ display:flex; justify-content:space-between; gap:1.2rem; margin-top:4rem; padding-top:1.6rem; border-top:1px solid var(--hair); }
+  .pager a{ text-decoration:none; color:var(--accent); max-width:48%; }
+  .pager .next{ text-align:right; margin-left:auto; }
+  .pager .dir{ font-family:var(--mono); font-size:0.66rem; letter-spacing:0.14em; }
+  .pager .pt{ display:block; font-family:var(--serif); font-weight:500; font-size:0.95rem; line-height:1.45; color:var(--ink-soft); margin-top:0.35rem; }
+  .pager a:hover .pt{ color:var(--ink); }
+</style>
+</head>
+<body>
+<article class="wrap">
+  <div class="topnav"><a href="index.html">← 回目錄</a></div>
+
+
+  <header class="hero">
+    <div class="kicker">給自己的成長雜記</div>
+    <h1>看清關係，再決定距離</h1>
+    <p class="sub">從一場銷售與行銷的戰爭，到人與人的距離</p>
+  </header>
+
+  <div class="lead">
+    <p class="opening">我們很習慣把「合不來」，當成「那個人有問題」。</p>
+    <p>最近因為上課，我重讀了一篇快二十年前的《哈佛商業評論》——Philip Kotler 幾位作者寫的，標題很聳動，叫〈終結銷售與行銷之間的戰爭〉，講的是公司裡這兩個部門，為什麼老是吵架。</p>
+    <p>本來以為就是一篇乾乾的管理文章，看完做個摘要交差就好。結果它反而塞給我一個，看「衝突」這件事的新角度。</p>
+  </div>
+
+  <section>
+    <h2>為什麼這件事打中我</h2>
+    <p>文章一開頭，就把這場戰爭比喻成《羅密歐與茱麗葉》裡那兩個世仇家族。但它真正厲害的地方，是它不把問題丟給「誰人品差」——它說，這是結構性的，而且可以被診斷、被修。</p>
+    <p>衝突有兩個來源。一個是經濟上的：兩個部門共用一筆預算，自然會搶。另一個是文化上的：他們根本是兩種人。行銷坐在桌前，看的是未來、是數據、是品牌；業務在第一線，看的是今天這張單能不能成。<span class="hl">不是誰對誰錯，是兩個人站的位置，本來就看不到同一片風景。</span></p>
+    <p>打中我的是這個——每次我心裡冒出「這個人很難搞」的時候，我其實是跳過了結構，直接怪了人。</p>
+
+    <blockquote class="pull">
+      <p>把「他很難搞」翻譯一次，常常只是「我們站的位置不同」。</p>
+    </blockquote>
+  </section>
+
+  <section>
+    <h2>先看清，再決定</h2>
+    <p>這篇文章最實用的地方，不是教你怎麼修，而是先教你怎麼「看」。</p>
+    <p>作者給了一個四階段的量表——從各做各的、到有規則、到有默契、到完全整合——還附了一份二十題的問卷，讓公司先測出自己站在哪一格。重點是順序：你沒先看清現在的關係長什麼樣，就急著開藥，通常開錯。</p>
+    <p>這跟我一直在練的「看見自己」，其實是同一件事。<span class="hl">診斷，永遠在處方之前。</span></p>
+    <p>而且裡面有個細節我很喜歡：同一段關係，業務和行銷打的分數常常差很多，那個落差本身，就是答案——這不只發生在公司。多少關係裡，兩個人對「我們現在好不好」的評分，根本不在同一個刻度上。</p>
+  </section>
+
+  <section>
+    <h2>不是越近越好</h2>
+    <p>然後是讓我有點意外的一段。</p>
+    <p>我本來以為，這種文章的結論一定是「大家要更緊密、更整合」。結果作者反而踩了煞車：不是每間公司都需要走到完全整合。如果公司還小、彼此相處又自在，那就別硬去動它。</p>
+    <p>這句話放到生活裡，力量其實滿大的。<span class="strong">硬把一段關係推得比它需要的還近，本身就是一種錯。</span>有時候「界線清楚、但保有彈性」，反而比「黏成一團」健康。</p>
+    <p>這讓我想到《金剛經》那句「應無所住」。不是叫你不去靠近，而是不要執著於「一定要多近」。剛剛好，就好。</p>
+
+    <blockquote class="pull">
+      <p>看清楚，是為了選一個剛好的距離，不是為了無限靠近。</p>
+    </blockquote>
+  </section>
+
+  <section>
+    <h2>我自己想補的一刀</h2>
+    <p>讀的時候，我自己補了一個作者沒講清楚的地方。</p>
+    <p>文章把「整合」當成一件事在講，但我覺得它混了兩種。一種是<span class="hl">實質上的整合</span>——共同的目標、共同的語言、那種「一起好、一起壞」的默契。另一種是<span class="hl">形式上的整合</span>——設一個高階主管、重新劃分團隊、改組織圖。</p>
+    <p>有趣的是，實質的那種，跟規模幾乎無關。一間小公司，三五個人本來就共用同一套數字、扛同一個目標，天生就整合了。反而是大公司，因為人多了、分工細了，才需要用一堆制度和頭銜，去「人工重建」小團隊本來免費就有的那種對齊。</p>
+    <p>換個方式說——那些看起來很高明的組織設計，很多時候只是在補一個「規模自己製造出來的病」。小團隊沒得這個病，自然不用吃這帖藥。</p>
+    <p>放到關係裡也一樣：你可以有全套的形式（住在一起、名義上是一隊、頭銜寫得很近），卻一點實質的對齊都沒有；也可以什麼形式都沒有，卻完全同頻。<span class="strong">形式可以裝，實質裝不了。</span></p>
+  </section>
+
+  <div class="closing">
+    <p class="grace">
+      <span class="small">SEE FIRST, THEN DECIDE</span>
+      先看清，再決定要靠多近。
+    </p>
+  </div>
+
+  <nav class="pager">
+    <a class="prev" href="memory.html"><span class="dir">← 上一篇</span><span class="pt">看見自己，享受當下：鬆開過去</span></a>
+  </nav>
+
+  <div class="foot">
+    <div class="dot"></div>
+    <a href="index.html" style="color:#B07A2E;text-decoration:none;letter-spacing:0.16em;font-size:0.78rem;">← 回目錄</a>
+  </div>
+
+</article>
+</body>
+</html>

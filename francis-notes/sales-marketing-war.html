@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>業務與行銷，為什麼總是開戰？｜拆解一篇經典 HBR</title>
+<link rel="canonical" href="https://francpeng-ops.github.io/francis-notes/sales-marketing-war.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F5F0E7;
+    --ink:#23282B;
+    --ink-soft:#4E575B;
+    --faint:#8C969A;
+    --accent:#216B78;          /* 冷色：墨綠藍（知識系列） */
+    --accent-soft:#2C8190;
+    --hair:rgba(35,40,43,0.12);
+    --serif:"Noto Serif TC",serif;
+    --sans:"Noto Sans TC",sans-serif;
+    --mono:ui-monospace,"SF Mono",Menlo,monospace;
+  }
+
+  *{box-sizing:border-box;}
+  html{ -webkit-text-size-adjust:100%; }
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-weight:400;
+    line-height:2.0;
+    letter-spacing:0.02em;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+
+  .wrap{
+    max-width:39rem;
+    margin:0 auto;
+    padding:0 1.5rem 5rem;
+    opacity:0;
+    animation:rise 0.9s ease-out 0.05s forwards;
+  }
+  @keyframes rise{
+    from{opacity:0;transform:translateY(10px);}
+    to{opacity:1;transform:translateY(0);}
+  }
+  @media (prefers-reduced-motion:reduce){ .wrap{animation:none;opacity:1;} }
+
+  /* ---------- hero ---------- */
+  .hero{ padding:5rem 0 2.75rem; text-align:center; }
+  .hero .kicker{
+    font-family:var(--sans);
+    font-weight:500;
+    font-size:0.74rem;
+    letter-spacing:0.26em;
+    color:var(--accent);
+    margin:0 0 1.7rem;
+  }
+  .hero h1{
+    font-family:var(--serif);
+    font-weight:700;
+    font-size:2.0rem;
+    line-height:1.5;
+    letter-spacing:0.03em;
+    margin:0 0 1.1rem;
+  }
+  .hero .sub{
+    font-size:0.92rem;
+    color:var(--ink-soft);
+    letter-spacing:0.06em;
+    font-weight:300;
+    line-height:1.85;
+    margin:0;
+  }
+
+  /* ---------- TL;DR box ---------- */
+  .tldr{
+    margin:2.5rem 0 0;
+    padding:1.4rem 1.5rem 1.5rem;
+    background:rgba(33,107,120,0.06);
+    border:1px solid rgba(33,107,120,0.18);
+    border-left:4px solid var(--accent);
+    border-radius:4px;
+  }
+  .tldr .label{
+    font-family:var(--mono);
+    font-size:0.66rem;
+    letter-spacing:0.24em;
+    color:var(--accent);
+    margin:0 0 0.7rem;
+  }
+  .tldr p{
+    font-size:0.99rem;
+    line-height:1.95;
+    margin:0;
+    color:var(--ink);
+  }
+
+  /* ---------- sections ---------- */
+  section{ margin-top:3.5rem; }
+  h2{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:1.3rem;
+    line-height:1.6;
+    letter-spacing:0.03em;
+    margin:0 0 1.25rem;
+    padding-bottom:0.5rem;
+    border-bottom:1px solid var(--hair);
+  }
+  h3{
+    font-family:var(--sans);
+    font-weight:500;
+    font-size:1.02rem;
+    letter-spacing:0.04em;
+    color:var(--accent);
+    margin:1.6rem 0 0.4rem;
+  }
+
+  p{
+    font-size:1.0625rem;
+    margin:0 0 1.4em;
+    color:var(--ink);
+  }
+  p:last-child{ margin-bottom:0; }
+
+  .en{ font-family:var(--serif); font-style:italic; letter-spacing:0.01em; }
+  .strong{ font-weight:500; color:var(--ink); }
+  .hl{
+    font-style:normal;
+    font-weight:500;
+    color:var(--ink);
+    background:linear-gradient(transparent 62%, rgba(33,107,120,0.16) 62%);
+  }
+
+  /* ---------- framework table ---------- */
+  .framework{ margin:1.6rem 0 1.5rem; overflow-x:auto; }
+  table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:0.96rem;
+    line-height:1.7;
+  }
+  thead th{
+    background:var(--accent);
+    color:#F5F0E7;
+    font-weight:500;
+    text-align:left;
+    padding:0.55rem 0.85rem;
+    letter-spacing:0.04em;
+  }
+  tbody td{
+    padding:0.6rem 0.85rem;
+    border-bottom:1px solid var(--hair);
+    vertical-align:top;
+  }
+  tbody td:first-child{
+    font-weight:600;
+    white-space:nowrap;
+    color:var(--ink);
+  }
+  tbody tr:nth-child(even){ background:rgba(33,107,120,0.045); }
+
+  /* ---------- pull quote ---------- */
+  .pull{ margin:2.5rem 0; padding:0 0 0 1.2rem; border-left:3px solid var(--accent-soft); }
+  .pull p{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:1.24rem;
+    line-height:1.8;
+    letter-spacing:0.02em;
+    color:var(--ink);
+    margin:0;
+  }
+
+  /* ---------- closing ---------- */
+  .closing{
+    position:relative;
+    margin-top:4.5rem;
+    padding:5rem 1rem;
+    text-align:center;
+    overflow:hidden;
+  }
+  .closing::before{
+    content:"";
+    position:absolute;
+    left:50%;top:46%;
+    width:min(120%,30rem);height:30rem;
+    transform:translate(-50%,-50%);
+    background:radial-gradient(circle,
+      rgba(168,206,212,0.80) 0%,
+      rgba(168,206,212,0.30) 32%,
+      rgba(245,240,231,0) 68%);
+    z-index:0;
+  }
+  .closing .grace{
+    position:relative;z-index:1;
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:1.6rem;
+    line-height:1.7;
+    letter-spacing:0.08em;
+    margin:0;
+  }
+  .closing .grace .small{
+    display:block;
+    font-family:var(--mono);
+    font-size:0.66rem;
+    letter-spacing:0.26em;
+    color:var(--accent);
+    margin-bottom:1.3rem;
+    font-weight:400;
+  }
+
+  /* ---------- foot ---------- */
+  .foot{
+    margin-top:3rem;
+    text-align:center;
+    color:var(--faint);
+    font-size:0.76rem;
+    letter-spacing:0.1em;
+    line-height:1.9;
+  }
+  .foot .dot{
+    width:4px;height:4px;border-radius:50%;
+    background:var(--accent);opacity:0.7;
+    margin:0 auto 1.3rem;
+  }
+
+  @media (max-width:430px){
+    .hero{ padding:3.75rem 0 2.25rem; }
+    .hero h1{ font-size:1.7rem; }
+    .pull p{ font-size:1.14rem; }
+    .closing .grace{ font-size:1.42rem; }
+    .closing{ padding:4rem 0.5rem; }
+    table{ font-size:0.9rem; }
+    thead th, tbody td{ padding:0.5rem 0.6rem; }
+  }
+
+  /* ---------- top nav + pager (auto-added) ---------- */
+  .topnav{ padding-top:1.6rem; }
+  .topnav a{ font-family:var(--mono); font-size:0.72rem; letter-spacing:0.16em; color:var(--accent); text-decoration:none; }
+  .topnav a:hover{ opacity:0.65; }
+  .topnav + .hero{ padding-top:2.5rem; }
+  .pager{ display:flex; justify-content:space-between; gap:1.2rem; margin-top:4rem; padding-top:1.6rem; border-top:1px solid var(--hair); }
+  .pager a{ text-decoration:none; color:var(--accent); max-width:48%; }
+  .pager .next{ text-align:right; margin-left:auto; }
+  .pager .dir{ font-family:var(--mono); font-size:0.66rem; letter-spacing:0.14em; }
+  .pager .pt{ display:block; font-family:var(--serif); font-weight:500; font-size:0.95rem; line-height:1.45; color:var(--ink-soft); margin-top:0.35rem; }
+  .pager a:hover .pt{ color:var(--ink); }
+</style>
+</head>
+<body>
+<article class="wrap">
+  <div class="topnav"><a href="index.html">← 回目錄</a></div>
+
+
+  <header class="hero">
+    <div class="kicker">知識解碼</div>
+    <h1>業務與行銷，為什麼總是開戰？</h1>
+    <p class="sub">拆解一篇經典 HBR——衝突的兩個根源、四階段框架，<br>與我自己的一點補充</p>
+  </header>
+
+  <div class="tldr">
+    <p class="label">三句話看懂</p>
+    <p>這篇 2006 年的《哈佛商業評論》在講一件每間公司都會遇到的事：業務和行銷天生不對盤。作者 Kotler 等人說，這不是誰人品問題，而是「結構問題」——來自<span class="strong">預算</span>和<span class="strong">文化</span>兩個根源。他們給了一套四階段量表，讓公司先診斷現狀、再對症下藥。核心一句話：先看清關係，再決定要整合到什麼程度。</p>
+  </div>
+
+  <section>
+    <p>最近上課讀到一篇老文章——2006 年《哈佛商業評論》，Philip Kotler 等人寫的〈Ending the War Between Sales and Marketing〉(終結銷售與行銷之間的戰爭)。快二十年了，但它講的問題到今天還是公司日常：業務嫌行銷不懂市場、預算亂花；行銷嫌業務只看眼前、不顧長遠。兩邊互看不順眼，公司就跟著付代價——成交週期變長、銷售成本變高。</p>
+    <p>我把上課做的分析整理成這篇，用比較白話的方式，跟對商業、行銷有興趣的朋友分享。</p>
+  </section>
+
+  <section>
+    <h2>一、這不是吵架，是結構問題</h2>
+    <p>文章最關鍵的一句話是：這場戰爭不是「性格不合」，而是<span class="hl">結構性的</span>——而且可以被診斷、被修。衝突有兩個根源。</p>
+
+    <h3>根源一：經濟（搶預算）</h3>
+    <p>兩個部門共用同一筆錢，自然會搶。最典型的是定價：當一個大案子需要特別折扣，業務主管常常直接去找財務長(CFO)拍板，行銷根本插不上話。促銷預算也一樣——行銷想砸電視廣告做品牌，業務卻覺得那筆錢不如拿來多請幾個人。</p>
+
+    <h3>根源二：文化（兩種人）</h3>
+    <p>他們根本是兩種人。行銷分析、看數據、想未來、做品牌；業務重關係、看現場，拚的是今天這張單能不能成交。<span class="hl">不是誰對誰錯，是兩個人站的位置，本來就看不到同一片風景。</span></p>
+
+    <p>文章用 IBM 當例子：在它把兩邊整併成一個叫「Channel Enablement」的單位之前，業務只管接單、不管創造需求；行銷又沒辦法把廣告花費連到實際銷售——於是新產品上市的時機，常常跟業務的節奏對不上。整併之後，協作才順起來。</p>
+  </section>
+
+  <section>
+    <h2>二、先診斷，再開藥</h2>
+    <p>這篇文章我覺得最實用的，不是給你解法，而是先給你一把尺。作者把業務與行銷的關係分成四個階段：</p>
+
+    <div class="framework">
+      <table>
+        <thead>
+          <tr><th>階段</th><th>長什麼樣子</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>未定義</td><td>各做各的，只有出事了才碰面。</td></tr>
+          <tr><td>已定義</td><td>有基本規則和共同語言（例如先講好「什麼算一條 lead」）。</td></tr>
+          <tr><td>對齊</td><td>界線清楚但有彈性，會一起規劃、一起受訓。</td></tr>
+          <tr><td>整合</td><td>共享目標、指標、獎勵，「一起好、一起壞」。</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>他還附了一份二十題問卷，讓公司測出自己落在哪一格。重點是順序：<span class="strong">沒先看清現在的關係，就急著改，通常改錯。</span></p>
+    <p>有個細節很有意思：同一段關係，業務和行銷自己打的分數，常常差很多——那個落差本身，就是最值得注意的訊號。</p>
+  </section>
+
+  <section>
+    <h2>三、要往上走，怎麼走</h2>
+    <p>如果診斷完發現需要更緊密，文章給了一條清楚的路。</p>
+
+    <h3>從「未定義」到「對齊」</h3>
+    <p>溝通先行，而且要「有紀律地」溝通：固定開會、訂清楚誰決定什麼。例如「兩百萬以上的案子要找品牌經理」「行銷文宣要業務看過才能印」。再來是讓兩邊一起做事——合辦活動、輪調職務，甚至實體坐近一點。文章提到有家銀行，乾脆把業務和行銷放進一個空的購物商場，各給一個店面，逼他們多互動。</p>
+
+    <h3>從「對齊」到「整合」</h3>
+    <p>真要走到最緊密的整合，文章建議：設一位扛整體營收的高階主管（CRO，像 Coca-Cola、FedEx 都有），把行銷拆成「上游」（管長期策略）和「下游」（直接支援業務開發），再用共同的指標和獎勵，把兩邊綁成「一起好、一起壞」。</p>
+  </section>
+
+  <section>
+    <h2>四、我自己想補的一點</h2>
+    <p>這裡是我讀的時候，覺得作者沒講清楚、想補的一刀。文章把「整合」當成一件事，但我認為它其實混了兩種。</p>
+
+    <blockquote class="pull">
+      <p>一種是「實質的整合」，一種是「形式的整合」——而它們需要的條件完全不同。</p>
+    </blockquote>
+
+    <p><span class="hl">實質的整合</span>是共同目標、共同語言、一起好一起壞的默契。<span class="hl">形式的整合</span>則是設高階主管、拆團隊、改組織圖。</p>
+    <p>關鍵差別在於：實質的整合，跟公司大小幾乎無關。一間小公司，三五個人本來就共用同一套數字、扛同一個目標，天生就「實質整合」了。反而是大公司，因為人多、分工細，才需要靠制度和頭銜，去「人工重建」小團隊本來免費就有的那種對齊。</p>
+    <p>換句話說，那些看起來很高明的組織設計（CRO、拆上下游），很多時候是大公司在補一個「規模自己製造出來的協調問題」。所以與其說「小公司走不到整合」，更準確的說法是：<span class="strong">小公司可能早就有整合的「實質」，只是用不上它的「形式」。</span>作者把這兩件事綁太緊，是這篇框架我覺得還可以再挑的地方。</p>
+  </section>
+
+  <section>
+    <h2>最後，拉遠一點看</h2>
+    <p>這篇講的是公司裡的兩個部門，但底層的邏輯，其實到哪都通用：很多我們以為的「合不來」，是結構問題，不是人的問題；而要處理它，第一步永遠是先看清楚現在的關係——而不是急著用力。</p>
+  </section>
+
+  <div class="closing">
+    <p class="grace">
+      <span class="small">DIAGNOSE BEFORE YOU PRESCRIBE</span>
+      先看清，再決定怎麼動。
+    </p>
+  </div>
+
+  <div class="foot">
+    <div class="dot"></div>
+    <a href="index.html" style="color:#216B78;text-decoration:none;">← 回目錄</a><br>
+    法蘭的學習筆記｜本文整理自 Kotler, Rackham &amp; Krishnaswamy，<br>〈Ending the War Between Sales and Marketing〉，HBR 2006
+  </div>
+
+</article>
+</body>
+</html>
