@@ -92,3 +92,38 @@ Claude Code 會：
 - `CLAUDE.md` 在資料夾根目錄，Claude Code 一開專案就自動讀，知道你的系列、配色與發文流程。
 - 桌面版 App 目前不支援 Linux（Mac／Windows 才有），你用 Mac 沒問題。
 - 想換設計、加深色模式、加「上一篇／下一篇」這類有創意的調整，回這裡跟我做好，再讓 Claude Code 落地。
+
+---
+
+## 我們的協作流程（最低摩擦版）
+
+分工：**想／寫／改** 在對話介面（claude.ai）做；**落地／發布／維護** 交給 Claude Code。
+交付以「**單檔 + 一段 prompt**」為主，不再每次丟整包 zip。
+
+### 三種交付方式
+
+**1. 新文章 → 單檔 + prompt（預設）**
+我給你「**那一篇的 `.html`**」（已排好版、設好 canonical）＋一段給 Claude Code 的 prompt。
+你把該檔放進專案資料夾、把 prompt 貼進 Claude Code，它完成其餘所有事。
+
+標準 prompt 範本（我每次會幫你填好）：
+> 我在專案資料夾放了新檔 `xxx.html`（◯◯系列）。請照 `CLAUDE.md`：
+> 1. 確認 canonical 指向 `https://francpeng-ops.github.io/francis-notes/xxx.html`；
+> 2. 在 `index.html` 的「◯◯」區最上面，加一個指向它的 `<li>`（標題《…》、簡介「…」、日期 2026.◯◯.◯◯）；
+> 3. 在 `rss.xml` 第一個 `<item>` 上面，加一個對應 `<item>`；
+> 4. commit（訊息 `post: xxx`）然後 push。
+
+**2. 小修改 → 只給文字指示（最輕）**
+連檔案都不用。我給你「找這段 → 換成這段、在哪個檔」，你貼給 Claude Code。
+> 在 `see-the-relationship.html`，把「（舊句）」整段換成「（新句）」，然後 commit（`edit: 微調`）並 push。
+
+**3. 第一次上線 → 整包 zip（只此一次）**
+專案還沒在你 Mac 上時，用整包 zip 建立本機資料夾、推上 GitHub。之後改用 1 或 2，不再用 zip。
+
+### 「第一次上線」prompt（可直接複製給 Claude Code）
+> 這個專案要上 GitHub。請幫我：
+> 1. 初始化 git，用名字 Francis Peng、email francpeng@gmail.com 設定身分，預設分支設成 main；
+> 2. 建立一個叫 francis-notes 的公開 repo（我的帳號是 francpeng-ops）並 push。
+> （檔案裡的 USERNAME 已套好，只剩 Substack 的 YOURPUB 之後再換。）
+
+完成後到 GitHub → Settings → Pages → main、/(root) → Save，等 1–2 分鐘即上線。
