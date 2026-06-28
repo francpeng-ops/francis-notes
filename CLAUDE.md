@@ -49,6 +49,11 @@
 - 不要把中文當檔名（網址會變亂碼）。一律英文。
 - 不要動 `<style>` 內的共用版型，除非使用者明確要求改設計。
 
+## Google Analytics（注意事項）
+- 每一頁（含 `_template.html` 母版）的 `<head>` 都必須有 GA 標籤（`G-HR79WVR1T3`）。
+- 新文章從母版複製後，請確認 GA 標籤已一併帶入；若遺漏，commit 前的 hook 會自動補上。
+- 若手動替換 HTML 檔案，告知 Claude Code 再 commit，以確保 hook 有機會執行檢查。
+
 ## 深色模式（重要）
 - 每頁都內建深色配色：`<style>` 結尾有 `color-scheme: light dark;` 和一段 `@media (prefers-color-scheme: dark){ … }`。母版 `_template.html` 也含這套，新文章直接沿用即可。
 - 規則：用 CSS 變數（`--paper / --ink / --ink-soft / --accent …`）的元素會自動跟著深色走；**凡是寫死 `rgba()` 或 hex 的顏色**（如 `.hl` 底色、`thead`、`.tldr`、`.closing` 光暈、`.foot a` 行內色），都要在那段 `@media` 裡補一條深色覆蓋，否則深色下會看不清。
