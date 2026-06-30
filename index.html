@@ -90,6 +90,23 @@
     .subscribe{ background:rgba(90,168,181,0.10); border-color:rgba(90,168,181,0.28); }
     .subscribe iframe{ border-color:rgba(236,230,217,0.18); }
   }
+
+
+  /* ---------- category tabs ---------- */
+  .tabs{ display:flex; flex-wrap:wrap; gap:0.5rem; margin:2.5rem 0 0; }
+  .tabs button{ font-family:var(--mono); font-size:0.7rem; letter-spacing:0.14em; padding:0.45rem 0.95rem; border-radius:999px; border:1px solid var(--hair); background:none; color:var(--ink-soft); cursor:pointer; transition:all 0.2s ease; }
+  .tabs button:hover{ border-color:var(--faint); }
+  .tabs button.active{ color:#F5F0E7; border-color:transparent; }
+  .tabs button.active[data-tab="all"]{ background:var(--ink-soft); }
+  .tabs button.active[data-tab="k"]{ background:var(--knowledge); }
+  .tabs button.active[data-tab="i"]{ background:var(--invest); }
+  .tabs button.active[data-tab="g"]{ background:var(--growth); }
+  .series.is-hidden{ display:none; }
+
+  /* ---------- show-more ---------- */
+  ul.posts li.is-extra{ display:none; }
+  .show-more{ display:block; width:100%; margin:0.6rem 0 0; padding:0.7rem; background:none; border:1px dashed var(--hair); border-radius:8px; font-family:var(--mono); font-size:0.7rem; letter-spacing:0.12em; color:var(--faint); cursor:pointer; text-align:center; transition:color 0.2s ease, border-color 0.2s ease; }
+  .show-more:hover{ color:var(--ink-soft); border-color:var(--faint); }
 </style>
 </head>
 <body>
@@ -100,6 +117,13 @@
     <h1>法蘭西斯的學習筆記</h1>
     <p>把生活體驗、上課和閱讀學到的東西，整理、拆解，並與大家分享。</p>
   </header>
+
+  <nav class="tabs">
+    <button type="button" class="active" data-tab="all">全部</button>
+    <button type="button" data-tab="k">知識解碼</button>
+    <button type="button" data-tab="i">投資筆記</button>
+    <button type="button" data-tab="g">成長雜記</button>
+  </nav>
 
   <!-- ===== 知識解碼 ===== -->
   <section class="series k">
@@ -234,5 +258,55 @@
   </div>
 
 </main>
+<script>
+(function(){
+  var LIMIT = 3, BATCH = 3;
+
+  // 各系列：超過 LIMIT 篇就收合，按鈕每次只展開 BATCH 篇
+  document.querySelectorAll('.series ul.posts').forEach(function(ul){
+    var items = Array.prototype.filter.call(ul.children, function(el){ return el.tagName === 'LI' && !el.classList.contains('soon'); });
+    if (items.length <= LIMIT) return;
+    items.slice(LIMIT).forEach(function(li){ li.classList.add('is-extra'); });
+
+    var shown = LIMIT;
+    var btn = document.createElement('button');
+    btn.className = 'show-more';
+    btn.type = 'button';
+
+    function updateLabel(){
+      var remaining = items.length - shown;
+      btn.textContent = '顯示更多（剩 ' + remaining + ' 篇）';
+    }
+    updateLabel();
+
+    btn.addEventListener('click', function(){
+      items.slice(shown, shown + BATCH).forEach(function(li){ li.classList.remove('is-extra'); });
+      shown += BATCH;
+      if (shown >= items.length) { btn.remove(); }
+      else { updateLabel(); }
+    });
+    ul.insertAdjacentElement('afterend', btn);
+  });
+
+  // 分類 tab：切換只顯示對應 .series，全部則都顯示
+  var tabs = document.querySelectorAll('.tabs button');
+  var sections = document.querySelectorAll('.series');
+  tabs.forEach(function(tab){
+    tab.addEventListener('click', function(){
+      tabs.forEach(function(t){ t.classList.remove('active'); });
+      tab.classList.add('active');
+      var target = tab.getAttribute('data-tab');
+      sections.forEach(function(sec){
+        if (target === 'all' || sec.classList.contains(target)) {
+          sec.classList.remove('is-hidden');
+        } else {
+          sec.classList.add('is-hidden');
+        }
+      });
+    });
+  });
+})();
+</script>
+
 </body>
 </html>
