@@ -25,6 +25,7 @@
     --knowledge:#216B78;   /* 知識解碼：墨綠藍 */
     --growth:#B07A2E;      /* 成長雜記：琥珀金 */
     --invest:#3A4D7A;      /* 投資筆記：靛藍 */
+    --movie:#8C3A46;       /* 電影筆記：深酒紅 */
     --hair:rgba(35,40,43,0.12);
     --serif:"Noto Serif TC",serif;
     --sans:"Noto Sans TC",sans-serif;
@@ -50,6 +51,7 @@
   .k .tag{ background:var(--knowledge); } .k h2{ color:var(--knowledge); }
   .g .tag{ background:var(--growth); }    .g h2{ color:var(--growth); }
   .i .tag{ background:var(--invest); }    .i h2{ color:var(--invest); }
+  .m .tag{ background:var(--movie); }     .m h2{ color:var(--movie); }
 
   ul.posts{ list-style:none; margin:0; padding:0; }
   ul.posts li{ border-top:1px solid var(--hair); }
@@ -83,7 +85,7 @@
     :root{
       --paper:#1A1712; --ink:#ECE6D9; --ink-soft:#B7AF9F; --faint:#8C8474;
       --hair:rgba(236,230,217,0.14);
-      --knowledge:#5AA8B5; --growth:#D9A24B; --invest:#8093CC;
+      --knowledge:#5AA8B5; --growth:#D9A24B; --invest:#8093CC; --movie:#D08A94;
     }
     .series-head .tag{ color:#15120D; }
     a.post:hover{ background:rgba(236,230,217,0.05); }
@@ -101,6 +103,7 @@
   .tabs button.active[data-tab="k"]{ background:var(--knowledge); }
   .tabs button.active[data-tab="i"]{ background:var(--invest); }
   .tabs button.active[data-tab="g"]{ background:var(--growth); }
+  .tabs button.active[data-tab="m"]{ background:var(--movie); }
   .series.is-hidden{ display:none; }
 
   /* ---------- show-more ---------- */
@@ -123,6 +126,7 @@
     <button type="button" data-tab="k">知識解碼</button>
     <button type="button" data-tab="i">投資筆記</button>
     <button type="button" data-tab="g">成長雜記</button>
+    <button type="button" data-tab="m">電影筆記</button>
   </nav>
 
   <!-- ===== 知識解碼 ===== -->
@@ -216,6 +220,26 @@
           <p class="t">看見自己，享受當下</p>
           <p class="d">本週幾件事，繞回同一個問題：安全感、放下，與當下。</p>
           <p class="meta">2026.06.26</p>
+        </a>
+      </li>
+
+    </ul>
+  </section>
+
+  <!-- ===== 電影筆記 ===== -->
+  <section class="series m">
+    <div class="series-head">
+      <span class="tag">電影筆記</span>
+      <h2>一部電影，一個命題</h2>
+      <span class="desc">看完之後留下來的那條線</span>
+    </div>
+    <ul class="posts">
+
+      <li>
+        <a class="post" href="toy-story-5-letting-go.html">
+          <p class="t">《玩具總動員5》：放下，不是找到意義</p>
+          <p class="d">放下不是壓抑，也不是妥協。從 Jessie 的時空膠囊，看意義的錨該放在哪裡：已完成的事實，與此刻能實踐的行。</p>
+          <p class="meta">2026.07.02</p>
         </a>
       </li>
 

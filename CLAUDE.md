@@ -23,10 +23,11 @@
 | `rss.xml` | RSS feed（含「新文章樣板」註解區塊） |
 | `deploy-guide.svg` / `publishing-guide.md` | 上傳教學 |
 
-## 三個系列與視覺識別
+## 四個系列與視覺識別
 - **知識解碼（knowledge）**：把專業講清楚、案例/框架解析。主色墨綠藍 `--accent:#216B78`。有「三句話看懂」`.tldr` 摘要框與 `.framework` 表格。
 - **投資筆記（invest）**：投資／理財的報告、案例與框架解析，專業但白話。主色靛藍 `#3A4D7A`（首頁系列 class 為 `.i`）。文章版型沿用知識解碼模板，把 `--accent` 改成 `#3A4D7A` 即可。
 - **成長雜記（growth）**：向內的體悟、第一人稱散文。主色琥珀金 `#B07A2E`。有 `.lead .opening` 開場句。
+- **電影筆記（movie）**：從單一作品出發的電影討論，一篇鎖定一部電影、一個命題。主色深酒紅 `#8C3A46`（深色模式 `#D08A94`），首頁系列 class 為 `.m`。版型：基底沿用成長雜記排版（`.lead .opening`、置中 `.pull`、`.closing`），把 `--accent` 換成深酒紅即可；`toy-story-5-letting-go.html` 是本系列的參照母版，未來新文章從它複製。標題格式固定為「《片名》：命題」（title、h1、index、rss 一致）。專用元件：hero 下方的 `.spoiler` 有雷提示（只用 CSS 變數配色，深色模式自動適配，不需另補深色覆蓋）。檔名慣例照舊：英文 slug、設 canonical、同步 `rss.xml`。
 - 共用：紙感底色 `#F5F0E7`、襯線標題、`.hl` 重點底線、`.pull` 金句、`.closing` 結尾光暈、頂部與底部 `← 回目錄`。
 - 風格：少用 emoji、克制排版、句子精煉。
 
