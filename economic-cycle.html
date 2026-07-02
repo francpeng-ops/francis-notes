@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HR79WVR1T3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HR79WVR1T3');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>股市創高、信心創低：我們在景氣循環的哪個位置？｜不著陸、K 型分化，與 AI 這張決定牌</title>
+<link rel="canonical" href="https://francpeng-ops.github.io/francis-notes/economic-cycle.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     投資筆記 — 沿用知識解碼版型，主色換成靛藍 #3A4D7A
+     ============================================================ */
+  :root{
+    --paper:#F5F0E7;
+    --ink:#23282B;
+    --ink-soft:#4E575B;
+    --faint:#8C969A;
+    --accent:#3A4D7A;          /* 投資筆記：靛藍 */
+    --accent-soft:#4F659E;
+    --hair:rgba(35,40,43,0.12);
+    --serif:"Noto Serif TC",serif;
+    --sans:"Noto Sans TC",sans-serif;
+    --mono:ui-monospace,"SF Mono",Menlo,monospace;
+  }
+  *{box-sizing:border-box;}
+  html{ -webkit-text-size-adjust:100%; }
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--sans); font-weight:400; line-height:2.0;
+    letter-spacing:0.02em; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  .wrap{ max-width:39rem; margin:0 auto; padding:0 1.5rem 5rem; opacity:0; animation:rise 0.9s ease-out 0.05s forwards; }
+  @keyframes rise{ from{opacity:0;transform:translateY(10px);} to{opacity:1;transform:translateY(0);} }
+  @media (prefers-reduced-motion:reduce){ .wrap{animation:none;opacity:1;} }
+
+  .hero{ padding:5rem 0 2.75rem; text-align:center; }
+  .hero .kicker{ font-weight:500; font-size:0.74rem; letter-spacing:0.26em; color:var(--accent); margin:0 0 1.7rem; }
+  .hero h1{ font-family:var(--serif); font-weight:700; font-size:2.0rem; line-height:1.5; letter-spacing:0.03em; margin:0 0 1.1rem; }
+  .hero .sub{ font-size:0.92rem; color:var(--ink-soft); letter-spacing:0.06em; font-weight:300; line-height:1.85; margin:0; }
+
+  .tldr{ margin:2.5rem 0 0; padding:1.4rem 1.5rem 1.5rem; background:rgba(58,77,122,0.06); border:1px solid rgba(58,77,122,0.18); border-left:4px solid var(--accent); border-radius:4px; }
+  .tldr .label{ font-family:var(--mono); font-size:0.66rem; letter-spacing:0.24em; color:var(--accent); margin:0 0 0.7rem; }
+  .tldr p{ font-size:0.99rem; line-height:1.95; margin:0; color:var(--ink); }
+
+  section{ margin-top:3.5rem; }
+  h2{ font-family:var(--serif); font-weight:600; font-size:1.3rem; line-height:1.6; letter-spacing:0.03em; margin:0 0 1.25rem; padding-bottom:0.5rem; border-bottom:1px solid var(--hair); }
+  h3{ font-family:var(--sans); font-weight:500; font-size:1.02rem; letter-spacing:0.04em; color:var(--accent); margin:1.6rem 0 0.4rem; }
+  p{ font-size:1.0625rem; margin:0 0 1.4em; color:var(--ink); }
+  p:last-child{ margin-bottom:0; }
+
+  .en{ font-family:var(--serif); font-style:italic; letter-spacing:0.01em; }
+  .strong{ font-weight:500; color:var(--ink); }
+  .hl{ font-style:normal; font-weight:500; color:var(--ink); background:linear-gradient(transparent 62%, rgba(58,77,122,0.16) 62%); }
+
+  .cap{ font-family:var(--mono); font-size:0.66rem; letter-spacing:0.18em; color:var(--accent); margin:0 0 0.6rem; }
+
+  .pull{ margin:2.5rem 0; padding:0 0 0 1.2rem; border-left:3px solid var(--accent-soft); }
+  .pull p{ font-family:var(--serif); font-weight:500; font-size:1.24rem; line-height:1.8; letter-spacing:0.02em; color:var(--ink); margin:0; }
+
+  /* ---------- figures（行內 SVG 圖表）---------- */
+  .fig{ margin:1.9rem 0 1.7rem; }
+  .fig svg{ display:block; width:100%; height:auto; }
+  .fig .src{ font-family:var(--mono); font-size:0.62rem; letter-spacing:0.1em; color:var(--faint); text-align:right; margin:0.45rem 0 0; }
+
+  /* ---------- sources（資料來源小字清單）---------- */
+  .sources h2{ font-size:1.05rem; }
+  .sources ul{ list-style:none; margin:0.2rem 0 0; padding:0; }
+  .sources li{ font-size:0.8rem; line-height:1.85; color:var(--faint); padding:0.5rem 0; border-top:1px solid var(--hair); }
+  .sources li:first-child{ border-top:none; padding-top:0; }
+
+  .closing{ position:relative; margin-top:4.5rem; padding:5rem 1rem; text-align:center; overflow:hidden; }
+  .closing::before{ content:""; position:absolute; left:50%; top:46%; width:min(120%,30rem); height:30rem; transform:translate(-50%,-50%);
+    background:radial-gradient(circle, rgba(150,165,210,0.80) 0%, rgba(150,165,210,0.30) 32%, rgba(245,240,231,0) 68%); z-index:0; }
+  .closing .grace{ position:relative; z-index:1; font-family:var(--serif); font-weight:600; font-size:1.6rem; line-height:1.7; letter-spacing:0.08em; margin:0; }
+  .closing .grace .small{ display:block; font-family:var(--mono); font-size:0.66rem; letter-spacing:0.26em; color:var(--accent); margin-bottom:1.3rem; font-weight:400; }
+
+  .foot{ margin-top:3rem; text-align:center; color:var(--faint); font-size:0.76rem; letter-spacing:0.1em; line-height:1.9; }
+  .foot .dot{ width:4px; height:4px; border-radius:50%; background:var(--accent); opacity:0.7; margin:0 auto 1.3rem; }
+  .foot a{ color:var(--accent); text-decoration:none; }
+  .foot .note{ display:block; margin-top:0.6rem; font-size:0.7rem; color:var(--faint); letter-spacing:0.06em; }
+
+  @media (max-width:430px){
+    .hero{ padding:3.75rem 0 2.25rem; } .hero h1{ font-size:1.7rem; }
+    .pull p{ font-size:1.14rem; } .closing .grace{ font-size:1.42rem; } .closing{ padding:4rem 0.5rem; }
+  }
+
+  /* ---------- top nav ---------- */
+  .topnav{ padding-top:1.6rem; }
+  .topnav a{ font-family:var(--mono); font-size:0.72rem; letter-spacing:0.16em; color:var(--accent); text-decoration:none; }
+  .topnav a:hover{ opacity:0.65; }
+  .topnav + .hero{ padding-top:2.5rem; }
+
+  :root{ color-scheme: light dark; }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --paper:#1A1712; --ink:#ECE6D9; --ink-soft:#B7AF9F; --faint:#8C8474;
+      --hair:rgba(236,230,217,0.14); --accent:#8093CC; --accent-soft:#93A4D6;
+    }
+    .hl{ background:linear-gradient(transparent 62%, rgba(128,147,204,0.32) 62%); }
+    .tldr{ background:rgba(128,147,204,0.10); border-color:rgba(128,147,204,0.30); }
+    .closing::before{ background:radial-gradient(circle, rgba(128,147,204,0.20) 0%, rgba(128,147,204,0.08) 32%, rgba(26,23,18,0) 68%); }
+    .foot a{ color:var(--accent) !important; }
+  }
+
+  /* ---------- pager ---------- */
+  .pager{ display:flex; justify-content:space-between; gap:1.2rem; margin-top:4rem; padding-top:1.6rem; border-top:1px solid var(--hair); }
+  .pager a{ text-decoration:none; color:var(--accent); max-width:48%; }
+  .pager .next{ text-align:right; margin-left:auto; }
+  .pager .dir{ font-family:var(--mono); font-size:0.66rem; letter-spacing:0.14em; }
+  .pager .pt{ display:block; font-family:var(--serif); font-weight:500; font-size:0.95rem; line-height:1.45; color:var(--ink-soft); margin-top:0.35rem; }
+  .pager a:hover .pt{ color:var(--ink); }
+</style>
+</head>
+<body>
+<article class="wrap">
+  <div class="topnav"><a href="index.html">← 回目錄</a></div>
+
+  <header class="hero">
+    <div class="kicker">投資筆記</div>
+    <h1>股市創高、信心創低：我們在景氣循環的哪個位置？</h1>
+    <p class="sub">從課堂的一道題，到 2026 年中的完整體檢——<br>不著陸、K 型分化，與 AI 這張決定牌</p>
+  </header>
+
+  <div class="tldr">
+    <p class="label">三句話看懂</p>
+    <p>美國經濟現在的位置，是「晚期擴張加上不著陸（no landing）」。成長和就業還撐著，通膨卻回頭升到三年高點，把 Fed 卡在降不了、甚至可能還得再升的尷尬位置。這不是衰退，也不是乾淨的軟著陸。把所有看似打架的訊號接起來的那把鑰匙，是 K 型分化；決定這個循環還能撐多久的那張牌，是 AI。到年底，我的基準情境是這個狀態大致延續，但風險在底下慢慢累積。</p>
+  </div>
+
+  <section>
+    <p>最近在上財務分析的課，這週討論的題目剛好是：現在美國經濟走到景氣循環的哪個位置，到年底又會走去哪。我覺得這題很好玩，與其把想法只留在課堂的討論區，不如整理成一篇，順便跟大家更新一下近況、閒聊一下最近的經濟到底是怎麼一回事。</p>
+    <p>現在打開財經新聞，你會同時看到兩種完全相反的情緒。一邊是 S&amp;P 500 今年頻頻刷新歷史新高、科技股帶著大盤往上衝，目前仍在高點附近；另一邊是密西根大學的消費者信心指數，五月掉到 44.8，是這份調查從 1950 年代做到現在的最低點。<span class="strong">股市說一切很好，家庭說日子很難。到底該信哪個？</span></p>
+    <p>大多數人想要一個一個字的答案：「到底衰退了沒？」但景氣循環從來不是這樣運作的。比較誠實的問法不是「現在是好還是壞」，而是「我們走到循環的哪個位置、下一步的風險往哪邊倒」。這篇就是我對這個問題的完整拆解。</p>
+  </section>
+
+  <section>
+    <h2>先講結論：晚期擴張，加上「不著陸」</h2>
+    <p>先把話擺在前面。我認為美國經濟現在在<span class="hl">「晚期擴張」（late-cycle expansion）的尾段，短期處在一個叫「不著陸」（no landing）的狀態</span>：成長還在跑、勞動市場還撐著，但通膨回頭升溫，把 Fed 卡住了。</p>
+    <p>這跟兩種常聽到的劇本都不一樣。軟著陸是通膨乖乖降、成長溫和放緩、Fed 可以開始降息；硬著陸是直接衰退。不著陸是第三種：成長沒垮、通膨黏住、Fed 不但降不了、甚至可能還得再升一碼。</p>
+    <p>這裡要先分清楚兩件常被混在一起的事：「位置」和「時點」。我可以判斷我們大概走到循環的哪裡，但我不會假裝知道它什麼時候轉彎。經濟學家 Romer 提醒過，「循環」這個詞其實會誤導人，因為轉折的時間和長短根本沒有規律可言：1980 年那次衰退只有六個月，1981 到 82 年那次卻長達十六個月。<span class="strong">能定位，不能算命</span>，這是這整篇的基調。</p>
+  </section>
+
+  <section>
+    <h2>為什麼不是衰退：表面很好，底層很薄</h2>
+    <p>先說為什麼我不覺得現在是衰退。判斷衰退的官方機構 NBER，看的不是單一一個爛數字，而是一整組指標有沒有「同步、持續」地往下掉。現在的數據還是一副擴張的樣子：失業率 4.3%、企業利潤率還很飽、股市在歷史高點附近，第一季 GDP 還從前一季的 0.5% 反彈到年化 2.1%，五月非農也加了 17.2 萬個工作。</p>
+    <p>但魔鬼在細節。同一份 GDP 報告，消費支出被下修到只剩年化 0.5%。換句話說，撐起這 2.1% 的不是一般家庭，而是 AI 和科技的資本支出（capex）加上政府支出。一個靠企業砸錢蓋基礎設施、政府花錢撐著、但一般消費者已經在縮手的擴張，這種<span class="strong">「頭重腳輕」</span>的組合，本身就是晚期循環最典型的樣子。</p>
+
+    <div class="fig">
+      <p class="cap">同一份 GDP，兩種溫度（年化，Q1 2026）</p>
+      <svg viewBox="0 0 640 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="GDP 年化 2.1%、消費支出 0.5%、企業固定投資 10.6% 的橫條圖">
+        <line x1="170" y1="12" x2="170" y2="204" stroke="var(--hair)" stroke-width="1"/>
+        <text x="158" y="47" text-anchor="end" font-family="var(--sans)" font-size="13.5" fill="var(--ink-soft)">GDP（年化）</text>
+        <rect x="170" y="24" width="84" height="36" rx="3" fill="var(--accent-soft)"/>
+        <text x="264" y="47" text-anchor="start" font-family="var(--mono)" font-size="13" fill="var(--ink-soft)">+2.1%</text>
+
+        <text x="158" y="117" text-anchor="end" font-family="var(--sans)" font-size="13.5" fill="var(--ink-soft)">消費支出</text>
+        <rect x="170" y="94" width="20" height="36" rx="3" fill="var(--faint)"/>
+        <text x="200" y="117" text-anchor="start" font-family="var(--mono)" font-size="13" fill="var(--ink-soft)">+0.5%</text>
+
+        <text x="158" y="187" text-anchor="end" font-family="var(--sans)" font-size="13.5" fill="var(--ink-soft)">企業固定投資</text>
+        <rect x="170" y="164" width="424" height="36" rx="3" fill="var(--accent)"/>
+        <text x="586" y="187" text-anchor="end" font-family="var(--mono)" font-size="13" font-weight="600" fill="#F5F0E7">+10.6%</text>
+      </svg>
+      <p class="src">來源：BEA, GDP Third Estimate Q1 2026</p>
+    </div>
+
+    <blockquote class="pull">
+      <p>表面很好，底層很薄。</p>
+    </blockquote>
+  </section>
+
+  <section>
+    <h2>為什麼不是軟著陸：通膨回來了</h2>
+    <p>再說為什麼不是乾淨的軟著陸，因為通膨回來了。五月 CPI 年增 4.2%，是三年多來最高；Fed 最看重的 PCE 也到 4.1%。六月的 FOMC 在新主席 Warsh 上任後轉鷹：利率按兵在 3.50% 到 3.75%，但點陣圖把 2026 年底的中位數從三月的 3.4% 上調到 3.8%，等於暗示要升、而不是降，而且 18 位官員裡有 17 位認為通膨風險偏向上行。</p>
+
+    <div class="fig">
+      <p class="cap">CPI 年增率 · 2026</p>
+      <svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="2026 年 1 到 5 月 CPI 年增率折線圖，從 2.4% 升到 4.2%，並標示核心 CPI 2.9% 與 Fed 目標 2% 兩條參考線">
+        <line x1="60" y1="238" x2="610" y2="238" stroke="var(--faint)" stroke-width="1" stroke-dasharray="4 5" opacity="0.7"/>
+        <text x="66" y="231" text-anchor="start" font-family="var(--sans)" font-size="11.5" fill="var(--faint)">Fed 目標 2%</text>
+
+        <line x1="60" y1="167" x2="610" y2="167" stroke="var(--faint)" stroke-width="1" stroke-dasharray="4 5" opacity="0.7"/>
+        <text x="66" y="160" text-anchor="start" font-family="var(--sans)" font-size="11.5" fill="var(--faint)">核心 CPI 2.9%（5月）</text>
+
+        <polyline points="90,207 320,135" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-dasharray="5 6"/>
+        <polyline points="320,135 435,96 550,64" fill="none" stroke="var(--accent)" stroke-width="2.5"/>
+
+        <circle cx="90" cy="207" r="4.5" fill="var(--accent)"/>
+        <circle cx="320" cy="135" r="4.5" fill="var(--accent)"/>
+        <circle cx="435" cy="96" r="4.5" fill="var(--accent)"/>
+        <circle cx="550" cy="64" r="5.5" fill="var(--accent)"/>
+
+        <text x="90" y="190" text-anchor="middle" font-family="var(--mono)" font-size="12" fill="var(--ink-soft)">2.4%</text>
+        <text x="320" y="118" text-anchor="middle" font-family="var(--mono)" font-size="12" fill="var(--ink-soft)">3.3%</text>
+        <text x="435" y="79" text-anchor="middle" font-family="var(--mono)" font-size="12" fill="var(--ink-soft)">3.8%</text>
+        <text x="550" y="46" text-anchor="middle" font-family="var(--mono)" font-size="13" font-weight="600" fill="var(--accent)">4.2%</text>
+
+        <text x="90" y="305" text-anchor="middle" font-family="var(--sans)" font-size="12.5" fill="var(--faint)">1月</text>
+        <text x="205" y="305" text-anchor="middle" font-family="var(--sans)" font-size="12.5" fill="var(--faint)">2月</text>
+        <text x="320" y="305" text-anchor="middle" font-family="var(--sans)" font-size="12.5" fill="var(--faint)">3月</text>
+        <text x="435" y="305" text-anchor="middle" font-family="var(--sans)" font-size="12.5" fill="var(--faint)">4月</text>
+        <text x="550" y="305" text-anchor="middle" font-family="var(--sans)" font-size="12.5" fill="var(--faint)">5月</text>
+      </svg>
+      <p class="src">來源：BLS, CPI — May 2026</p>
+    </div>
+
+    <p>這波通膨確實有一部分是能源在推：能源年增 23.5%，但扣掉食物和能源的核心 CPI 月增只有 0.2%。這代表它比較像一次性的供給衝擊，不是全面過熱，所以有機會隨著油價回落而降溫。但別急著把問題一筆勾銷。房租和醫療這兩塊，跟油價幾乎沒關係：房租本來就在結構性地漲，而 2025 年底到期的 ACA 保費補貼，會用遞延的方式把醫療成本往上推。<span class="hl">油價可以解釋這次的跳升，但解釋不了通膨的全部。</span>這也是為什麼我認為，就算油價下來，通膨也會卡在目標之上，而不是漂亮地滑回 2%。</p>
+  </section>
+
+  <section>
+    <h2>把矛盾接起來的鑰匙：K 型經濟</h2>
+    <p>講到這裡，那個「股市創高、信心創低」的矛盾要怎麼接起來？鑰匙是 K 型分化。<span class="hl">一旦你看到經濟是沿著資產和所得在上下分岔，那些互相打架的訊號就變成同一個故事了。</span></p>
+    <p>資產增值的好處集中在頂端：持股最多的那一組人裡，有 28% 說資產上漲讓日子變好，中間那組只剩 8%、底層只剩 4%。頂端的需求和信心撐得住。而中位數家庭被生活成本（油、房租、醫療）夾擊，把信心指數壓到五月的 44.8，直到六月油價回落才回升到 49.5。</p>
+
+    <div class="fig">
+      <p class="cap">「資產增值讓日子變好」的比例，按持股高低分組</p>
+      <svg viewBox="0 0 640 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="持股最高三分之一 28%、中間三分之一 8%、底層三分之一 4% 的橫條圖">
+        <line x1="170" y1="12" x2="170" y2="204" stroke="var(--hair)" stroke-width="1"/>
+        <text x="158" y="47" text-anchor="end" font-family="var(--sans)" font-size="13.5" fill="var(--ink-soft)">持股最高 1/3</text>
+        <rect x="170" y="24" width="411" height="36" rx="3" fill="var(--accent)"/>
+        <text x="573" y="47" text-anchor="end" font-family="var(--mono)" font-size="13" font-weight="600" fill="#F5F0E7">28%</text>
+
+        <text x="158" y="117" text-anchor="end" font-family="var(--sans)" font-size="13.5" fill="var(--ink-soft)">中間 1/3</text>
+        <rect x="170" y="94" width="117" height="36" rx="3" fill="var(--accent-soft)"/>
+        <text x="297" y="117" text-anchor="start" font-family="var(--mono)" font-size="13" fill="var(--ink-soft)">8%</text>
+
+        <text x="158" y="187" text-anchor="end" font-family="var(--sans)" font-size="13.5" fill="var(--ink-soft)">底層 1/3</text>
+        <rect x="170" y="164" width="59" height="36" rx="3" fill="var(--faint)"/>
+        <text x="239" y="187" text-anchor="start" font-family="var(--mono)" font-size="13" fill="var(--ink-soft)">4%</text>
+      </svg>
+      <p class="src">來源：University of Michigan Surveys of Consumers, 2026/5–6</p>
+    </div>
+
+    <p>同一個 K 型，同時解釋了兩件事：股市和信心的分裂，以及「總需求看起來撐住、但中位數家庭其實很緊」的落差。所以這個分裂不是在推翻前面的判斷，反而是在佐證它。</p>
+
+    <blockquote class="pull">
+      <p>股市好、家庭苦，這兩件事可以同時是真的。</p>
+    </blockquote>
+  </section>
+
+  <section>
+    <h2>決定牌：AI，賣鏟人與挖金礦的時間差</h2>
+    <p>最後一張、也是最關鍵的牌，是 AI。這裡有一個財務上很有意思的「時間差」問題，值得慢慢講。</p>
+    <p>先分兩種人：賣鏟子的，和挖金礦的。AI 這波資本支出，現在確實已經在變成真金白銀，但賺到的主要是「賣鏟人」。最具體的例子就是台灣的晶片供應鏈：美國那些科技巨頭砸下的 capex，當下就變成台廠的實際營收，這是已經到手的錢。問題在挖金礦的那一端。美國的 hyperscaler（那些超大型雲端業者）現在花的是 capex，但他們得把這些晶片和資料中心，未來真的轉化成「生產力提升」和「軟體端的營收」，這個循環才撐得住。</p>
+    <p>所以要把兩件事分清楚：<span class="hl">capex（蓋 AI 的錢）不等於全經濟的生產力提升。</span>前者現在就在推升 GDP 和資產價格，後者（AI 真的讓各行各業的產出變多）到現在還沒被總體數據證實。</p>
+    <p>多方的劇本是：如果 AI 真的帶來全面的生產力提升，它會壓低成本、幫通膨降溫、把晚期循環重設成一段新的擴張，有點像 1990 年代末那場生產力榮景。這也是新任 Fed 主席 Warsh 在賭的方向，他直接說 AI 是「結構性地壓低通膨」。</p>
+    <p>空方的劇本是：這波蓋 AI 的錢越來越靠舉債，估值已經逼近 2000 年網路泡沫的極端（Shiller CAPE 大約 41，是一百多年來次高，只輸給 2000 年），而且最大的幾檔科技股就占了大盤約三分之一。只要 AI 的敘事一反轉，光是「大家開始轉悲觀」這件事，就可能靠預期本身觸發收縮，跑在基本面前面。</p>
+    <p>而這次跟 1990 年代最關鍵的差別是：當年那種投資是用「賺來的現金」在燒，現在這波是用「借來的債」在燒。同一股力量正在延長這個循環，但如果那些營收沒有及時長出來、還不動這些債和槓桿，它也可能反過來變成終結循環的那根引信。</p>
+
+    <blockquote class="pull">
+      <p>我個人看多，但這不是無腦多。</p>
+    </blockquote>
+  </section>
+
+  <section>
+    <h2>到年底，以及什麼會證明我錯</h2>
+    <p>那到年底呢？我的基準情境是：<span class="strong">不著陸大致延續</span>。成長放緩到 2% 附近、通膨隨油價回落但仍卡在 3% 以上、Fed 按兵或最多再升一碼。</p>
+    <p>但我更在意的是「什麼情況會證明我錯」，因為那才是預測最誠實的地方。而且這些風險不是假設，是活的：荷莫茲海峽才剛重新通航，六月底又因為美伊衝突被測試了一次。如果七、八月核心 PCE 沒有跟著油價下來，或者荷莫茲再度封鎖，「不著陸」就會滑向停滯性通膨（stagflation）甚至硬著陸。而 AI 那張牌，如果生產力遲遲沒兌現、或者拿去蓋 AI 的那些債開始出現裂痕，我會很快從多方翻到空方。</p>
+    <p>最後再補充一點。這兩年其實給我們上了不少課：去年的關稅、今年的美伊戰爭，這種等級的事件，基本上都落在一般投資人的預測範圍之外，沒有人能在年初就把它們排進模型裡。所以到年底會不會又冒出什麼突發狀況，坦白說我們也掌握不了，更別忘了還有期中選舉這個變數。重點從來不是把預測算到多準，而是在一個不斷變動的盤面裡，怎麼保持靈活、替自己留下調整的空間。</p>
+  </section>
+
+  <section>
+    <h2>What I'm Watching</h2>
+    <p>能定位，不能算命。我們可以靠數據和指標判斷經濟現在站在哪裡，卻沒辦法精準知道它什麼時候轉彎。所以最誠實的預測，不是丟給你一個斬釘截鐵的答案，而是清楚說出：我在盯著哪幾件事。當那幾件事變了，我的看法就會跟著變。</p>
+  </section>
+
+  <div class="closing">
+    <p class="grace">
+      <span class="small">POSITION, NOT PROPHECY</span>
+      能定位，不能算命。
+    </p>
+  </div>
+
+  <section class="sources">
+    <h2>資料來源</h2>
+    <ul>
+      <li>美國勞工統計局（BLS），<span class="en">Consumer Price Index — May 2026</span>（2026/6/10 發布）：CPI 年增 4.2%、核心 CPI 月增 0.2%／年增 2.9%、能源年增 23.5%、住房（shelter）年增 3.4%</li>
+      <li>美國經濟分析局（BEA），<span class="en">Personal Income and Outlays — May 2026</span>（2026/6/25 發布）：PCE 年增 4.1%、核心 PCE 年增 3.4%</li>
+      <li>聯準會，<span class="en">FOMC Statement</span> 與 <span class="en">Summary of Economic Projections</span>（2026/6/17）：利率維持 3.50%–3.75%、2026 年底利率中位數自 3.4% 上調至 3.8%、18 位官員中 17 位認為通膨風險偏上行、2026 年 PCE 預測 3.6%、GDP 預測 2.2%</li>
+      <li>BEA，<span class="en">GDP（Third Estimate）— Q1 2026</span>（2026/6/25 發布）：Q1 實質 GDP 年化 2.1%（2025 Q4 為 0.5%）、消費支出下修至年化 0.5%、企業固定投資年化約 10.6%</li>
+      <li>BLS，<span class="en">Employment Situation — May 2026</span>：非農就業 +17.2 萬、失業率 4.3%</li>
+      <li>密西根大學消費者調查（Surveys of Consumers），2026 年 5–6 月：消費者信心 44.8（1950 年代開始調查以來最低）回升至 49.5；不同持股分組提及資產增值的比例（28%／8%／4%）出自同調查</li>
+      <li>Shiller CAPE（Robert Shiller 資料庫）：2026 年 6 月約 40–41，為百餘年來次高、僅低於 2000 年</li>
+      <li>油價與荷莫茲海峽情勢：Reuters，2026 年 6 月下旬報導</li>
+      <li>ACA 加強版保費補貼於 2025 年底到期：KFF（Kaiser Family Foundation）政策分析</li>
+    </ul>
+  </section>
+
+  <nav class="pager">
+    <a class="next" href="fed-rate-hikes-cuts.html"><span class="dir">下一篇 →</span><span class="pt">升息降息，Fed 到底在幹嘛？</span></a>
+  </nav>
+
+  <div class="foot">
+    <div class="dot"></div>
+    <a href="index.html">← 回目錄</a>　法蘭的學習筆記｜投資筆記
+    <span class="note">本文為個人學習筆記與分析，不構成投資建議。</span>
+  </div>
+
+</article>
+</body>
+</html>

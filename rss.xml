@@ -7,15 +7,13 @@
   <language>zh-Hant</language>
   <lastBuildDate>Sat, 28 Jun 2026 12:00:00 +0800</lastBuildDate>
   <atom:link href="https://francpeng-ops.github.io/francis-notes/rss.xml" rel="self" type="application/rss+xml"/>
-  <!-- ▼▼ 發新文章：複製這段、改 4 個地方、貼到第一個 <item> 上面 ▼▼
   <item>
-    <title>文章標題</title>
-    <link>https://francpeng-ops.github.io/francis-notes/檔名.html</link>
-    <guid isPermaLink="true">https://francpeng-ops.github.io/francis-notes/檔名.html</guid>
-    <description>一句簡介。</description>
-    <pubDate>Mon, 06 Jul 2026 09:00:00 +0800</pubDate>
+    <title>股市創高、信心創低：我們在景氣循環的哪個位置？</title>
+    <link>https://francpeng-ops.github.io/francis-notes/economic-cycle.html</link>
+    <guid isPermaLink="true">https://francpeng-ops.github.io/francis-notes/economic-cycle.html</guid>
+    <description>不著陸、K 型分化，與 AI 這張決定牌——一份 2026 年中的景氣循環體檢。</description>
+    <pubDate>Wed, 01 Jul 2026 09:00:00 +0800</pubDate>
   </item>
-  ▲▲ 樣板結束 ▲▲ -->
   <item>
     <title>控制，是一種過期的求生本能</title>
     <link>https://francpeng-ops.github.io/francis-notes/control.html</link>
