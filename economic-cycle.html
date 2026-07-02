@@ -69,11 +69,6 @@
   .pull{ margin:2.5rem 0; padding:0 0 0 1.2rem; border-left:3px solid var(--accent-soft); }
   .pull p{ font-family:var(--serif); font-weight:500; font-size:1.24rem; line-height:1.8; letter-spacing:0.02em; color:var(--ink); margin:0; }
 
-  /* ---------- figures（行內 SVG 圖表）---------- */
-  .fig{ margin:1.9rem 0 1.7rem; }
-  .fig svg{ display:block; width:100%; height:auto; }
-  .fig .src{ font-family:var(--mono); font-size:0.62rem; letter-spacing:0.1em; color:var(--faint); text-align:right; margin:0.45rem 0 0; }
-
   /* ---------- sources（資料來源小字清單）---------- */
   .sources h2{ font-size:1.05rem; }
   .sources ul{ list-style:none; margin:0.2rem 0 0; padding:0; }
@@ -156,24 +151,6 @@
     <p>先說為什麼我不覺得現在是衰退。判斷衰退的官方機構 NBER，看的不是單一一個爛數字，而是一整組指標有沒有「同步、持續」地往下掉。現在的數據還是一副擴張的樣子：失業率 4.3%、企業利潤率還很飽、股市在歷史高點附近，第一季 GDP 還從前一季的 0.5% 反彈到年化 2.1%，五月非農也加了 17.2 萬個工作。</p>
     <p>但魔鬼在細節。同一份 GDP 報告，消費支出被下修到只剩年化 0.5%。換句話說，撐起這 2.1% 的不是一般家庭，而是 AI 和科技的資本支出（capex）加上政府支出。一個靠企業砸錢蓋基礎設施、政府花錢撐著、但一般消費者已經在縮手的擴張，這種<span class="strong">「頭重腳輕」</span>的組合，本身就是晚期循環最典型的樣子。</p>
 
-    <div class="fig">
-      <p class="cap">同一份 GDP，兩種溫度（年化，Q1 2026）</p>
-      <svg viewBox="0 0 640 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="GDP 年化 2.1%、消費支出 0.5%、企業固定投資 10.6% 的橫條圖">
-        <line x1="170" y1="12" x2="170" y2="204" stroke="var(--hair)" stroke-width="1"/>
-        <text x="158" y="47" text-anchor="end" font-family="var(--sans)" font-size="13.5" fill="var(--ink-soft)">GDP（年化）</text>
-        <rect x="170" y="24" width="84" height="36" rx="3" fill="var(--accent-soft)"/>
-        <text x="264" y="47" text-anchor="start" font-family="var(--mono)" font-size="13" fill="var(--ink-soft)">+2.1%</text>
-
-        <text x="158" y="117" text-anchor="end" font-family="var(--sans)" font-size="13.5" fill="var(--ink-soft)">消費支出</text>
-        <rect x="170" y="94" width="20" height="36" rx="3" fill="var(--faint)"/>
-        <text x="200" y="117" text-anchor="start" font-family="var(--mono)" font-size="13" fill="var(--ink-soft)">+0.5%</text>
-
-        <text x="158" y="187" text-anchor="end" font-family="var(--sans)" font-size="13.5" fill="var(--ink-soft)">企業固定投資</text>
-        <rect x="170" y="164" width="424" height="36" rx="3" fill="var(--accent)"/>
-        <text x="586" y="187" text-anchor="end" font-family="var(--mono)" font-size="13" font-weight="600" fill="#F5F0E7">+10.6%</text>
-      </svg>
-      <p class="src">來源：BEA, GDP Third Estimate Q1 2026</p>
-    </div>
 
     <blockquote class="pull">
       <p>表面很好，底層很薄。</p>
@@ -184,36 +161,6 @@
     <h2>為什麼不是軟著陸：通膨回來了</h2>
     <p>再說為什麼不是乾淨的軟著陸，因為通膨回來了。五月 CPI 年增 4.2%，是三年多來最高；Fed 最看重的 PCE 也到 4.1%。六月的 FOMC 在新主席 Warsh 上任後轉鷹：利率按兵在 3.50% 到 3.75%，但點陣圖把 2026 年底的中位數從三月的 3.4% 上調到 3.8%，等於暗示要升、而不是降，而且 18 位官員裡有 17 位認為通膨風險偏向上行。</p>
 
-    <div class="fig">
-      <p class="cap">CPI 年增率 · 2026</p>
-      <svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="2026 年 1 到 5 月 CPI 年增率折線圖，從 2.4% 升到 4.2%，並標示核心 CPI 2.9% 與 Fed 目標 2% 兩條參考線">
-        <line x1="60" y1="238" x2="610" y2="238" stroke="var(--faint)" stroke-width="1" stroke-dasharray="4 5" opacity="0.7"/>
-        <text x="66" y="231" text-anchor="start" font-family="var(--sans)" font-size="11.5" fill="var(--faint)">Fed 目標 2%</text>
-
-        <line x1="60" y1="167" x2="610" y2="167" stroke="var(--faint)" stroke-width="1" stroke-dasharray="4 5" opacity="0.7"/>
-        <text x="66" y="160" text-anchor="start" font-family="var(--sans)" font-size="11.5" fill="var(--faint)">核心 CPI 2.9%（5月）</text>
-
-        <polyline points="90,207 320,135" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-dasharray="5 6"/>
-        <polyline points="320,135 435,96 550,64" fill="none" stroke="var(--accent)" stroke-width="2.5"/>
-
-        <circle cx="90" cy="207" r="4.5" fill="var(--accent)"/>
-        <circle cx="320" cy="135" r="4.5" fill="var(--accent)"/>
-        <circle cx="435" cy="96" r="4.5" fill="var(--accent)"/>
-        <circle cx="550" cy="64" r="5.5" fill="var(--accent)"/>
-
-        <text x="90" y="190" text-anchor="middle" font-family="var(--mono)" font-size="12" fill="var(--ink-soft)">2.4%</text>
-        <text x="320" y="118" text-anchor="middle" font-family="var(--mono)" font-size="12" fill="var(--ink-soft)">3.3%</text>
-        <text x="435" y="79" text-anchor="middle" font-family="var(--mono)" font-size="12" fill="var(--ink-soft)">3.8%</text>
-        <text x="550" y="46" text-anchor="middle" font-family="var(--mono)" font-size="13" font-weight="600" fill="var(--accent)">4.2%</text>
-
-        <text x="90" y="305" text-anchor="middle" font-family="var(--sans)" font-size="12.5" fill="var(--faint)">1月</text>
-        <text x="205" y="305" text-anchor="middle" font-family="var(--sans)" font-size="12.5" fill="var(--faint)">2月</text>
-        <text x="320" y="305" text-anchor="middle" font-family="var(--sans)" font-size="12.5" fill="var(--faint)">3月</text>
-        <text x="435" y="305" text-anchor="middle" font-family="var(--sans)" font-size="12.5" fill="var(--faint)">4月</text>
-        <text x="550" y="305" text-anchor="middle" font-family="var(--sans)" font-size="12.5" fill="var(--faint)">5月</text>
-      </svg>
-      <p class="src">來源：BLS, CPI — May 2026</p>
-    </div>
 
     <p>這波通膨確實有一部分是能源在推：能源年增 23.5%，但扣掉食物和能源的核心 CPI 月增只有 0.2%。這代表它比較像一次性的供給衝擊，不是全面過熱，所以有機會隨著油價回落而降溫。但別急著把問題一筆勾銷。房租和醫療這兩塊，跟油價幾乎沒關係：房租本來就在結構性地漲，而 2025 年底到期的 ACA 保費補貼，會用遞延的方式把醫療成本往上推。<span class="hl">油價可以解釋這次的跳升，但解釋不了通膨的全部。</span>這也是為什麼我認為，就算油價下來，通膨也會卡在目標之上，而不是漂亮地滑回 2%。</p>
   </section>
@@ -223,24 +170,6 @@
     <p>講到這裡，那個「股市創高、信心創低」的矛盾要怎麼接起來？鑰匙是 K 型分化。<span class="hl">一旦你看到經濟是沿著資產和所得在上下分岔，那些互相打架的訊號就變成同一個故事了。</span></p>
     <p>資產增值的好處集中在頂端：持股最多的那一組人裡，有 28% 說資產上漲讓日子變好，中間那組只剩 8%、底層只剩 4%。頂端的需求和信心撐得住。而中位數家庭被生活成本（油、房租、醫療）夾擊，把信心指數壓到五月的 44.8，直到六月油價回落才回升到 49.5。</p>
 
-    <div class="fig">
-      <p class="cap">「資產增值讓日子變好」的比例，按持股高低分組</p>
-      <svg viewBox="0 0 640 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="持股最高三分之一 28%、中間三分之一 8%、底層三分之一 4% 的橫條圖">
-        <line x1="170" y1="12" x2="170" y2="204" stroke="var(--hair)" stroke-width="1"/>
-        <text x="158" y="47" text-anchor="end" font-family="var(--sans)" font-size="13.5" fill="var(--ink-soft)">持股最高 1/3</text>
-        <rect x="170" y="24" width="411" height="36" rx="3" fill="var(--accent)"/>
-        <text x="573" y="47" text-anchor="end" font-family="var(--mono)" font-size="13" font-weight="600" fill="#F5F0E7">28%</text>
-
-        <text x="158" y="117" text-anchor="end" font-family="var(--sans)" font-size="13.5" fill="var(--ink-soft)">中間 1/3</text>
-        <rect x="170" y="94" width="117" height="36" rx="3" fill="var(--accent-soft)"/>
-        <text x="297" y="117" text-anchor="start" font-family="var(--mono)" font-size="13" fill="var(--ink-soft)">8%</text>
-
-        <text x="158" y="187" text-anchor="end" font-family="var(--sans)" font-size="13.5" fill="var(--ink-soft)">底層 1/3</text>
-        <rect x="170" y="164" width="59" height="36" rx="3" fill="var(--faint)"/>
-        <text x="239" y="187" text-anchor="start" font-family="var(--mono)" font-size="13" fill="var(--ink-soft)">4%</text>
-      </svg>
-      <p class="src">來源：University of Michigan Surveys of Consumers, 2026/5–6</p>
-    </div>
 
     <p>同一個 K 型，同時解釋了兩件事：股市和信心的分裂，以及「總需求看起來撐住、但中位數家庭其實很緊」的落差。所以這個分裂不是在推翻前面的判斷，反而是在佐證它。</p>
 
