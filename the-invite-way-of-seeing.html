@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HR79WVR1T3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HR79WVR1T3');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>《The Invite》：一部關於「觀看」的電影｜電影筆記</title>
+<link rel="canonical" href="https://francpeng-ops.github.io/francis-notes/the-invite-way-of-seeing.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     電影筆記 — 版型（基底沿用成長雜記排版，主色：深酒紅）
+     ============================================================ */
+  :root{
+    --paper:#F5F0E7;
+    --ink:#23282B;
+    --ink-soft:#4E575B;
+    --faint:#8C969A;
+    --accent:#7F1D2A;          /* 電影筆記：深酒紅 */
+    --accent-soft:#A34E5A;
+    --hair:rgba(35,40,43,0.12);
+    --serif:"Noto Serif TC",serif;
+    --sans:"Noto Sans TC",sans-serif;
+    --mono:ui-monospace,"SF Mono",Menlo,monospace;
+  }
+  *{box-sizing:border-box;}
+  html{ -webkit-text-size-adjust:100%; }
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--sans); font-weight:400; line-height:2.0;
+    letter-spacing:0.02em; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  .wrap{ max-width:39rem; margin:0 auto; padding:0 1.5rem 5rem; opacity:0; animation:rise 0.9s ease-out 0.05s forwards; }
+  @keyframes rise{ from{opacity:0;transform:translateY(10px);} to{opacity:1;transform:translateY(0);} }
+  @media (prefers-reduced-motion:reduce){ .wrap{animation:none;opacity:1;} }
+
+  /* ---------- hero ---------- */
+  .hero{
+    padding:5rem 0 3.25rem;
+    text-align:center;
+  }
+  .hero .kicker{
+    font-family:var(--sans);
+    font-weight:500;
+    font-size:0.74rem;
+    letter-spacing:0.26em;
+    color:var(--accent);
+    margin:0 0 1.7rem;
+  }
+  .hero h1{
+    font-family:var(--serif);
+    font-weight:700;
+    font-size:2.05rem;
+    line-height:1.45;
+    letter-spacing:0.04em;
+    margin:0 0 1.1rem;
+  }
+  .hero .sub{
+    font-size:0.92rem;
+    color:var(--ink-soft);
+    letter-spacing:0.12em;
+    font-weight:300;
+    margin:0;
+  }
+
+  /* ---------- spoiler note（電影筆記專用小元件，只用變數色） ---------- */
+  .spoiler{
+    margin:0 0 2.75rem;
+    text-align:center;
+    font-family:var(--mono);
+    font-size:0.7rem;
+    letter-spacing:0.24em;
+    color:var(--faint);
+  }
+  .spoiler .mark{ color:var(--accent); }
+
+  /* ---------- lead ---------- */
+  .lead p{
+    font-size:1.06rem;
+    margin:0 0 1.55em;
+  }
+  .lead p:first-child{ margin-top:0; }
+  .lead .opening{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:1.5rem;
+    line-height:1.6;
+    letter-spacing:0.03em;
+    color:var(--ink);
+    margin-bottom:1.55em;
+  }
+
+  /* ---------- sections ---------- */
+  section{ margin-top:3.75rem; }
+
+  h2{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:1.32rem;
+    line-height:1.6;
+    letter-spacing:0.03em;
+    margin:0 0 1.3rem;
+  }
+
+  p{
+    font-size:1.0625rem;
+    margin:0 0 1.5em;
+    color:var(--ink);
+  }
+  p:last-child{ margin-bottom:0; }
+
+  .en{ font-family:var(--serif); font-style:italic; letter-spacing:0.01em; }
+
+  .strong{ font-weight:500; color:var(--ink); }
+
+  .hl{
+    font-style:normal;
+    font-weight:500;
+    color:var(--ink);
+    background:linear-gradient(transparent 62%, rgba(140,58,70,0.16) 62%);
+  }
+
+  .ref{
+    color:var(--accent);
+    text-decoration:none;
+    border-bottom:1px solid rgba(140,58,70,0.35);
+  }
+  .ref:hover{ opacity:0.75; }
+
+  /* ---------- single pull quote ---------- */
+  .pull{
+    margin:2.75rem 0;
+    padding:0;
+    text-align:center;
+  }
+  .pull p{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:1.42rem;
+    line-height:1.75;
+    letter-spacing:0.04em;
+    color:var(--ink);
+    margin:0;
+  }
+
+  /* ---------- closing (signature glow) ---------- */
+  .closing{
+    position:relative;
+    margin-top:5rem;
+    padding:5.5rem 1rem;
+    text-align:center;
+    overflow:hidden;
+  }
+  .closing::before{
+    content:"";
+    position:absolute;
+    left:50%;top:46%;
+    width:min(120%,30rem);height:30rem;
+    transform:translate(-50%,-50%);
+    background:radial-gradient(circle,
+      rgba(230,178,186,0.85) 0%,
+      rgba(230,178,186,0.35) 32%,
+      rgba(245,240,231,0) 68%);
+    z-index:0;
+  }
+  .closing .grace{
+    position:relative;z-index:1;
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:1.72rem;
+    line-height:1.7;
+    letter-spacing:0.1em;
+    margin:0;
+  }
+  .closing .grace .small{
+    display:block;
+    font-family:var(--mono);
+    font-size:0.66rem;
+    letter-spacing:0.26em;
+    color:var(--accent);
+    margin-bottom:1.3rem;
+    font-weight:400;
+  }
+
+  /* ---------- foot ---------- */
+  .foot{
+    margin-top:3.5rem;
+    text-align:center;
+    color:var(--faint);
+    font-size:0.78rem;
+    letter-spacing:0.16em;
+  }
+  .foot .dot{
+    width:4px;height:4px;border-radius:50%;
+    background:var(--accent);opacity:0.7;
+    margin:0 auto 1.4rem;
+  }
+  .foot a{ color:var(--accent); text-decoration:none; }
+
+  @media (max-width:430px){
+    .hero{ padding:3.75rem 0 2.75rem; }
+    .hero h1{ font-size:1.78rem; }
+    .pull p{ font-size:1.26rem; }
+    .closing .grace{ font-size:1.5rem; }
+    .closing{ padding:4.5rem 0.5rem; }
+  }
+
+  /* ---------- top nav + pager ---------- */
+  .topnav{ padding-top:1.6rem; }
+  .topnav a{ font-family:var(--mono); font-size:0.72rem; letter-spacing:0.16em; color:var(--accent); text-decoration:none; }
+  .topnav a:hover{ opacity:0.65; }
+  .topnav + .hero{ padding-top:2.5rem; }
+  .pager{ display:flex; justify-content:space-between; gap:1.2rem; margin-top:4rem; padding-top:1.6rem; border-top:1px solid var(--hair); }
+  .pager a{ text-decoration:none; color:var(--accent); max-width:48%; }
+  .pager .next{ text-align:right; margin-left:auto; }
+  .pager .dir{ font-family:var(--mono); font-size:0.66rem; letter-spacing:0.14em; }
+  .pager .pt{ display:block; font-family:var(--serif); font-weight:500; font-size:0.95rem; line-height:1.45; color:var(--ink-soft); margin-top:0.35rem; }
+  .pager a:hover .pt{ color:var(--ink); }
+
+  :root{ color-scheme: light dark; }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --paper:#1B1414; --ink:#ECE6D9; --ink-soft:#B7AF9F; --faint:#8C8474;
+      --hair:rgba(236,230,217,0.14); --accent:#C64A52; --accent-soft:#D25E66;
+    }
+    .hl{ background:linear-gradient(transparent 62%, rgba(208,138,148,0.30) 62%); }
+    .ref{ border-bottom-color:rgba(208,138,148,0.45); }
+    .closing::before{ background:radial-gradient(circle, rgba(208,138,148,0.20) 0%, rgba(208,138,148,0.08) 32%, rgba(27,20,20,0) 68%); }
+    .foot a{ color:var(--accent) !important; }
+  }
+</style>
+</head>
+<body>
+<article class="wrap">
+  <div class="topnav"><a href="index.html">← 回目錄</a></div>
+
+
+  <header class="hero">
+    <div class="kicker">電影筆記</div>
+    <h1>《The Invite》：<br>一部關於「觀看」的電影</h1>
+    <p class="sub">一場晚餐，四面鏡子</p>
+  </header>
+
+  <div class="lead">
+    <p class="opening">有些電影像一場盛宴，有些電影像一面鏡子。</p>
+    <p>《<span class="en">The Invite</span>》屬於後者。看完之後，你會覺得自己剛做完一場伴侶諮商，即使你現在單身，也能真切感受到親密關係中那種微妙的張力。</p>
+    <p>先簡單介紹一下這部片。《<span class="en">The Invite</span>》由 A24 出品，我個人會把它歸類在小品電影裡：格局不大、成本不高，靠的是劇本和表演的細膩。但小品不代表小卡司，這部片的陣容其實相當堅強：Seth Rogen 飾演丈夫 Joe，Olivia Wilde 自導自演，飾演妻子 Angela，樓上那對神祕鄰居則由 Edward Norton 和 Penélope Cruz 擔綱。四位演員的演技都非常出色，每個角色都有自己明確的個性，彼此的化學反應撐起了整部電影。</p>
+    <p>它有點像喜劇版的《婚姻故事》，用詼諧的方式演繹我們在日常生活中經常看到、卻很少直視的關係課題。故事平淡無奇：一對婚姻岌岌可危的夫妻，邀請樓上那對看似完美的鄰居來家裡晚餐，然後一整晚的事情就在一間公寓裡發生。但正是這個「平淡」，讓它照出來的東西格外清晰。</p>
+  </div>
+
+  <section>
+    <h2>一間公寓，四面鏡子</h2>
+    <p>這部片有很純正的舞台劇血統。它改編自西班牙電影《樓上的鄰居》（<span class="en">The People Upstairs</span>），已經是這個劇本的第五個翻拍版本，而導演 Olivia Wilde 更明確地向 1966 年的經典《靈慾春宵》（<span class="en">Who's Afraid of Virginia Woolf?</span>）致敬：全片幾乎只有四個角色，場景不出一間公寓，一切靠對白和演技撐起來。</p>
+    <p>舞台劇搬上大螢幕最大的風險是「靜」，很容易變成看兩小時的話劇錄影。但這部片的解法很聰明：雖然劇情看似日常，實際上埋了非常多的轉折，每一次資訊揭露都重新洗牌四個人之間的關係，觀眾就這樣很自然地被帶著走，跟著主角一起面對眼前的課題，完全不顯得突兀。我認為這是導演克服了舞台劇形式限制的功力所在。</p>
+    <p>而這個封閉的形式，本身就是主題的載體。<span class="hl">把四個人關在一個房間裡，就是強迫他們互相成為對方的鏡子。</span></p>
+    <p>接下來的討論會涉及部分劇情。這部片值得你不帶預設地走進去，介意劇透的朋友，建議先看完電影再回來。</p>
+  </section>
+
+  <div class="spoiler" style="margin-top:2.75rem;"><span class="mark">●</span>　以下涉及部分劇情，請自行斟酌　<span class="mark">●</span></div>
+
+  <section style="margin-top:0;">
+    <h2>旁觀者清</h2>
+    <p>這部片很好地說明了為什麼有一句話叫「旁觀者清」。</p>
+    <p>兩對伴侶都有各自的問題，而這些問題透過與他人的互動變得更加外顯。當事人身在局中，往往看不見自己的困境和思考上的盲點；反而是換一個第三者的視角，事情才會突然變得清楚。這就是「觀」的重要性：有時候我們需要把自己從情緒的第一人稱抽離出來，用看別人的方式看自己，盲點才會現形。</p>
+    <p>但他人的視角同時也是一把雙面刃。片中女主角一開場就顯露出非常在意他人評價的性格，這其實是缺乏自信的表現。她也在「看」，但她的看是往外看別人怎麼看她，等於把定義自己的權力外包了出去，用注意力換取安全感，結果反而更不安。<span class="hl">同樣是觀看，方向不同，結果天差地別。</span>健康的「觀」是主動抽離來看清自己；而她的觀看，是一種假性的觀看。</p>
+  </section>
+
+  <section>
+    <h2>慾望是一面鏡子，不是一場奇觀</h2>
+    <p>全片最精彩的段落，是兩對伴侶直接把性攤在餐桌上談的那一段。性癖好、性傾向、開放式關係，這些當代社會中的多元樣貌，就這樣坦露在觀眾面前。我覺得這個角度或許能讓比較保守的觀眾，試著去體會為什麼有些人會選擇這樣的生活。</p>
+    <p>而男女主角的反應才是最誠實的一刻：內心震驚，表面維持禮貌，卻又忍不住好奇心不斷追問。這個狀態同時暴露了兩層東西：表層是社交禮儀的偽裝，深層是對自己內心慾望的不夠坦然。當一個人對某種生活方式反應過度激烈時，<span class="hl">激烈的往往不是反對本身，而是內心某個被觸動卻不願承認的角落。</span></p>
+    <p>有些評論批評這部片立場不中立，把開放式關係塑造成「更開明、更解放」的姿態，反過來把單偶婚姻描繪成壓抑的牢籠。我倒不完全認同。如果電影真要美化開放式關係，大可讓鄰居那對維持完美無瑕當作對照組，但它沒有。最後鄰居之間的爭吵，恰恰證明了這種關係也不會沒有問題。電影真正想說的，從來不是哪種關係比較好，而是<span class="hl">任何關係形式，都不能豁免於人自身的課題。</span></p>
+  </section>
+
+  <section>
+    <h2>選擇、匱乏，與「住」</h2>
+    <p>這就要說到我認為全片最核心的一層。</p>
+    <p>男主角住在漂亮的大房子裡，明明有著很棒的人生，卻依然沉溺在過去的挫折中，覺得很不快樂，直到最後才被點醒。他的悲劇不是選錯了生活，而是人在此處、心卻困在別處。生活過得快樂與否，跟我們選擇用什麼角度去看，關係遠比境遇本身來得大。</p>
+
+    <blockquote class="pull">
+      <p>快樂是注意力的函數，<br>不是條件的函數。</p>
+    </blockquote>
+
+    <p>親密關係可能是最讓我們直視自身慾望的場景，而人們往往因為社會的包袱或羞恥感，不願意直視。但解方不是到處宣揚自己有什麼慾望，而是願不願意去思考每個慾望背後的原因。很多時候慾望本身並不是重點，它反映的是我們缺乏了什麼，而那個匱乏，才是問題的源頭。所以認識自己是關鍵的第一步，我們才有機會對慾望誠實，知道如何面對和處理它。</p>
+    <p>不過我後來又多想了一層：認識自己，也不必執著於要多徹底。走到後來，「認識」會慢慢變成「不必再認識也無妨」的那種鬆：和每個狀態的自己共處，不論那是不是自己熟悉的樣子，對自己不評判，但底層依舊知道自己的本質。</p>
+    <p>回到那個「中立」的爭論。也許追根究底，沒有任何方法能讓不同的生活方式真正平起平坐，因為是我們每個人的意識，為不同的方式貼上了標籤，本來就不存在一種客觀的標準。說到底，中立從來不是電影的義務。藝術本來就是 <span class="en">free format</span>，沒有固定的形式和標準，創作者當然有權利帶著自己的觀點說話。但這不代表創作者可以什麼都不管。正因為藝術的影響力可以很大，創作者反而更需要有拿捏尺度的能力：清楚知道自己想透過作品傳遞什麼觀念，以及如何引導觀眾看懂電影的核心，甚至在這個過程中，慢慢培養出觀看者自己的能力。這種「有觀點，卻不強迫」的平衡，我想就是電影、乃至藝術的高深之處。</p>
+    <p>而在觀眾這一端，中立則是一種可以練習的能力。當你願意開放心胸、放下「住」的時候，差異才會單純地是差異，而不是優劣。</p>
+  </section>
+
+  <section>
+    <h2>經典為什麼是經典</h2>
+    <p>《靈慾春宵》（<span class="en">Who's Afraid of Virginia Woolf?</span>）在六十年後依然被翻拍、被致敬，說明真正經典的從來不是題材前不前衛，而是它挖到的東西夠底層。</p>
+
+    <blockquote class="pull">
+      <p>前衛會過時，<br>但對人性的準確洞察不會。</p>
+    </blockquote>
+
+    <p>《<span class="en">The Invite</span>》未必是經典，但它誠實。而誠實，在關於親密關係的電影裡，已經是很難得的事了。</p>
+    <p>推薦給喜歡細膩小品的朋友。看完之後，也許你也會忍不住問自己：我現在的不快樂，有多少是境遇給的，有多少是我自己選的角度？</p>
+  </section>
+
+  <div class="closing">
+    <p class="grace">
+      <span class="small">THE WAY YOU LOOK IS THE LIFE YOU LIVE</span>
+      你看世界的方式，決定你生活的模樣。
+    </p>
+  </div>
+
+  <nav class="pager">
+    <a class="prev" href="toy-story-5-letting-go.html"><span class="dir">← 上一篇</span><span class="pt">《玩具總動員5》：放下，不是找到意義</span></a>
+  </nav>
+
+  <div class="foot">
+    <div class="dot"></div>
+    <a href="index.html">← 回目錄</a>　法蘭的學習筆記
+  </div>
+
+</article>
+</body>
+</html>
