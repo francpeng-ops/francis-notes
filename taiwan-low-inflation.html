@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HR79WVR1T3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HR79WVR1T3');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>通膨去哪了？台灣 CPI 不到 2% 的機制與帳單</title>
+<link rel="canonical" href="https://francpeng-ops.github.io/francis-notes/taiwan-low-inflation.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     投資筆記 — 沿用知識解碼版型，主色換成靛藍
+     ============================================================ */
+  :root{
+    --paper:#F5F0E7;
+    --ink:#23282B;
+    --ink-soft:#4E575B;
+    --faint:#8C969A;
+    --accent:#0E3F6E;          /* 投資筆記：靛藍 */
+    --accent-soft:#4F659E;
+    --hair:rgba(35,40,43,0.12);
+    --serif:"Noto Serif TC",serif;
+    --sans:"Noto Sans TC",sans-serif;
+    --mono:ui-monospace,"SF Mono",Menlo,monospace;
+  }
+  *{box-sizing:border-box;}
+  html{ -webkit-text-size-adjust:100%; }
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--sans); font-weight:400; line-height:2.0;
+    letter-spacing:0.02em; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  .wrap{ max-width:39rem; margin:0 auto; padding:0 1.5rem 5rem; opacity:0; animation:rise 0.9s ease-out 0.05s forwards; }
+  @keyframes rise{ from{opacity:0;transform:translateY(10px);} to{opacity:1;transform:translateY(0);} }
+  @media (prefers-reduced-motion:reduce){ .wrap{animation:none;opacity:1;} }
+
+  .hero{ padding:5rem 0 2.75rem; text-align:center; }
+  .hero .kicker{ font-weight:500; font-size:0.74rem; letter-spacing:0.26em; color:var(--accent); margin:0 0 1.7rem; }
+  .hero h1{ font-family:var(--serif); font-weight:700; font-size:2.0rem; line-height:1.5; letter-spacing:0.03em; margin:0 0 1.1rem; }
+  .hero .sub{ font-size:0.92rem; color:var(--ink-soft); letter-spacing:0.06em; font-weight:300; line-height:1.85; margin:0; }
+
+  .tldr{ margin:2.5rem 0 0; padding:1.4rem 1.5rem 1.5rem; background:rgba(58,77,122,0.06); border:1px solid rgba(58,77,122,0.18); border-left:4px solid var(--accent); border-radius:4px; }
+  .tldr .label{ font-family:var(--mono); font-size:0.66rem; letter-spacing:0.24em; color:var(--accent); margin:0 0 0.7rem; }
+  .tldr p{ font-size:0.99rem; line-height:1.95; margin:0; color:var(--ink); }
+
+  section{ margin-top:3.5rem; }
+  h2{ font-family:var(--serif); font-weight:600; font-size:1.3rem; line-height:1.6; letter-spacing:0.03em; margin:0 0 1.25rem; padding-bottom:0.5rem; border-bottom:1px solid var(--hair); }
+  h3{ font-family:var(--sans); font-weight:500; font-size:1.02rem; letter-spacing:0.04em; color:var(--accent); margin:1.6rem 0 0.4rem; }
+  p{ font-size:1.0625rem; margin:0 0 1.4em; color:var(--ink); }
+  p:last-child{ margin-bottom:0; }
+
+  .en{ font-family:var(--serif); font-style:italic; letter-spacing:0.01em; }
+  .strong{ font-weight:500; color:var(--ink); }
+  .hl{ font-style:normal; font-weight:500; color:var(--ink); background:linear-gradient(transparent 62%, rgba(58,77,122,0.16) 62%); }
+
+  .cap{ font-family:var(--mono); font-size:0.66rem; letter-spacing:0.18em; color:var(--accent); margin:0 0 0.6rem; }
+
+  .pull{ margin:2.5rem 0; padding:0 0 0 1.2rem; border-left:3px solid var(--accent-soft); }
+  .pull p{ font-family:var(--serif); font-weight:500; font-size:1.24rem; line-height:1.8; letter-spacing:0.02em; color:var(--ink); margin:0; }
+
+  /* ---------- sources（資料來源小字清單）---------- */
+  .sources h2{ font-size:1.05rem; }
+  .sources ul{ list-style:none; margin:0.2rem 0 0; padding:0; }
+  .sources li{ font-size:0.8rem; line-height:1.85; color:var(--faint); padding:0.5rem 0; border-top:1px solid var(--hair); }
+  .sources li:first-child{ border-top:none; padding-top:0; }
+
+  .closing{ position:relative; margin-top:4.5rem; padding:5rem 1rem; text-align:center; overflow:hidden; }
+  .closing::before{ content:""; position:absolute; left:50%; top:46%; width:min(120%,30rem); height:30rem; transform:translate(-50%,-50%);
+    background:radial-gradient(circle, rgba(150,165,210,0.80) 0%, rgba(150,165,210,0.30) 32%, rgba(245,240,231,0) 68%); z-index:0; }
+  .closing .grace{ position:relative; z-index:1; font-family:var(--serif); font-weight:600; font-size:1.6rem; line-height:1.7; letter-spacing:0.08em; margin:0; }
+  .closing .grace .small{ display:block; font-family:var(--mono); font-size:0.66rem; letter-spacing:0.26em; color:var(--accent); margin-bottom:1.3rem; font-weight:400; }
+
+  .foot{ margin-top:3rem; text-align:center; color:var(--faint); font-size:0.76rem; letter-spacing:0.1em; line-height:1.9; }
+  .foot .dot{ width:4px; height:4px; border-radius:50%; background:var(--accent); opacity:0.7; margin:0 auto 1.3rem; }
+  .foot a{ color:var(--accent); text-decoration:none; }
+  .foot .note{ display:block; margin-top:0.6rem; font-size:0.7rem; color:var(--faint); letter-spacing:0.06em; }
+
+  @media (max-width:430px){
+    .hero{ padding:3.75rem 0 2.25rem; } .hero h1{ font-size:1.7rem; }
+    .pull p{ font-size:1.14rem; } .closing .grace{ font-size:1.42rem; } .closing{ padding:4rem 0.5rem; }
+  }
+
+  /* ---------- top nav ---------- */
+  .topnav{ padding-top:1.6rem; }
+  .topnav a{ font-family:var(--mono); font-size:0.72rem; letter-spacing:0.16em; color:var(--accent); text-decoration:none; }
+  .topnav a:hover{ opacity:0.65; }
+  .topnav + .hero{ padding-top:2.5rem; }
+
+  :root{ color-scheme: light dark; }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --paper:#1A1712; --ink:#ECE6D9; --ink-soft:#B7AF9F; --faint:#8C8474;
+      --hair:rgba(236,230,217,0.14); --accent:#5C93D6; --accent-soft:#7DA9E0;
+    }
+    .hl{ background:linear-gradient(transparent 62%, rgba(128,147,204,0.32) 62%); }
+    .tldr{ background:rgba(128,147,204,0.10); border-color:rgba(128,147,204,0.30); }
+    .closing::before{ background:radial-gradient(circle, rgba(128,147,204,0.20) 0%, rgba(128,147,204,0.08) 32%, rgba(26,23,18,0) 68%); }
+    .foot a{ color:var(--accent) !important; }
+  }
+
+  /* ---------- pager ---------- */
+  .pager{ display:flex; justify-content:space-between; gap:1.2rem; margin-top:4rem; padding-top:1.6rem; border-top:1px solid var(--hair); }
+  .pager a{ text-decoration:none; color:var(--accent); max-width:48%; }
+  .pager .next{ text-align:right; margin-left:auto; }
+  .pager .dir{ font-family:var(--mono); font-size:0.66rem; letter-spacing:0.14em; }
+  .pager .pt{ display:block; font-family:var(--serif); font-weight:500; font-size:0.95rem; line-height:1.45; color:var(--ink-soft); margin-top:0.35rem; }
+  .pager a:hover .pt{ color:var(--ink); }
+</style>
+</head>
+<body>
+<article class="wrap">
+  <div class="topnav"><a href="index.html">← 回目錄</a></div>
+
+  <header class="hero">
+    <div class="kicker">投資筆記</div>
+    <h1>通膨去哪了？</h1>
+    <p class="sub">台灣 CPI 不到 2% 的機制與帳單<br>三道防線、遞延的成本，與十一月的選舉</p>
+  </header>
+
+  <div class="tldr">
+    <p class="label">三句話看懂</p>
+    <p>美國這輪擴張走到偏晚期，撐住它的主引擎是 AI 資本支出，而這筆錢的另一端就是台灣：出口、GDP、股市全面受惠，數字亮眼。但強勁的表象下有一個反直覺的訊號，就是通膨長期壓在 2% 以下。拆開來看，低通膨是政策壓制（電價、油價、健保、學費）、匯率管理、加上結構性弱內需的合成品，而它的成本沒有消失：被記在台電的資產負債表、房價、和電網投資不足這三個地方。對投資人來說，重點不是「台灣通膨會不會起來」，而是「這套壓制機制什麼時候鬆動、鬆動時長什麼樣子」。</p>
+  </div>
+
+  <section>
+    <p>最近在課堂上跟同學來回聊景氣循環，討論的多半是美國：這輪擴張走到哪了、AI 資本支出撐不撐得住、聯準會下一步怎麼走。多數人的共識是美國處於擴張的偏晚期，成長還在、但動能集中，撐住整個循環的主引擎，是科技巨頭們一年好幾千億美元的 AI 資本支出。至於這筆支出可不可持續，正反兩邊都有紮實的論點，目前沒有答案。</p>
+    <p>教授也鼓勵我們討論其他經濟體，剛好是一個深入研究台灣經濟現況的契機。因為那筆被反覆辯論的 AI 資本支出，流出美國之後，很大一部分就進了台灣。</p>
+  </section>
+
+  <section>
+    <h2>錢進台灣：一個進口的擴張</h2>
+    <p>台灣今年的數字只能用誇張形容。第一季 GDP 年增 13.69%（後續還上修到 14.55%），是近半世紀最快的單季增速；電子與資通訊產品占出口比重來到 78.5%；股市屢創新高。美國企業的資本支出，記到台灣的帳上就是出口與 GDP，錢的流向就是這麼直接。</p>
+    <p>我在課堂的討論版上寫過一篇比較台灣、日本、韓國景氣循環的貼文，當時我給台灣的定位是「進口的擴張中段」（<span class="en">imported mid-expansion</span>）。單看數據（成長強勁、通膨溫和、利率不動），這是教科書上的擴張中段；但這輪擴張的動能幾乎完全來自美國的 AI 資本支出，所以<span class="hl">台灣真正的循環位置，其實不寫在自己的數據裡，而寫在美國企業的投資決策裡</span>。</p>
+    <p>再往下看一層，會發現這是一個雙軌並行的結構：出口部門跟著美國資本支出高速擴張，撐起亮眼的總體數字；內需部門的薪資與消費卻停在原地。台灣央行總裁都公開警告過「K 型經濟」的問題：晶片相關產業熱到不行，其他部門原地踏步。總體數字漂亮、多數人體感平淡，就是這個結構的直接結果。</p>
+  </section>
+
+  <section>
+    <h2>強勁數據裡，有一個反直覺的訊號</h2>
+    <p>在這一片亮眼的數字裡，有一個訊號跟直覺對不上：台灣的通膨，長期壓在 2% 以下。</p>
+    <p>對照一下就知道這有多特別。美國聯準會到現在還在跟 4% 以上的通膨纏鬥，利率壓在 3.5% 到 3.75% 不敢動，官方的說法是「風險偏向上行」。同一時間，台灣的經濟成長率是美國的好幾倍，CPI 預測值卻不到 2%，央行按兵不動。<span class="strong">成長越強、通膨越低，這不太符合教科書。</span></p>
+    <p>很多人把這當成台灣的優勢：又能成長又不通膨，還有比這更好的事嗎？我的看法不太一樣。低通膨本身不是好消息也不是壞消息，它是一個需要被拆解的訊號。而台灣的版本拆開來看，裡面裝的是三個結構問題。這也是我認為目前強勁經濟表象的背後，最被低估的一個風險來源。</p>
+    <p>以下一層一層拆。</p>
+  </section>
+
+  <section>
+    <h2>第一道防線：價格防火牆</h2>
+    <p>已開發國家的 CPI 裡，波動最兇的就是能源和公用事業。台灣的做法很直接：把這兩塊國有化，然後用審議會管價格。</p>
+    <p>電價由每半年一次的電價審議會決定。注意，是「審議」，不是「市場」。2026 年上半年，中東開打、國際燃料價格飆漲，審議會的決議是：凍漲。官方理由講得很白，穩定物價是當前重要目標。油氣那邊也一樣，中油光是幾週內就吸收了兩百多億的油氣成本。</p>
+    <p>翻譯成白話：<span class="hl">國際能源衝擊在抵達你我的帳單之前，就先被國營事業的資產負債表攔截了</span>。美國的能源漲價直接進 CPI、逼聯準會升息；台灣的能源漲價變成台電的虧損，CPI 根本看不到它。</p>
+    <p>同一套邏輯還鋪在其他地方。健保給付價格由政府核定，所以醫療服務通膨趨近於零；對照一下美國，醫療是通膨的長期推手。大學學費凍漲快二十年。水價、公共運輸，全部受管制。CPI 籃子裡一大塊服務類項目，在台灣是政策變數，不是市場變數。</p>
+  </section>
+
+  <section>
+    <h2>第二道防線：匯率減震器</h2>
+    <p>台灣的能源進口依存度超過九成。如果匯率自由浮動，國際物價的波動會原封不動灌進進口物價。但台灣央行的干預傳統行之有年，阻升也阻貶，把匯率的波動削峰填谷。</p>
+    <p>干預的手法說穿了不神秘。央行手上有近六千億美元的外匯存底，等於一個超大的調節水庫：熱錢湧入、台幣升值太快時，央行進場「買美元、賣台幣」，把升值的力道吸掉；資金外逃、台幣貶值太急時，反過來「賣美元、買台幣」，撐住匯價。實務上常見的場景是所謂的「尾盤調節」：收盤前那段時間匯價突然被拉回來，市場普遍解讀為央行進場調節。對進口物價的效果很直接：油、氣、原物料都用美元計價，匯率穩住了，進口成本的波動就被壓掉一大截，輸入性通膨的壓力自然小很多。</p>
+  </section>
+
+  <section>
+    <h2>第三道防線：沒有人有錢漲價</h2>
+    <p>前兩道是政策，第三道是結構，就是前面說的那個雙軌。</p>
+    <p>台灣的實質薪資成長停滯了很久，家庭儲蓄率又高，內需的需求拉力天生偏弱。看一組數字就懂：2025 年 GDP 成長 8.7%，民間消費只成長 1.35%。成長由出口部門獨拿，不流進一般家庭的購買力，自然也推不動消費物價。</p>
+    <p>這其實是 K 型經濟的另一面。上 K（半導體、AI 供應鏈）賺到手軟，下 K 的薪資單十年如一日。低通膨在這個意義上不完全是政策成就，它同時反映內需長期疲弱。<span class="strong">物價平靜，是因為需求端根本沒有推升物價的力道。</span></p>
+  </section>
+
+  <section>
+    <h2>還有一塊：CPI 根本沒在量的東西</h2>
+    <p>台灣 CPI 的居住類是用「租金」衡量的，而台灣的租金市場（申報率低、房東不漲租的默契文化）長期低報實際居住成本。結果就是：房價二十年翻了幾倍，CPI 幾乎無感。</p>
+    <p>這不是造假，是統計口徑的選擇。但它的含義很重要：它不在消費物價裡，它在資產價格裡。CPI 看到的下 K 物價很平靜；CPI 看不到的上 K 資產一路飆漲。連通膨本身，都是 K 型的。</p>
+
+    <blockquote class="pull">
+      <p>通膨沒有消失，它換了一種形式存在。</p>
+    </blockquote>
+  </section>
+
+  <section>
+    <h2>那帳單在哪？</h2>
+    <p>價格管制不消滅通膨，只是記帳。現在這本帳主要放在台電：累積虧損超過三千五百億，連續二十一年發不出股利，靠行政院專案融資和立法院撥補在撐。</p>
+    <p>問題是這本帳遲早要結。2015 年立法通過的電價公式，本來就要求電價足額反映成本；法律都寫好了，只是一直「權宜」著不執行。而遞延的調整不會消失，只會變成階梯式的補漲：2024 年 4 月那次平均一口氣調漲 11%，就是預演。</p>
+    <p>更麻煩的是政治棘輪。回顧過去的紀錄，選舉年之前幾乎不漲電價。凍漲容易、補漲難，每凍一次，遞延的存量就更大，未來的調整就更痛，也就更難調。對投資人來說，這代表台灣的通膨路徑不是平滑曲線，而是<span class="hl">「長期壓平、偶發跳升」，而跳升的時點由政治決定，不由市場決定</span>。這種路徑，模型抓不到，但行事曆抓得到。</p>
+  </section>
+
+  <section>
+    <h2>AI 來了，撞上補貼電價</h2>
+    <p>這是我認為最值得盯的一條線，而且它跟文章開頭那筆美國資本支出直接相連。</p>
+    <p>補貼電價等於對用電大戶的隱性補貼。而台灣此刻正迎來史上最大的電力需求成長：先進製程加 AI 資料中心。把邏輯攤開來看，會發現一個明顯的矛盾：<span class="hl">我們用全民分攤的低電價，支撐著全球最賺錢產業鏈的電力成本</span>。</p>
+    <p>公平地說，情況有在改善：2023 年之後工業電價已經高於住宅電價，「巷口咖啡店補貼台積電」的批評不再完全成立。但特高壓大戶的電價仍低於售電成本，虧本售電還在繼續。</p>
+    <p>同時，凍漲壓縮了台電的資本支出能力。電網韌性、綠能轉型的投資被排擠，偏偏 AI 時代最需要的就是電網。於是形成一個扭曲三角：低電價吸引高耗能投資，高耗能投資加重台電負擔，台電負擔又讓電價更難正常化。三個角互相鎖死。</p>
+  </section>
+
+  <section>
+    <h2>投資上怎麼看</h2>
+    <p>第一，<span class="strong">把電價審議會當成總經事件來追</span>。每年三月和九月各一次。它是台灣「遞延通膨」何時兌現的最直接訊號，重要性不亞於央行理監事會。尤其選舉年的九月場，凍漲機率高，但每一次凍漲都在墊高未來補漲的幅度。</p>
+    <p>第二，<span class="strong">台灣的通膨風險是跳躍式的，不是漸進式的</span>。資產配置上如果有針對台灣通膨的部位，要對的是「階梯」不是「斜率」。電價一次調 11% 那種事，未來應該還會發生。</p>
+    <p>第三，<span class="strong">留意能源與電網相關的政策受益方向</span>。扭曲三角總有一天要解，解法不外乎電價正常化加上電網投資加速。這兩件事發生時，誰受益、誰受損，順著想下去也許就能找出潛在的投資機會。但別忘了，這個題目裡「政策」永遠有最大的影響力，時程和方向都掌握在它手上。</p>
+    <p>第四，<span class="strong">長線上留一隻眼睛看「日本化」</span>。低通膨、低薪資成長、高儲蓄、資產價格膨脹，這個組合跟平成年代的日本相當相似。台灣的差別在於有半導體這具超強引擎，但如果成長的果實持續不外溢到薪資與消費，帳面 GDP 亮眼、生活水準停滯的雙軌就可能長期化。到那時候，低通膨就不再是政策成就，而是經濟活力流失、社會風險累積的警訊。</p>
+  </section>
+
+  <section>
+    <h2>結語</h2>
+    <p>低通膨的機制講完了，把鏡頭拉回全景。</p>
+    <p>台灣目前的處境，可以濃縮成三句話。擴張是進口的：動能來自美國的 AI 資本支出，可持續性由別人決定。通膨是壓制的：三道防線把物價壓平，但代價持續累積。帳單是遞延的：台電的累虧、被低估的居住成本、被排擠的電網投資，遲早要有人結。</p>
+    <p>強勁與脆弱，在台灣是同一件事的兩面。同一筆美國資本支出，既是 GDP 的來源，也是最大的單一風險；同一套壓制機制，既給了物價穩定，也累積了未來的調整壓力。政府近年推動綠能、國防、無人機這些分散布局，方向是對的，但短期內改變不了集中度。在那之前，台灣的循環好壞，一半看別人，一半看自己什麼時候願意結帳。</p>
+    <p>最後想多說一句。十一月就是地方選舉，而這篇談的每一件事，電價要不要反映成本、台電的虧損誰來補、電網投資排不排得進預算，最終都是政治決定。所以接下來這段時間，或許值得多關心一點政治。不是要選邊站，而是用經濟學的視角，去看每個政治人物的政見、言論與行動：哪些選擇是把帳單誠實地攤開來，對台灣的長期發展有利；哪些只是把帳單繼續往後推，累積更多風險。同一件事，換一個角度看，常常會看到不一樣的東西。多一個視角，總是好事。</p>
+  </section>
+
+  <div class="closing">
+    <p class="grace">
+      <span class="small">ONE MORE LENS</span>
+      多一個視角，總是好事。
+    </p>
+  </div>
+
+  <section class="sources">
+    <h2>資料來源</h2>
+    <ul>
+      <li>行政院主計總處：2026 年第一季 GDP 概估年增 13.69%、修正後 14.55%；2025 年全年 GDP 成長 8.7%、民間消費成長 1.35%</li>
+      <li>財政部貿易統計：電子與資通訊產品占 2026 年出口比重約 78.5%</li>
+      <li>台電 2026 年度股東常會（2026/6/26）：累積虧損 3,511 億元、連續 21 年未配發股利</li>
+      <li>經濟部電價審議會決議（2026/3/27）：2026 年上半年電價凍漲，平均電價維持每度 3.78 元；2024 年 4 月平均調漲約 11%</li>
+      <li>報導者〈台電負債比逾 9 成，2025 上半年電價凍漲〉：電價公式（2015 年立法）、政策性負擔與選舉年凍漲紀錄之數據分析</li>
+      <li>中央銀行：外匯存底約 5,972 億美元（2026 年 6 月）；央行總裁對「K 型經濟」之公開示警見媒體報導</li>
+    </ul>
+  </section>
+
+  <nav class="pager">
+    <a class="next" href="economic-cycle.html"><span class="dir">下一篇 →</span><span class="pt">股市創高、信心創低：我們在景氣循環的哪個位置？</span></a>
+  </nav>
+
+  <div class="foot">
+    <div class="dot"></div>
+    <a href="index.html">← 回目錄</a>　法蘭的學習筆記｜投資筆記
+    <span class="note">本文為個人學習筆記與分析，不構成投資建議。</span>
+  </div>
+
+</article>
+</body>
+</html>
