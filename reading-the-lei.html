@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HR79WVR1T3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HR79WVR1T3');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>讀懂領先經濟指標 LEI：水位落後，斜率領先｜八個零件變好，儀表板卻亮紅燈</title>
+<link rel="canonical" href="https://francpeng-ops.github.io/francis-notes/reading-the-lei.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     投資筆記 — 沿用知識解碼版型，主色換成靛藍
+     ============================================================ */
+  :root{
+    --paper:#F5F0E7;
+    --ink:#23282B;
+    --ink-soft:#4E575B;
+    --faint:#8C969A;
+    --accent:#0E3F6E;          /* 投資筆記：靛藍 */
+    --accent-soft:#4F659E;
+    --hair:rgba(35,40,43,0.12);
+    --serif:"Noto Serif TC",serif;
+    --sans:"Noto Sans TC",sans-serif;
+    --mono:ui-monospace,"SF Mono",Menlo,monospace;
+  }
+  *{box-sizing:border-box;}
+  html{ -webkit-text-size-adjust:100%; }
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--sans); font-weight:400; line-height:2.0;
+    letter-spacing:0.02em; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  .wrap{ max-width:39rem; margin:0 auto; padding:0 1.5rem 5rem; opacity:0; animation:rise 0.9s ease-out 0.05s forwards; }
+  @keyframes rise{ from{opacity:0;transform:translateY(10px);} to{opacity:1;transform:translateY(0);} }
+  @media (prefers-reduced-motion:reduce){ .wrap{animation:none;opacity:1;} }
+
+  .hero{ padding:5rem 0 2.75rem; text-align:center; }
+  .hero .kicker{ font-weight:500; font-size:0.74rem; letter-spacing:0.26em; color:var(--accent); margin:0 0 1.7rem; }
+  .hero h1{ font-family:var(--serif); font-weight:700; font-size:2.0rem; line-height:1.5; letter-spacing:0.03em; margin:0 0 1.1rem; }
+  .hero .sub{ font-size:0.92rem; color:var(--ink-soft); letter-spacing:0.06em; font-weight:300; line-height:1.85; margin:0; }
+
+  .tldr{ margin:2.5rem 0 0; padding:1.4rem 1.5rem 1.5rem; background:rgba(58,77,122,0.06); border:1px solid rgba(58,77,122,0.18); border-left:4px solid var(--accent); border-radius:4px; }
+  .tldr .label{ font-family:var(--mono); font-size:0.66rem; letter-spacing:0.24em; color:var(--accent); margin:0 0 0.7rem; }
+  .tldr p{ font-size:0.99rem; line-height:1.95; margin:0; color:var(--ink); }
+
+  section{ margin-top:3.5rem; }
+  h2{ font-family:var(--serif); font-weight:600; font-size:1.3rem; line-height:1.6; letter-spacing:0.03em; margin:0 0 1.25rem; padding-bottom:0.5rem; border-bottom:1px solid var(--hair); }
+  h3{ font-family:var(--sans); font-weight:500; font-size:1.02rem; letter-spacing:0.04em; color:var(--accent); margin:1.6rem 0 0.4rem; }
+  p{ font-size:1.0625rem; margin:0 0 1.4em; color:var(--ink); }
+  p:last-child{ margin-bottom:0; }
+
+  .en{ font-family:var(--serif); font-style:italic; letter-spacing:0.01em; }
+  .strong{ font-weight:500; color:var(--ink); }
+  .hl{ font-style:normal; font-weight:500; color:var(--ink); background:linear-gradient(transparent 62%, rgba(58,77,122,0.16) 62%); }
+
+  .cap{ font-family:var(--mono); font-size:0.66rem; letter-spacing:0.18em; color:var(--accent); margin:0 0 0.6rem; }
+
+  .pull{ margin:2.5rem 0; padding:0 0 0 1.2rem; border-left:3px solid var(--accent-soft); }
+  .pull p{ font-family:var(--serif); font-weight:500; font-size:1.24rem; line-height:1.8; letter-spacing:0.02em; color:var(--ink); margin:0; }
+
+  /* ---------- sources（資料來源小字段落）---------- */
+  .sources h2{ font-size:1.05rem; }
+  .sources .intro{ font-size:0.86rem; color:var(--ink-soft); line-height:1.9; margin:0 0 1.2em; }
+  .sources p{ font-size:0.82rem; line-height:1.9; color:var(--faint); margin:0 0 0.95em; }
+  .sources a{ color:var(--accent-soft); text-decoration:none; border-bottom:1px solid rgba(79,101,158,0.35); word-break:break-all; }
+  .sources a:hover{ opacity:0.68; }
+
+  .closing{ position:relative; margin-top:4.5rem; padding:5rem 1rem; text-align:center; overflow:hidden; }
+  .closing::before{ content:""; position:absolute; left:50%; top:46%; width:min(120%,30rem); height:30rem; transform:translate(-50%,-50%);
+    background:radial-gradient(circle, rgba(150,165,210,0.80) 0%, rgba(150,165,210,0.30) 32%, rgba(245,240,231,0) 68%); z-index:0; }
+  .closing .grace{ position:relative; z-index:1; font-family:var(--serif); font-weight:600; font-size:1.6rem; line-height:1.7; letter-spacing:0.08em; margin:0; }
+  .closing .grace .small{ display:block; font-family:var(--mono); font-size:0.66rem; letter-spacing:0.26em; color:var(--accent); margin-bottom:1.3rem; font-weight:400; }
+
+  .foot{ margin-top:3rem; text-align:center; color:var(--faint); font-size:0.76rem; letter-spacing:0.1em; line-height:1.9; }
+  .foot .dot{ width:4px; height:4px; border-radius:50%; background:var(--accent); opacity:0.7; margin:0 auto 1.3rem; }
+  .foot a{ color:var(--accent); text-decoration:none; }
+  .foot .note{ display:block; margin-top:0.6rem; font-size:0.7rem; color:var(--faint); letter-spacing:0.06em; }
+
+  @media (max-width:430px){
+    .hero{ padding:3.75rem 0 2.25rem; } .hero h1{ font-size:1.7rem; }
+    .pull p{ font-size:1.14rem; } .closing .grace{ font-size:1.42rem; } .closing{ padding:4rem 0.5rem; }
+  }
+
+  /* ---------- top nav ---------- */
+  .topnav{ padding-top:1.6rem; }
+  .topnav a{ font-family:var(--mono); font-size:0.72rem; letter-spacing:0.16em; color:var(--accent); text-decoration:none; }
+  .topnav a:hover{ opacity:0.65; }
+  .topnav + .hero{ padding-top:2.5rem; }
+
+  :root{ color-scheme: light dark; }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --paper:#1A1712; --ink:#ECE6D9; --ink-soft:#B7AF9F; --faint:#8C8474;
+      --hair:rgba(236,230,217,0.14); --accent:#5C93D6; --accent-soft:#7DA9E0;
+    }
+    .hl{ background:linear-gradient(transparent 62%, rgba(128,147,204,0.32) 62%); }
+    .tldr{ background:rgba(128,147,204,0.10); border-color:rgba(128,147,204,0.30); }
+    .sources a{ color:var(--accent-soft) !important; border-bottom-color:rgba(125,169,224,0.40); }
+    .closing::before{ background:radial-gradient(circle, rgba(128,147,204,0.20) 0%, rgba(128,147,204,0.08) 32%, rgba(26,23,18,0) 68%); }
+    .foot a{ color:var(--accent) !important; }
+  }
+
+  /* ---------- pager ---------- */
+  .pager{ display:flex; justify-content:space-between; gap:1.2rem; margin-top:4rem; padding-top:1.6rem; border-top:1px solid var(--hair); }
+  .pager a{ text-decoration:none; color:var(--accent); max-width:48%; }
+  .pager .next{ text-align:right; margin-left:auto; }
+  .pager .dir{ font-family:var(--mono); font-size:0.66rem; letter-spacing:0.14em; }
+  .pager .pt{ display:block; font-family:var(--serif); font-weight:500; font-size:0.95rem; line-height:1.45; color:var(--ink-soft); margin-top:0.35rem; }
+  .pager a:hover .pt{ color:var(--ink); }
+</style>
+</head>
+<body>
+<article class="wrap">
+  <div class="topnav"><a href="index.html">← 回目錄</a></div>
+
+  <header class="hero">
+    <div class="kicker">投資筆記</div>
+    <h1>讀懂領先經濟指標 LEI：水位落後，斜率領先</h1>
+    <p class="sub">八個零件變好，儀表板卻亮紅燈——<br>拆開 LEI 這台儀器，判讀美國經濟的週期位置</p>
+  </header>
+
+  <div class="tldr">
+    <p class="label">TL;DR</p>
+    <p>美國的領先經濟指標（LEI）連續兩個月給出看似矛盾的訊號：五月靠金融市場獨撐上漲，六月十項成分裡八項改善、指數卻反而下跌。這篇文章想做三件事：一、把 LEI 這台儀器拆開來，講清楚每個數字是什麼、為什麼值得看；二、用它來判讀美國現在的週期位置——成長還在、但引擎只剩一顆，而且這顆引擎大部分不在儀器的雷達上；三、留下三筆寫在紙上的預測，其中一筆押在 8 月 20 日的下一次公布。到時候，我們可以自己打開報告，用同樣的方法對帳。</p>
+  </div>
+
+  <section>
+    <h2>一、兩個月，兩個矛盾的訊號</h2>
+    <p>先看兩則新聞，它們相隔一個月，來自同一份報告。</p>
+    <p>六月十八日，美國經濟諮商理事會（The Conference Board）公布五月的領先經濟指標：LEI 上漲 0.1%，來到 99.3，連續第二個月上揚。聽起來是好消息。但打開細項，這 0.1% 的漲幅<span class="hl">全部</span>來自三個金融成分——標普五百指數、利差、領先信用指數。剩下的七項裡，拖累最重的是消費者預期，其次是初領失業救濟金人數和建築許可。換句話說，是市場的樂觀單獨扛起了整個指數，實體經濟那一半在往下沉。</p>
+    <p>一個月後，七月二十日，六月的數字出爐：LEI 下跌 0.2%，回到 99.1。這次更奇怪——十項成分裡有<span class="hl">八項</span>改善，只有兩項下滑（又是消費者預期，又是建築許可），但就這兩項，把整個指數拉成負的。</p>
+    <p>八個零件變好，儀表板卻亮紅燈。這不是儀器壞了，而是儀器在告訴我們一件事：<span class="hl">這個經濟體內部的分歧，大到少數幾個部門的重量足以壓過其他所有部門的總和。</span></p>
+    <p>這兩個月的數據公布，剛好落在我修的財務分析課程討論這個主題的期間，一群背景各異的同學——高中老師、理財規劃顧問、退休前的上班族——在討論區為這幾份報告來回討論了兩週。這篇文章裡有幾個最好用的比喻和最尖銳的質疑，來自於我們的討論區內容，這也是我在課堂中得到的最大收穫之一。</p>
+    <p>回到那個矛盾。要理解它，得先知道這台儀器是怎麼造的。</p>
+  </section>
+
+  <section>
+    <h2>二、拆開儀器：LEI 是什麼</h2>
+    <p>領先經濟指標不是一個數字，是十個數字的加權平均。這十項可以粗略分成三組。</p>
+    <p>第一組是<span class="hl">金融市場</span>：標普五百指數、利差、領先信用指數。這裡的「利差」值得多講一句，因為它常被誤會。它指的是十年期公債殖利率減去聯邦資金利率——也就是「市場對長期的看法」減去「央行對現在的定價」。當這個差變小甚至翻負（俗稱殖利率曲線倒掛），歷史上往往是衰退的前兆。注意，這不是問卷調查出來的意見，而是債券市場裡真金白銀的投資決策所透露出的集體判斷。殖利率曲線可以說是債市的「顯示性偏好」——不必問投資人怎麼想，看他們把錢放在哪裡就知道了。</p>
+    <p>第二組是<span class="hl">實體活動</span>：製造業平均工時、消費財新訂單、非國防資本財訂單、建築許可、初領失業救濟金人數。這些都是可以數出來的東西——多少張訂單、多少件許可、多少人去申請救濟。</p>
+    <p>第三組只有一項：<span class="hl">消費者預期</span>。十項成分裡，這是唯一一個「問人感覺如何」得來的軟數據，其他九項都是硬數據。這個區分很重要，因為當有人說「這個指數被情緒污染了」，正確的回答是：只有十分之一是情緒，其他都是行為。</p>
+    <p>為什麼要看領先指標？因為經濟數據有三種時態。有些數據走在景氣前面（領先），有些跟景氣同步（同時），有些落在景氣後面（落後）。這裡藏著一個多數人都會踩的陷阱：<span class="hl">失業率不是領先指標。</span></p>
+    <p>初領失業救濟金人數領先，非農就業人數同步，而失業率——尤其是失業持續時間——是落後的。企業感受到壓力時，第一步不是裁員，而是凍結招聘、砍加班工時；裁員是最後一張骨牌。所以等失業率明顯升高時，衰退往往已經走了一段路。用失業率抓景氣轉折，就像看著後照鏡開車。</p>
+    <p>而現在的美國就業市場，正卡在「骨牌倒下之前」的階段：ISM 服務業指數的就業分項落到 47.9（低於 50 代表收縮），職位空缺持續下滑，但裁員人數仍然偏低。低招聘、低解僱——冰凍期。六月非農就業只增加 5.7 萬人，失業率 4.2% 看起來平穩，但那是因為勞動參與率掉到 2021 年 3 月以來的低點——分母縮水撐住的平穩。</p>
+  </section>
+
+  <section>
+    <h2>三、怎麼讀：水位落後，斜率領先</h2>
+    <p>知道零件之後，第二課是讀法。這裡有一個貫穿全篇的原則：</p>
+
+    <blockquote class="pull">
+      <p>看指標，水位落後，斜率領先。</p>
+    </blockquote>
+
+    <p>什麼意思？薪水是「水位」——它本身就是錢，數字大小直接決定我們的生活。但 LEI 不是薪水，它是「天氣預報」——99.1 這個數字本身沒有意義（它只是以 2016 年為 100 的相對值），有意義的是它往哪個方向走、走多快。</p>
+    <p>這個原則有一個著名的應用叫沙姆法則（Sahm Rule）：失業率本身是落後指標，但失業率的<span class="hl">變化速度</span>——三個月移動平均比過去一年低點高出 0.5 個百分點——卻能近乎即時地標記衰退的開始。同一個數據，看水位是後照鏡，看斜率變成擋風玻璃。這是整套指標判讀裡最值得帶走的一個觀念。</p>
+    <p>第三課是警報器的設計。諮商理事會用所謂 3Ds 法則來判斷 LEI 是否發出衰退訊號：深度（depth）、持續度（duration）、擴散度（diffusion）。翻成白話，就是兩道扳機——第一道，六個月年化跌幅是否超過 4.3%；第二道，擴散指數是否跌破 50（意思是十項成分裡下跌的過半）。<span class="hl">兩道扳機都要扣下，警報才響。</span></p>
+    <p>現在的讀數：六個月年化跌幅約 0.6%，離 4.3% 很遠；擴散指數 70，遠在 50 之上。兩道扳機都沒扣。所以儘管 LEI 的六個月變化率已經連續負值好一陣子，正式的衰退訊號並沒有出現。諮商理事會自己的用詞是：負值，但穩定（<span class="en">while negative, were stable</span>）。</p>
+    <p>「穩定的負值」聽起來像壞消息裡的好消息，但這裡要小心一個語感陷阱。有人會問：一直負下去，經濟不就一直縮嗎？不會——記住，LEI 是預報不是薪水。穩定的小幅負斜率翻譯出來是「預期成長緩慢」，不是「經濟每半年萎縮 0.3%」。真正該讓人警覺的不是負值本身，而是<span class="hl">擴散度開始變寬</span>——下跌的成分從兩項變成五項、六項，大家一起往下。六月只有兩項在跌。這就是為什麼儀表板亮的是黃燈，不是紅燈。</p>
+  </section>
+
+  <section>
+    <h2>四、指數裡的 K</h2>
+    <p>把五月和六月放在一起看，一個結構浮出來了。</p>
+    <p>五月：金融三項獨力把指數扛成正的，消費相關成分往下拉——上半身贏。六月：八項改善不敵消費者預期與建築許可兩記重錘——下半身贏。同一台儀器，兩個月，勝負易手，但對陣的雙方從來沒變過：<span class="hl">一邊是資產市場，一邊是家庭部門。</span></p>
+    <p>這就是所謂 K 型經濟，而且它不只發生在經濟裡，它直接發生在指數的內部。K 的上半部——持有資產的人——由股市和 AI 行情托著；K 的下半部——中位數家庭——被能源價格當成一種稅在課。今年二月底戰爭爆發後，布蘭特原油從每桶 72 美元一路衝上 120，六月底停火回落到 73，七月中旬荷莫茲海峽情勢再起，又站回 86 之上。汽油價格年增率仍高達 26.7%。對開車通勤、看著加油機跳表的家庭來說，總體數據裡的「經濟仍在成長」是別人的事。</p>
+    <p>這一個機制，同時解釋了兩個困擾很多人的謎題：為什麼消費者信心低迷而股市屢創新高（情緒與市場的背離），以及為什麼總量數據強韌而中位數家庭吃緊（平均值與中位數的背離）。不需要兩套理論，一個 K 就夠了。</p>
+    <p>六月的通膨數據給了 K 的下半部一次喘息：CPI 月減 0.4%，是 2020 年 4 月以來最大單月跌幅，年增率從 4.2% 降到 3.5%，核心通膨月增率是零。主要功臣是能源——汽油單月大跌 9.7%。七月中旬的密西根大學消費者信心調查隨即大幅回升，五個分項全數上揚，而且改善橫跨所有年齡、收入、財富與政黨立場。</p>
+    <p>但這裡要誠實地擺上一個心理學的保留。打個比方：一直被打耳光的人，突然少打一下，也會覺得舒服。行為經濟學稱之為參照點依賴——當 6 美元的油價成為心理錨點，5.5 美元感覺像贏，即使一年前它還是 4 美元。七月的信心回升，有多少是實質改善，有多少是錨點重設帶來的相對感受？如果油價因為地緣政治再度走高，這份好心情可能來得快去得也快。這正是押在 8 月 20 日的那筆預測，後面會講。</p>
+  </section>
+
+  <section>
+    <h2>五、盲點：為舊經濟打造的雷達</h2>
+    <p>現在進入這篇文章最想講的一個論點。</p>
+    <p>回頭看那十項成分：製造業工時、消費財訂單、住宅建築許可。這份清單是為一個什麼樣的經濟體設計的？一個由<span class="hl">製造業和房市</span>驅動週期的經濟體。過去七十年，美國的景氣循環大致確實長這樣：利率下降、房市啟動、工廠加班、消費跟上。LEI 的十個零件，就是沿著這條傳動軸安裝的感測器。</p>
+    <p>但這一輪的引擎不一樣。目前撐起美國經濟擴張的，越來越單一地依賴 AI 相關的企業資本支出——超大規模雲端業者今年預估砸下 6,770 億美元蓋資料中心，2028 年上看 8,020 億，而且大多由營運現金流支應，連跟銀行借錢都不太需要。問題來了：資料中心、AI 晶片——其中很大一部分是進口的——在 LEI 的十個零件裡，幾乎<span class="hl">測不到</span>。它不太反映在製造業工時上，不反映在消費財訂單上，更不反映在住宅建築許可上。</p>
+
+    <blockquote class="pull">
+      <p>儀器沒有壞，是經濟換了引擎，而新引擎大部分裝在雷達的範圍之外。</p>
+    </blockquote>
+
+    <p>這意味著什麼？意味著這一輪的 LEI 可能系統性地<span class="hl">偏悲觀</span>——它勤勤懇懇地測量著舊傳動軸，而動力早已從另一條軸輸出。連諮商理事會自己的解讀都在說：消費支出走弱，但 AI 相關的強勁企業投資預期將支撐經濟活動。支撐經濟的東西，恰好是指數量不到的東西。</p>
+  </section>
+
+  <section>
+    <h2>六、誠實的反論：同一注不能當兩個證據</h2>
+    <p>如果文章停在上一段，那就成了一篇替多頭辯護的文章。但這個論點有一個必須直視的弱點。</p>
+    <p>有人會說：不對啊，LEI 裡明明有測到 AI——金融三項不是一直很強嗎？股市屢創新高，不就是 AI 榮景的證明？</p>
+    <p>恰恰相反，這正是問題所在。<span class="hl">指數裡的金融強勢，不是 AI 敘事的獨立確認——股價本身就是 AI 交易。</span>同一注押在兩個地方，不能當成兩個證據。如果 AI 資本支出的故事出了狀況，股市和指數的金融成分會一起轉向，而那時，已經被掏空的消費端不會提供任何緩衝。單引擎飛機的問題從來不是引擎不夠力，是沒有第二顆。</p>
+    <p>再把警戒方向擺正。傳統的恐怖故事是「船在下沉，甲板上的人還在開派對」——大眾樂觀，災難將至。但現在的情境是鏡像的：消費者悲觀，市場樂觀。如果自滿存在，它不在街上，在 AI 交易的甲板上。順帶一提，判斷市場情緒時，別忘了前面說過的：十項成分裡只有消費者預期是「感覺」，其他九項是「行為」。真正該擔心被情緒推著走的，從來不是建築許可這種硬數據，而是那三項金融成分。</p>
+    <p>所以整體的判讀是：<span class="hl">no landing、晚週期、K 型。</span>短期內成長還在但正在減速；通膨不再直線滑向 2%，而是被地緣政治的能源價格挾持——六月 FOMC 在 3.50% 到 3.75% 按兵不動，點陣圖偏鷹，五月下旬上任的新主席 Kevin Warsh 立場鷹派，降息遙遙無期，甚至留著升息的尾巴；週期位置在高原的尾端，但轉折的時點——經濟學家 Christina Romer 的老話——無法預知。我們能做的不是猜日期，而是架好儀器、盯著斜率和擴散度，等訊號自己浮現。</p>
+  </section>
+
+  <section>
+    <h2>七、延伸討論：台灣的回聲</h2>
+    <p>寫到這裡，剛好看到一則台灣的新聞，值得放進來對照——不是因為它支持上面的論點，而是因為它示範了<span class="hl">為什麼我們需要自己看數據</span>。</p>
+    <p>七月下旬，台新新光金控首席經濟學家李鎮宇表示，經濟數據很好、民眾卻感受不到溫度，因為這是「史上首見投資與消費反向」——全球都在投資 AI，而 AI 取代勞工，因此消費保守。</p>
+    <p>「數據很好、體感很冷」，聽起來跟美國的 K 型完全同構，對吧？慢著，先查數據。翻開主計總處的國民所得統計：台灣第一季經濟成長率上修到 14.55%，是數十年罕見的高點，其中民間消費實質成長 4.89%——<span class="hl">近十季最高</span>——資本形成成長 5.20%。投資和消費，兩個都在漲，而且都創了近期高點。「投資與消費反向」這個說法，在國民所得帳上根本找不到。</p>
+    <p>那體感的冷是假的嗎？也不是。分歧是真的，只是它不在「投資 vs. 消費」這條線上，而在<span class="hl">組成的內部</span>。出口的成長高度集中——電子零組件加資通產品占出口比重達 78.5%，傳統產業的出口依然疲弱。更微妙的是消費那個亮眼的 4.89% 是怎麼來的：主計總處自己點名了股市成交值年增 117% 帶來的財富效果。換句話說，台灣的總量消費之所以撐得住，有一部分正是 K 的上半部——資產持有者——在消費。K 沒有消失，它只是戴著「總量良好」的面具。</p>
+    <p>這一段想留給讀者的，不是「哪位經濟學家說錯了」，而是一個可以帶走的習慣：<span class="hl">聽到任何「史上首見」「歷史唯一」的說法，先去找那份原始統計。</span>大多數時候，我們會發現真相比口號更有意思——而且往往藏著口號沒說出來的那半個故事。</p>
+  </section>
+
+  <section>
+    <h2>八、三筆寫在紙上的預測</h2>
+    <p>這篇文章用的方法，說穿了很簡單：把判斷寫下來，標好日期，附上「如果我錯了，會看到什麼」，然後等數據公布，回來對帳。預測不值錢，可以被打臉的預測才值錢。目前帳本上有三筆。</p>
+    <p>第一筆，寫在六月的數據公布之前：「觀察金融成分能不能繼續獨力扛住指數。」答案已經揭曉——不能。六月 LEI 轉跌，金融端的正貢獻被消費者預期和建築許可壓過。K 的下半身第一次把整個指數拉下水，框架通過了第一次檢驗。</p>
+    <p>第二筆，是更早之前的判斷：「五月很可能是這一輪通膨的高點」，理由是通膨的動能來自能源脈衝而非全面擴散。六月 CPI 大幅回落驗證了這個方向——但誠實地說，細項裡住房通膨也同步降溫到月增 0.1%，這削弱了原先「住房具有僵固性」的那條推論支腳。方向對了，理由只對了一半，帳本上照實記下。</p>
+    <p>第三筆，還開著，押在 8 月 20 日——下一次 LEI 公布的日子。命題是這樣的：如果七月的數據顯示消費者預期明顯回升、而金融成分維持強勢，那麼 K 型分歧的故事需要軟化，六月 CPI 的能源降溫可能真的傳導到了家庭的心理層面；反過來，如果油價的再度走高吃掉了這份喘息、消費者預期的反彈曇花一現，那麼 K 型結構就還在原地，七月密大信心調查的跳升只是錨點重設的相對感受。</p>
+    <p>到了那一天，我們不需要等任何人的解讀。打開報告，就知道要看哪三個地方：<span class="hl">擴散指數</span>是否仍在 50 之上、下跌的成分有沒有從兩項開始變多；<span class="hl">消費者預期</span>這個分項是回升還是回落；<span class="hl">六個月變化率</span>的斜率是趨平還是加速惡化。三個數字，五分鐘，我們對這台儀器的理解，就已經超過大多數只讀標題的人。</p>
+    <p>這篇文章到這裡沒有結論，因為結論在 8 月 20 日。這不是偷懶——這是方法本身：判讀景氣從來不是一錘定音的宣告，而是一套「提出可檢驗的命題、等待數據、修正框架」的循環。所以真正該累積的不是對某一期數字的判斷，而是那套判斷的方法；數字每個月都會被新的數字取代，方法不會。</p>
+  </section>
+
+  <div class="closing">
+    <p class="grace">
+      <span class="small">OLD GAUGES, NEW ENGINE</span>
+      儀器沒有壞，是經濟換了引擎。<br>八月二十日，帶著各自的判斷，我們回來對帳。
+    </p>
+  </div>
+
+  <section class="sources">
+    <h2>資料來源</h2>
+    <p class="intro">想自己查證或進一步研究的讀者，本文所有數據都可以在以下公開來源找到原始出處。</p>
+    <p>The Conference Board，美國領先經濟指標（LEI）月報：五月數據於 2026 年 6 月 18 日發布、六月數據於 7 月 20 日發布，新聞稿與技術附註皆可下載。<a href="https://www.conference-board.org/topics/us-leading-indicators" target="_blank" rel="noopener">conference-board.org/topics/us-leading-indicators</a></p>
+    <p>美國勞工統計局（BLS），消費者物價指數（CPI）2026 年 6 月報告，7 月 14 日發布。<a href="https://www.bls.gov/cpi" target="_blank" rel="noopener">bls.gov/cpi</a></p>
+    <p>美國勞工統計局（BLS），就業報告（Employment Situation）與職位空缺調查（JOLTS）。<a href="https://www.bls.gov/empsit" target="_blank" rel="noopener">bls.gov/empsit</a>、<a href="https://www.bls.gov/jlt" target="_blank" rel="noopener">bls.gov/jlt</a></p>
+    <p>密西根大學消費者調查（Surveys of Consumers），2026 年 7 月初值，7 月 17 日發布，主持人 Joanne Hsu。<a href="https://www.sca.isr.umich.edu" target="_blank" rel="noopener">sca.isr.umich.edu</a></p>
+    <p>ISM 服務業採購經理人指數（Services PMI）月報。<a href="https://www.ismworld.org" target="_blank" rel="noopener">ismworld.org</a></p>
+    <p>CME FedWatch 工具，聯邦資金利率期貨隱含的升降息機率。<a href="https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html" target="_blank" rel="noopener">cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html</a></p>
+    <p>聖路易聯邦準備銀行 FRED 資料庫，沙姆法則即時指標（Sahm Rule Recession Indicator）。<a href="https://fred.stlouisfed.org/series/SAHMREALTIME" target="_blank" rel="noopener">fred.stlouisfed.org/series/SAHMREALTIME</a></p>
+    <p>J.P. Morgan Asset Management，Guide to the Markets 2026 年第二季（超大規模雲端業者資本支出預估）。<a href="https://am.jpmorgan.com" target="_blank" rel="noopener">am.jpmorgan.com</a></p>
+    <p>行政院主計總處，115 年第 1 季國民所得統計初步統計（2026 年 5 月 29 日發布，經濟成長率上修至 14.55%，含民間消費與資本形成細項）。<a href="https://www.dgbas.gov.tw" target="_blank" rel="noopener">dgbas.gov.tw</a></p>
+    <p>聯合新聞網，〈感受不到經濟成長的溫度？李鎮宇：史上首見投資與消費反向〉，2026 年 7 月 23 日。<a href="https://udn.com/news/story/7238/9646299" target="_blank" rel="noopener">udn.com/news/story/7238/9646299</a></p>
+    <p>關於參照點依賴與展望理論，可讀 Daniel Kahneman 的《快思慢想》（Thinking, Fast and Slow）。</p>
+  </section>
+
+  <nav class="pager">
+    <a class="next" href="taiwan-low-inflation.html"><span class="dir">下一篇 →</span><span class="pt">通膨去哪了？台灣 CPI 不到 2% 的機制與帳單</span></a>
+  </nav>
+
+  <div class="foot">
+    <div class="dot"></div>
+    <a href="index.html">← 回目錄</a>　法蘭的學習筆記｜投資筆記
+    <span class="note">本文為個人學習筆記與分析，不構成投資建議。</span>
+  </div>
+
+</article>
+</body>
+</html>
