@@ -26,6 +26,7 @@
     --growth:#B07A2E;      /* 成長雜記：琥珀金 */
     --invest:#0E3F6E;      /* 投資筆記：Berkeley 深藍（提亮）*/
     --movie:#7F1D2A;       /* 電影筆記：酒紅 */
+    --weekly:#4A5560;      /* 市場週報：石墨灰藍 */
     --hair:rgba(35,40,43,0.12);
     --serif:"Noto Serif TC",serif;
     --sans:"Noto Sans TC",sans-serif;
@@ -74,6 +75,24 @@
     a.post .t{ font-size:1.05rem; }
   }
 
+  /* ---------- weekly entry card ---------- */
+  .weekly-card{ display:flex; align-items:center; gap:1rem; margin:2rem 0 0; padding:1.2rem 1.4rem; background:rgba(74,85,96,0.07); border:1px solid rgba(74,85,96,0.22); border-radius:12px; text-decoration:none; color:var(--ink); transition:background 0.2s ease; }
+  .weekly-card:hover{ background:rgba(74,85,96,0.12); }
+  .weekly-card .wk-badge{ font-family:var(--mono); font-size:0.6rem; letter-spacing:0.16em; color:#F5F0E7; background:var(--weekly); padding:0.28rem 0.62rem; border-radius:999px; white-space:nowrap; }
+  .weekly-card .wk-body{ flex:1; }
+  .weekly-card .wk-t{ display:block; font-family:var(--serif); font-weight:600; font-size:1.08rem; line-height:1.4; color:var(--weekly); }
+  .weekly-card .wk-d{ display:block; font-size:0.82rem; color:var(--ink-soft); font-weight:300; line-height:1.65; margin-top:0.2rem; }
+  .weekly-card .wk-arrow{ font-family:var(--mono); color:var(--weekly); font-size:1rem; }
+  .weekly-card.is-hidden{ display:none; }
+
+  /* ---------- pagination ---------- */
+  .pagination{ display:flex; align-items:center; justify-content:center; gap:1.1rem; margin:2.2rem 0 0; }
+  .pagination.is-hidden{ display:none; }
+  .pagination button{ font-family:var(--mono); font-size:0.7rem; letter-spacing:0.12em; color:var(--ink-soft); background:none; border:1px solid var(--hair); border-radius:999px; padding:0.42rem 0.95rem; cursor:pointer; transition:border-color 0.2s ease, color 0.2s ease; }
+  .pagination button:hover:not(:disabled){ border-color:var(--faint); color:var(--ink); }
+  .pagination button:disabled{ opacity:0.35; cursor:default; }
+  .pagination .pg-status{ font-family:var(--mono); font-size:0.66rem; letter-spacing:0.12em; color:var(--faint); }
+
   /* ---------- subscribe ---------- */
   .subscribe{ margin-top:4rem; padding:2rem 1.6rem; background:rgba(33,107,120,0.06); border:1px solid rgba(33,107,120,0.18); border-radius:12px; text-align:center; }
   .subscribe h2{ font-family:var(--serif); font-weight:600; font-size:1.2rem; color:var(--knowledge); margin:0 0 0.5rem; }
@@ -87,10 +106,13 @@
     :root{
       --paper:#1A1712; --ink:#ECE6D9; --ink-soft:#B7AF9F; --faint:#8C8474;
       --hair:rgba(236,230,217,0.14);
-      --knowledge:#5AA8B5; --growth:#D9A24B; --invest:#5C93D6; --movie:#C64A52;
+      --knowledge:#5AA8B5; --growth:#D9A24B; --invest:#5C93D6; --movie:#C64A52; --weekly:#9BA6B2;
     }
     a.post .cat{ color:#15120D; }
     a.post:hover{ background:rgba(236,230,217,0.05); }
+    .weekly-card{ background:rgba(155,166,178,0.12); border-color:rgba(155,166,178,0.30); }
+    .weekly-card:hover{ background:rgba(155,166,178,0.18); }
+    .weekly-card .wk-badge{ color:#15120D; }
     .subscribe{ background:rgba(90,168,181,0.10); border-color:rgba(90,168,181,0.28); }
     .subscribe iframe{ border-color:rgba(236,230,217,0.18); }
   }
@@ -105,6 +127,7 @@
   .tabs button.active[data-tab="i"]{ background:var(--invest); }
   .tabs button.active[data-tab="g"]{ background:var(--growth); }
   .tabs button.active[data-tab="m"]{ background:var(--movie); }
+  .tabs button.active[data-tab="w"]{ background:var(--weekly); }
   @media (prefers-color-scheme: dark){
     .tabs button.active{ color:#15120D; }
   }
@@ -121,11 +144,21 @@
 
   <nav class="tabs">
     <button type="button" class="active" data-tab="all">全部</button>
-    <button type="button" data-tab="k">知識解碼</button>
+    <button type="button" data-tab="w">市場週報</button>
     <button type="button" data-tab="i">投資筆記</button>
     <button type="button" data-tab="g">成長雜記</button>
     <button type="button" data-tab="m">電影筆記</button>
+    <button type="button" data-tab="k">知識解碼</button>
   </nav>
+
+  <a class="weekly-card" id="weeklyCard" href="weekly/index.html">
+    <span class="wk-badge">每週更新</span>
+    <span class="wk-body">
+      <span class="wk-t">市場週報</span>
+      <span class="wk-d">每週回顧美股與台股的關鍵事件，提煉一條主軸，留下可檢驗的推演。</span>
+    </span>
+    <span class="wk-arrow">→</span>
+  </a>
 
   <!-- 一篇文章 = 一個 <li>，最新的排最上面。
        data-cat 決定牌卡過濾與標籤顏色：k 知識解碼 / i 投資筆記 / g 成長雜記 / m 電影筆記 -->
@@ -241,6 +274,12 @@
 
   </ul>
 
+  <nav class="pagination is-hidden" id="pagination" aria-label="文章分頁">
+    <button type="button" class="pg-prev" disabled>← 上一頁</button>
+    <span class="pg-status">第 1 / 1 頁</span>
+    <button type="button" class="pg-next">下一頁 →</button>
+  </nav>
+
   <section class="subscribe">
     <h2>訂閱新文章</h2>
     <p>Email 訂閱即將開放。<br>近期會提供留下信箱、新文章一發佈就通知你的方式，敬請期待。</p>
@@ -262,23 +301,50 @@
 </main>
 <script>
 (function(){
-  // 分類牌卡：逐篇過濾。點某一類就只留下該類文章，順序仍照時間軸。
+  // 分類牌卡 + 分頁：每頁 5 篇，過濾後重新分頁，切系列回到第 1 頁。
+  var PAGE_SIZE = 5;
   var tabs  = document.querySelectorAll('.tabs button');
-  var items = document.querySelectorAll('ul.posts > li');
+  var items = Array.prototype.slice.call(document.querySelectorAll('ul.posts > li'));
+  var wk    = document.getElementById('weeklyCard');
+  var pager = document.getElementById('pagination');
+  var prevBtn = pager && pager.querySelector('.pg-prev');
+  var nextBtn = pager && pager.querySelector('.pg-next');
+  var pgStat  = pager && pager.querySelector('.pg-status');
+  var current = 'all', page = 1;
+
+  function render(){
+    var filtered = items.filter(function(li){
+      return current === 'all' || li.getAttribute('data-cat') === current;
+    });
+    var totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+    if (page > totalPages) page = totalPages;
+    var start = (page - 1) * PAGE_SIZE;
+    items.forEach(function(li){ li.classList.add('is-hidden'); });
+    filtered.slice(start, start + PAGE_SIZE).forEach(function(li){ li.classList.remove('is-hidden'); });
+    if (wk) wk.classList.toggle('is-hidden', !(current === 'all' || current === 'w'));
+    if (pager){
+      if (totalPages <= 1) { pager.classList.add('is-hidden'); }
+      else {
+        pager.classList.remove('is-hidden');
+        pgStat.textContent = '第 ' + page + ' / ' + totalPages + ' 頁';
+        prevBtn.disabled = (page === 1);
+        nextBtn.disabled = (page === totalPages);
+      }
+    }
+  }
+
   tabs.forEach(function(tab){
     tab.addEventListener('click', function(){
       tabs.forEach(function(t){ t.classList.remove('active'); });
       tab.classList.add('active');
-      var target = tab.getAttribute('data-tab');
-      items.forEach(function(li){
-        if (target === 'all' || li.getAttribute('data-cat') === target) {
-          li.classList.remove('is-hidden');
-        } else {
-          li.classList.add('is-hidden');
-        }
-      });
+      current = tab.getAttribute('data-tab');
+      page = 1;
+      render();
     });
   });
+  if (prevBtn) prevBtn.addEventListener('click', function(){ if (page > 1){ page--; render(); window.scrollTo({ top: 0, behavior: 'smooth' }); } });
+  if (nextBtn) nextBtn.addEventListener('click', function(){ page++; render(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+  render();
 
   // 未讀圓點：文章被點開過就記在本機，回首頁後該篇圓點消失；新文章預設未讀。
   var READ_KEY = 'fn:read';

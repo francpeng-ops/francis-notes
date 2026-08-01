@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HR79WVR1T3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HR79WVR1T3');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>市場週報 W31｜獎勵 AI 收入、懲罰 AI 支出</title>
+<link rel="canonical" href="https://francpeng-ops.github.io/francis-notes/weekly/2026-w31.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     投資筆記 · 市場週報 — 本檔為週報系列參照母版
+     版型基底沿用投資筆記排版，主色改石墨灰藍 #4A5560，視覺重量降一級：
+     hero 縮小、加 .numstrip 數字列、.checkrow 檢核列、.watch 觀察清單
+     ============================================================ */
+  :root{
+    --paper:#F5F0E7;
+    --ink:#23282B;
+    --ink-soft:#4E575B;
+    --faint:#8C969A;
+    --accent:#4A5560;          /* 市場週報：石墨灰藍 */
+    --accent-soft:#5E6A76;
+    --hair:rgba(35,40,43,0.12);
+    --serif:"Noto Serif TC",serif;
+    --sans:"Noto Sans TC",sans-serif;
+    --mono:ui-monospace,"SF Mono",Menlo,monospace;
+  }
+  *{box-sizing:border-box;}
+  html{ -webkit-text-size-adjust:100%; }
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--sans); font-weight:400; line-height:2.0;
+    letter-spacing:0.02em; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  .wrap{ max-width:39rem; margin:0 auto; padding:0 1.5rem 5rem; opacity:0; animation:rise 0.9s ease-out 0.05s forwards; }
+  @keyframes rise{ from{opacity:0;transform:translateY(10px);} to{opacity:1;transform:translateY(0);} }
+  @media (prefers-reduced-motion:reduce){ .wrap{animation:none;opacity:1;} }
+
+  .topnav{ padding-top:1.6rem; display:flex; justify-content:space-between; }
+  .topnav a{ font-family:var(--mono); font-size:0.72rem; letter-spacing:0.16em; color:var(--accent); text-decoration:none; }
+  .topnav a:hover{ opacity:0.65; }
+
+  /* 週報 hero：比長文縮小一級 */
+  .hero{ padding:2.8rem 0 1.8rem; text-align:center; }
+  .hero .kicker{ font-weight:500; font-size:0.72rem; letter-spacing:0.24em; color:var(--accent); margin:0 0 1.2rem; }
+  .hero h1{ font-family:var(--serif); font-weight:700; font-size:1.62rem; line-height:1.55; letter-spacing:0.03em; margin:0 0 0.8rem; }
+  .hero .sub{ font-family:var(--mono); font-size:0.72rem; color:var(--faint); letter-spacing:0.16em; font-weight:300; margin:0; }
+
+  /* 時效聲明 */
+  .asof{ text-align:center; font-family:var(--mono); font-size:0.64rem; letter-spacing:0.14em; color:var(--faint); margin:0 0 1.8rem; }
+
+  .tldr{ margin:0.5rem 0 0; padding:1.4rem 1.5rem 1.5rem; background:rgba(74,85,96,0.06); border:1px solid rgba(74,85,96,0.18); border-left:4px solid var(--accent); border-radius:4px; }
+  .tldr .label{ font-family:var(--mono); font-size:0.66rem; letter-spacing:0.24em; color:var(--accent); margin:0 0 0.7rem; }
+  .tldr p{ font-size:0.99rem; line-height:1.95; margin:0; color:var(--ink); }
+
+  /* 關鍵數字列 */
+  .numstrip{ display:grid; grid-template-columns:repeat(4,1fr); gap:0.6rem; margin:1.4rem 0 0; }
+  .numstrip .cell{ padding:0.85rem 0.5rem 0.8rem; border:1px solid var(--hair); border-radius:4px; text-align:center; }
+  .numstrip .lab{ font-family:var(--mono); font-size:0.6rem; letter-spacing:0.1em; color:var(--faint); margin:0 0 0.35rem; }
+  .numstrip .val{ font-family:var(--serif); font-weight:600; font-size:1.02rem; line-height:1.3; color:var(--ink); margin:0; }
+  .numstrip .chg{ font-family:var(--mono); font-size:0.62rem; letter-spacing:0.06em; color:var(--accent); margin:0.3rem 0 0; }
+
+  section{ margin-top:3rem; }
+  h2{ font-family:var(--serif); font-weight:600; font-size:1.22rem; line-height:1.6; letter-spacing:0.03em; margin:0 0 1.1rem; padding-bottom:0.5rem; border-bottom:1px solid var(--hair); }
+  p{ font-size:1.0625rem; margin:0 0 1.4em; color:var(--ink); }
+  p:last-child{ margin-bottom:0; }
+
+  .en{ font-family:var(--serif); font-style:italic; letter-spacing:0.01em; }
+  .strong{ font-weight:500; color:var(--ink); }
+  .hl{ font-style:normal; font-weight:500; color:var(--ink); background:linear-gradient(transparent 62%, rgba(74,85,96,0.16) 62%); }
+
+  /* 一週時間軸表格 */
+  .framework{ margin:1.6rem 0 0; overflow-x:auto; }
+  table{ width:100%; border-collapse:collapse; font-size:0.86rem; line-height:1.75; }
+  thead th{ font-family:var(--mono); font-size:0.64rem; letter-spacing:0.12em; font-weight:500; color:#F5F0E7; background:var(--accent); padding:0.55rem 0.7rem; text-align:left; }
+  tbody td{ padding:0.6rem 0.7rem; border-bottom:1px solid var(--hair); vertical-align:top; color:var(--ink-soft); }
+  tbody td:first-child{ font-family:var(--mono); font-size:0.72rem; letter-spacing:0.06em; color:var(--ink); white-space:nowrap; }
+  tbody tr:nth-child(even){ background:rgba(74,85,96,0.05); }
+
+  .aside{ margin:1.6rem 0 0; padding:0.9rem 1.1rem; background:rgba(74,85,96,0.05); border-radius:4px; font-size:0.86rem; line-height:1.85; color:var(--ink-soft); }
+  .aside .lab{ font-weight:500; color:var(--accent); }
+
+  /* 上週檢核列 */
+  .checkrow{ margin:1.4rem 0 0; padding:0; list-style:none; }
+  .checkrow li{ padding:0.7rem 0 0.7rem 1.1rem; border-left:3px solid var(--hair); margin-bottom:0.6rem; font-size:0.94rem; line-height:1.9; color:var(--ink-soft); }
+  .checkrow li .verdict{ font-family:var(--mono); font-size:0.64rem; letter-spacing:0.12em; color:var(--accent); display:block; margin-bottom:0.15rem; }
+
+  /* 下週觀察清單：每條一個可檢驗的條件句 */
+  .watch{ margin:1.4rem 0 0; padding:0; list-style:none; counter-reset:w; }
+  .watch li{ position:relative; counter-increment:w; padding:0.85rem 0 0.85rem 2.3rem; border-top:1px solid var(--hair); font-size:0.97rem; line-height:1.95; }
+  .watch li:first-child{ border-top:none; }
+  .watch li::before{ content:counter(w,decimal-leading-zero); position:absolute; left:0; top:1.05rem; font-family:var(--mono); font-size:0.68rem; letter-spacing:0.08em; color:var(--accent); }
+  .watch .cue{ font-weight:500; color:var(--ink); }
+
+  .pull{ margin:2.5rem 0; padding:0 0 0 1.2rem; border-left:3px solid var(--accent-soft); }
+  .pull p{ font-family:var(--serif); font-weight:500; font-size:1.18rem; line-height:1.8; letter-spacing:0.02em; color:var(--ink); margin:0; }
+
+  .sources h2{ font-size:1.0rem; }
+  .sources ul{ list-style:none; margin:0.2rem 0 0; padding:0; }
+  .sources li{ font-size:0.8rem; line-height:1.85; color:var(--faint); padding:0.5rem 0; border-top:1px solid var(--hair); }
+  .sources li:first-child{ border-top:none; padding-top:0; }
+
+  .pager{ display:flex; justify-content:space-between; gap:1.2rem; margin-top:4rem; padding-top:1.6rem; border-top:1px solid var(--hair); }
+  .pager a{ text-decoration:none; color:var(--accent); max-width:48%; }
+  .pager .next{ text-align:right; margin-left:auto; }
+  .pager .dir{ font-family:var(--mono); font-size:0.66rem; letter-spacing:0.14em; }
+  .pager .pt{ display:block; font-family:var(--serif); font-weight:500; font-size:0.95rem; line-height:1.45; color:var(--ink-soft); margin-top:0.35rem; }
+  .pager a:hover .pt{ color:var(--ink); }
+
+  .foot{ margin-top:3.5rem; text-align:center; color:var(--faint); font-size:0.78rem; letter-spacing:0.16em; }
+  .foot .dot{ width:4px; height:4px; border-radius:50%; background:var(--accent); opacity:0.7; margin:0 auto 1.4rem; }
+  .foot a{ color:var(--accent); text-decoration:none; }
+  .foot .note{ display:block; margin-top:0.8rem; font-size:0.7rem; letter-spacing:0.1em; line-height:1.9; }
+
+  @media (max-width:430px){
+    .hero{ padding:2.2rem 0 1.5rem; }
+    .hero h1{ font-size:1.42rem; }
+    .numstrip{ grid-template-columns:repeat(2,1fr); }
+    table{ font-size:0.8rem; } thead th, tbody td{ padding:0.45rem 0.5rem; }
+    .pull p{ font-size:1.1rem; }
+  }
+
+  :root{ color-scheme: light dark; }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --paper:#16161B; --ink:#E8E6DF; --ink-soft:#B2B0AA; --faint:#85838C;
+      --hair:rgba(232,230,223,0.14); --accent:#9BA6B2; --accent-soft:#B3BCC6;
+    }
+    .hl{ background:linear-gradient(transparent 62%, rgba(155,166,178,0.32) 62%); }
+    thead th{ color:#15151A; }
+    tbody tr:nth-child(even){ background:rgba(155,166,178,0.10); }
+    .tldr{ background:rgba(155,166,178,0.10); border-color:rgba(155,166,178,0.30); }
+    .aside{ background:rgba(155,166,178,0.08); }
+    .foot a{ color:var(--accent) !important; }
+  }
+</style>
+</head>
+<body>
+<article class="wrap">
+  <div class="topnav">
+    <a href="../index.html">← 回目錄</a>
+    <a href="index.html">週報各期</a>
+  </div>
+
+  <header class="hero">
+    <div class="kicker">投資筆記 · 市場週報</div>
+    <h1>獎勵 AI 收入、懲罰 AI 支出</h1>
+    <p class="sub">2026 W31 · 07.27 – 07.31 · 超級財報週</p>
+  </header>
+
+  <p class="asof">數據截至 2026/07/31 收盤 · 本頁為當週市場快照</p>
+
+  <div class="tldr">
+    <p class="label">本週一句話</p>
+    <p>市場用真金白銀替 AI 敘事重新定價：<span class="strong">收到 AI 錢的（Microsoft、Amazon、台積電）被獎勵，替 AI 付錢的（Meta、Tesla、Apple）被懲罰</span>。台股在同一週內先寫下史上第 3 大單日跌點、再寫下史上最大單日漲點，以 V 型反轉收官——但七月月線仍收黑，這是修復，還不是新高。</p>
+  </div>
+
+  <div class="numstrip">
+    <div class="cell"><p class="lab">標普 500</p><p class="val">7,489.72</p><p class="chg">週 +1.0%</p></div>
+    <div class="cell"><p class="lab">那斯達克 100</p><p class="val">28,274.20</p><p class="chg">週 +0.5%</p></div>
+    <div class="cell"><p class="lab">台股加權</p><p class="val">約 43,119</p><p class="chg">週 −1.2%｜五 +8%</p></div>
+    <div class="cell"><p class="lab">台積電 2330</p><p class="val">2,425</p><p class="chg">週五漲停 +220</p></div>
+  </div>
+
+  <section>
+    <h2>一週時間軸</h2>
+    <div class="framework">
+      <table>
+        <thead><tr><th>日期</th><th>美股</th><th>台股</th><th>當日一件事</th></tr></thead>
+        <tbody>
+          <tr><td>7/27 一</td><td>標普 +0.0%</td><td>43,634（−0.05%）</td><td>美伊暫停打擊、WTI 暴跌 7%；Nvidia 因中國競爭疑慮跌 5%</td></tr>
+          <tr><td>7/28 二</td><td>標普 +0.2%<br>那指100 −1.0%</td><td>41,603（−4.65%）</td><td>亞洲晶片股災：KOSPI 熔斷 −10%，台股單日重挫 2,031 點</td></tr>
+          <tr><td>7/29 三</td><td>標普 −1.5%</td><td>40,039（−3.76%）</td><td>Fed 鷹派按兵不動，道瓊崩 1,100 點、30 年期美債殖利率升至約 5.24%；盤後 Microsoft 大勝、Meta 大失</td></tr>
+          <tr><td>7/30 四</td><td>標普 +1.7%<br>那指100 +3.4%</td><td>39,933（−0.2%）</td><td>Microsoft 暴漲 15.6%；台股單日振幅 1,700 點；盤後 Amazon 大勝、Apple 挫</td></tr>
+          <tr><td>7/31 五</td><td>標普 +0.7%</td><td>約 43,119（+8%）</td><td>台股暴漲 3,186 點、台積電漲停；KOSPI 反彈 17.9%；Amazon +15%、Apple −7.3%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="aside"><span class="lab">數據備註：</span>台股「史上第 3 大跌點」「史上最大漲點」與 KOSPI「史上最大漲幅」等紀錄級描述，以各交易所官方統計為準。美股週漲跌以 7/24 收盤為基準；台股七月全月下跌 3,006 點。</div>
+  </section>
+
+  <section>
+    <h2>本週主軸：AI 敘事的重新定價</h2>
+    <p>如果這週只能記住一件事，是這條分界線：<span class="hl">同樣的 AI 故事，市場開始問你站在收錢的一側，還是付錢的一側</span>。</p>
+    <p>過去兩年，AI 是「敘事定價」——只要沾上邊，本益比就往上給。這週的超級財報一口氣把定價邏輯切換成「現金流定價」。Azure 年化營收首度突破千億美元，Microsoft 單日漲 15.6%；AWS 獲利大勝，Amazon 漲 15%。市場獎勵的不是「有 AI 題材」，是「AI 已經收到錢」。反過來，Meta 財報顯示 AI 支出吞掉獲利、Alphabet 上調資本支出、Tesla 宣示大支出年、Apple 被記憶體漲價侵蝕毛利——同一個 AI 浪潮，站在付錢那一側，帳面數字再漂亮也被賣。Intel 大勝後隔日反殺，更說明這不是個股新聞，是整個定價框架在換檔。</p>
+    <p>台股的史詩級 V 轉是同一條邏輯的延伸：賣鏟子的人站在收入方。週二週三的兆元天量與融資餘額驟降，等於把浮動籌碼洗過一輪；週五 Microsoft 與 Amazon 確認雲端 AI 需求為真，台積電漲停、單一檔貢獻大盤逾 1,900 點。但有兩個保留。第一，這是軋空式的修復，不是趨勢的重啟——七月月線仍收黑 3,006 點，外資週五仍在賣。第二，這條分界線是在高折現率底下畫的：<span class="strong">30 年期美債殖利率還掛在數十年高檔</span>，如果長端再往上，連收入方的本益比都會被壓。這週市場回答了「AI 需求是不是真的」，還沒回答「在這個利率水位，它值多少錢」。</p>
+  </section>
+
+  <section>
+    <h2>上週檢核</h2>
+    <p>本期為創刊號，沒有上週清單可以對答案。下面的觀察清單就是第一份基準——下週開始，每期第一件事是回頭檢核這份清單的落點，說對說錯都留在紀錄上。</p>
+  </section>
+
+  <section>
+    <h2>下週觀察清單</h2>
+    <ul class="watch">
+      <li><span class="cue">台股 43,000 與外資動向。</span>若外資由賣轉買且指數站穩 43,000，V 轉可升級為趨勢修復；若外資續賣，週五的暴漲就只是軋空反彈，追高風險大。</li>
+      <li><span class="cue">30 年期美債殖利率。</span>若自 5.24% 附近回落到 5% 以下，風險資產的估值壓力鬆綁；若續創新高，這週的反彈邏輯會被折現率直接沒收。</li>
+      <li><span class="cue">記憶體漲價的雙面刃。</span>對南亞科、華邦電是營收題材，對 Apple 等品牌是成本壓力。若下週更多硬體品牌下修毛利指引，「收入方 vs 支出方」的分界線會從 AI 延伸到整條供應鏈。</li>
+      <li><span class="cue">美伊與油價。</span>暫停打擊後又見零星空襲，Brent 徘徊高檔。若荷莫茲再度受威脅，通膨敘事回歸，Fed 的鷹派就從「風險」變成「基準」。</li>
+      <li><span class="cue">財報季下半場。</span>留意醫療、金融、能源等非科技板塊的相對強勢是否延續——這決定資金是在板塊間輪動，還是正在離場。</li>
+    </ul>
+  </section>
+
+  <section class="sources">
+    <h2>資料來源</h2>
+    <ul>
+      <li>各指數收盤與個股行情：Yahoo Finance、CNBC、Robinhood 行情數據（2026/07/27–07/31）</li>
+      <li>財報數據：Microsoft、Amazon、Meta、Apple、Alphabet、Tesla、Intel 各公司財報與法說（2026 年 7 月下旬）</li>
+      <li>Fed 決策與 30 年期殖利率：FOMC 聲明（2026/07/29）與美國公債市場行情</li>
+      <li>台股統計：台灣證券交易所；相關報導見聯合新聞網、鉅亨網、中央社</li>
+    </ul>
+  </section>
+
+  <nav class="pager">
+    <!-- 下一期發佈後，在此加上 next 連結；本期為創刊號無 prev -->
+  </nav>
+
+  <div class="foot">
+    <div class="dot"></div>
+    <a href="../index.html">← 回目錄</a>　法蘭西斯的學習筆記｜投資筆記 · 市場週報
+    <span class="note">本週報彙整自公開市場資訊，為個人學習筆記與分析，不構成投資建議；實際數據以各交易所官方公布為準。</span>
+  </div>
+
+</article>
+</body>
+</html>
