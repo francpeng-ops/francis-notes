@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'rss.xml'
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -42,7 +43,7 @@ jobs:
           PY
 
       - name: 廣播新文章通知
-        if: steps.check.outputs.is_new == 'true'
+        if: steps.check.outputs.is_new == 'true' || github.event_name == 'workflow_dispatch'
         env:
           LINE_TOKEN: ${{ secrets.LINE_CHANNEL_ACCESS_TOKEN }}
         run: |
