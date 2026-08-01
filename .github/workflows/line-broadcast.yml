@@ -1,0 +1,71 @@
+name: LINE 新文章推播
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'rss.xml'
+
+permissions:
+  contents: read
+
+jobs:
+  broadcast:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: 確認 rss.xml 最新一篇是否為新文章
+        id: check
+        run: |
+          python3 - <<'PY'
+          import xml.etree.ElementTree as ET
+          import subprocess, os
+
+          def first_guid(xml_text):
+              root = ET.fromstring(xml_text)
+              item = root.find('channel').find('item')
+              return item.find('guid').text if item is not None else None
+
+          new_guid = first_guid(open('rss.xml', encoding='utf-8').read())
+          try:
+              old_xml = subprocess.check_output(['git', 'show', 'HEAD~1:rss.xml'], text=True)
+              old_guid = first_guid(old_xml)
+          except Exception:
+              old_guid = None
+
+          is_new = new_guid != old_guid
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+              f.write(f"is_new={'true' if is_new else 'false'}\n")
+          PY
+
+      - name: 廣播新文章通知
+        if: steps.check.outputs.is_new == 'true'
+        env:
+          LINE_TOKEN: ${{ secrets.LINE_CHANNEL_ACCESS_TOKEN }}
+        run: |
+          python3 - <<'PY'
+          import xml.etree.ElementTree as ET
+          import os, json, urllib.request
+
+          root = ET.parse('rss.xml').getroot()
+          item = root.find('channel').find('item')
+          title = item.find('title').text
+          desc = item.find('description').text
+          link = item.find('link').text
+
+          message = f"新文章上線：{title}\n\n{desc}\n\n{link}"
+          req = urllib.request.Request(
+              'https://api.line.me/v2/bot/message/broadcast',
+              data=json.dumps({"messages":[{"type":"text","text":message}]}).encode('utf-8'),
+              headers={
+                  'Content-Type': 'application/json',
+                  'Authorization': f"Bearer {os.environ['LINE_TOKEN']}"
+              },
+              method='POST'
+          )
+          with urllib.request.urlopen(req) as resp:
+              print(resp.status, resp.read().decode())
+          PY
