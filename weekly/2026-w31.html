@@ -131,6 +131,13 @@
     .pull p{ font-size:1.1rem; }
   }
 
+  .line-entry{ margin:3.2rem auto 0; padding:1.6rem 1.8rem; max-width:34rem; text-align:center;
+    border:1px solid var(--hair); border-radius:12px; }
+  .line-entry .t{ font-family:"Noto Serif TC",serif; font-size:1.02rem; margin:0 0 0.4rem; color:var(--ink); }
+  .line-entry .d{ font-size:0.86rem; color:var(--ink-soft); line-height:1.8; margin:0 0 1rem; }
+  .line-entry .btn{ display:inline-block; padding:0.55rem 1.3rem; border-radius:999px;
+    background:#06C755; color:#fff; font-size:0.86rem; text-decoration:none; letter-spacing:0.05em; }
+
   :root{ color-scheme: light dark; }
   @media (prefers-color-scheme: dark){
     :root{
@@ -143,6 +150,8 @@
     .tldr{ background:rgba(155,166,178,0.10); border-color:rgba(155,166,178,0.30); }
     .aside{ background:rgba(155,166,178,0.08); }
     .foot a{ color:var(--accent) !important; }
+    .line-entry{ border-color:rgba(232,230,223,0.14); }
+    .line-entry .btn{ background:#06C755; color:#fff; }
   }
 </style>
 </head>
@@ -226,6 +235,12 @@
   <nav class="pager">
     <!-- 下一期發佈後，在此加上 next 連結；本期為創刊號無 prev -->
   </nav>
+
+  <div class="line-entry">
+    <p class="t">每週更新，直接聊</p>
+    <p class="d">加入 LINE 接收每週推播，讀完有想法，回覆訊息就是留言。</p>
+    <a class="btn" href="https://lin.ee/ZKl2GV5" target="_blank" rel="noopener">加入 LINE 好友 →</a>
+  </div>
 
   <div class="foot">
     <div class="dot"></div>
