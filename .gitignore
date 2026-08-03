@@ -1,2 +1,7 @@
 .claude/
 .DS_Store
+
+# 個人帳戶紀錄與作廢舊格式報告，切勿推上公開 repo
+_drafts/portfolio/
+_drafts/archive_舊格式/
+_drafts/weekly/daily/
