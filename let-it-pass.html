@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HR79WVR1T3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HR79WVR1T3');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>幸運會經過，煩惱也會｜同一個技巧，兩種用法</title>
+<link rel="canonical" href="https://francpeng-ops.github.io/francis-notes/let-it-pass.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F5F0E7;
+    --ink:#2A2520;
+    --ink-soft:#5A5247;
+    --faint:#9A9082;
+    --accent:#B07A2E;
+    --hair:rgba(42,37,32,0.12);
+    --serif:"Noto Serif TC",serif;
+    --sans:"Noto Sans TC",sans-serif;
+    --mono:ui-monospace,"SF Mono",Menlo,monospace;
+  }
+
+  *{box-sizing:border-box;}
+
+  html{ -webkit-text-size-adjust:100%; }
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-weight:400;
+    line-height:2.0;
+    letter-spacing:0.02em;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+
+  .wrap{
+    max-width:39rem;
+    margin:0 auto;
+    padding:0 1.5rem 5rem;
+    opacity:0;
+    animation:rise 0.9s ease-out 0.05s forwards;
+  }
+
+  @keyframes rise{
+    from{opacity:0;transform:translateY(10px);}
+    to{opacity:1;transform:translateY(0);}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .wrap{animation:none;opacity:1;}
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    padding:5rem 0 3.25rem;
+    text-align:center;
+  }
+  .hero .kicker{
+    font-family:var(--sans);
+    font-weight:500;
+    font-size:0.74rem;
+    letter-spacing:0.26em;
+    color:var(--accent);
+    margin:0 0 1.7rem;
+  }
+  .hero h1{
+    font-family:var(--serif);
+    font-weight:700;
+    font-size:2.05rem;
+    line-height:1.45;
+    letter-spacing:0.04em;
+    margin:0 0 1.1rem;
+  }
+  .hero .sub{
+    font-size:0.92rem;
+    color:var(--ink-soft);
+    letter-spacing:0.12em;
+    font-weight:300;
+    margin:0;
+  }
+
+  /* ---------- lead ---------- */
+  .lead p{
+    font-size:1.06rem;
+    margin:0 0 1.55em;
+  }
+  .lead p:first-child{ margin-top:0; }
+  .lead .opening{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:1.5rem;
+    line-height:1.6;
+    letter-spacing:0.03em;
+    color:var(--ink);
+    margin-bottom:1.55em;
+  }
+
+  /* ---------- sections ---------- */
+  section{ margin-top:3.75rem; }
+
+  h2{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:1.32rem;
+    line-height:1.6;
+    letter-spacing:0.03em;
+    margin:0 0 1.3rem;
+  }
+
+  p{
+    font-size:1.0625rem;
+    margin:0 0 1.5em;
+    color:var(--ink);
+  }
+  p:last-child{ margin-bottom:0; }
+
+  .en{ font-family:var(--serif); font-style:italic; letter-spacing:0.01em; }
+
+  .strong{ font-weight:500; color:var(--ink); }
+
+  .hl{
+    font-style:normal;
+    font-weight:500;
+    color:var(--ink);
+    background:linear-gradient(transparent 62%, rgba(176,122,46,0.18) 62%);
+  }
+
+  /* ---------- single pull quote ---------- */
+  .pull{
+    margin:2.75rem 0;
+    padding:0;
+    text-align:center;
+  }
+  .pull p{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:1.42rem;
+    line-height:1.75;
+    letter-spacing:0.04em;
+    color:var(--ink);
+    margin:0;
+  }
+
+  /* ---------- closing (signature glow) ---------- */
+  .closing{
+    position:relative;
+    margin-top:5rem;
+    padding:5.5rem 1rem;
+    text-align:center;
+    overflow:hidden;
+  }
+  .closing::before{
+    content:"";
+    position:absolute;
+    left:50%;top:46%;
+    width:min(120%,30rem);height:30rem;
+    transform:translate(-50%,-50%);
+    background:radial-gradient(circle,
+      rgba(243,219,165,0.85) 0%,
+      rgba(243,219,165,0.35) 32%,
+      rgba(245,240,231,0) 68%);
+    z-index:0;
+  }
+  .closing .grace{
+    position:relative;z-index:1;
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:1.72rem;
+    line-height:1.7;
+    letter-spacing:0.1em;
+    margin:0;
+  }
+  .closing .grace .small{
+    display:block;
+    font-family:var(--mono);
+    font-size:0.68rem;
+    letter-spacing:0.28em;
+    color:var(--accent);
+    margin-bottom:1.4rem;
+    font-weight:400;
+  }
+
+  /* ---------- foot ---------- */
+  .foot{
+    margin-top:3.5rem;
+    text-align:center;
+    color:var(--faint);
+    font-size:0.78rem;
+    letter-spacing:0.16em;
+  }
+  .foot .dot{
+    width:4px;height:4px;border-radius:50%;
+    background:var(--accent);opacity:0.7;
+    margin:0 auto 1.4rem;
+  }
+  .foot a{ color:var(--accent); text-decoration:none; }
+
+  @media (max-width:430px){
+    .hero{ padding:3.75rem 0 2.75rem; }
+    .hero h1{ font-size:1.78rem; }
+    .pull p{ font-size:1.26rem; }
+    .closing .grace{ font-size:1.5rem; }
+    .closing{ padding:4.5rem 0.5rem; }
+  }
+
+  /* ---------- top nav + pager (auto-added) ---------- */
+  .topnav{ padding-top:1.6rem; }
+  .topnav a{ font-family:var(--mono); font-size:0.72rem; letter-spacing:0.16em; color:var(--accent); text-decoration:none; }
+  .topnav a:hover{ opacity:0.65; }
+  .topnav + .hero{ padding-top:2.5rem; }
+  .pager{ display:flex; justify-content:space-between; gap:1.2rem; margin-top:4rem; padding-top:1.6rem; border-top:1px solid var(--hair); }
+  .pager a{ text-decoration:none; color:var(--accent); max-width:48%; }
+  .pager .next{ text-align:right; margin-left:auto; }
+  .pager .dir{ font-family:var(--mono); font-size:0.66rem; letter-spacing:0.14em; }
+  .pager .pt{ display:block; font-family:var(--serif); font-weight:500; font-size:0.95rem; line-height:1.45; color:var(--ink-soft); margin-top:0.35rem; }
+  .pager a:hover .pt{ color:var(--ink); }
+
+  /* ---------- inline link (article-specific) ---------- */
+  .lead a, section p a{
+    color:var(--accent);
+    text-decoration:none;
+    border-bottom:1px solid rgba(176,122,46,0.45);
+  }
+  .lead a:hover, section p a:hover{ border-bottom-color:var(--accent); }
+
+  :root{ color-scheme: light dark; }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --paper:#1A1712; --ink:#ECE6D9; --ink-soft:#B7AF9F; --faint:#8C8474;
+      --hair:rgba(236,230,217,0.14); --accent:#D9A24B;
+    }
+    .hl{ background:linear-gradient(transparent 62%, rgba(217,162,75,0.30) 62%); }
+    .lead a, section p a{ border-bottom-color:rgba(217,162,75,0.50); }
+    .dek{ color:var(--ink-soft); }
+    .closing::before{ background:radial-gradient(circle, rgba(217,162,75,0.20) 0%, rgba(217,162,75,0.08) 32%, rgba(26,23,18,0) 68%); }
+    .foot a{ color:var(--accent) !important; }
+  }
+</style>
+</head>
+<body>
+<article class="wrap">
+  <div class="topnav"><a href="index.html">← 回目錄</a></div>
+
+  <header class="hero">
+    <div class="kicker">給自己的成長雜記</div>
+    <h1>幸運會經過，煩惱也會</h1>
+    <p class="sub">從一句別人的口頭禪，到一張罰單——同一個技巧，兩種用法。</p>
+  </header>
+
+  <div class="lead">
+    <p class="opening">前陣子收到一張停車罰單。我在心裡面責怪了自己一下，大概三秒，然後把該處理的處理完，就讓它過去了。</p>
+    <p>它後來還是偶爾冒出來一次，提醒我剛剛損失了一筆錢。但我就像滑手機那樣把它滑過去，沒有停下來，也沒有帶起什麼情緒。事情本身完全沒有改變，罰單就在那裡；改變的是，我沒有在它上面待著。</p>
+    <p>這篇想談的就是這個動作：認出來，給它一個名字，然後放掉。它聽起來很小，但回頭看，它幾乎是我七月過得輕盈的全部原因。<a href="july-2026.html">上一篇月記</a>的最後提過，noting 這個技巧我後來用出了一些心得，值得另外找機會說——這篇就是那個機會。</p>
+    <p>而讓我開始注意到這個動作的，是一句別人的口頭禪。</p>
+  </div>
+
+  <section>
+    <h2>一句別人的口頭禪</h2>
+    <p>事情的起點很輕。我在社群上滑到愛德恩，有些讀者可能認識他，他是「小朋友學投資」的創辦人。他說自己常常把「太幸運了吧」掛在嘴邊。我感覺得出來他是個心懷感激的人，覺得每天都過得很幸福，所以那句話是真的從心裡面冒出來的。他說他發現自己越講越幸運，於是把這個小祕訣分享給大家。</p>
+    <p>我覺得很有趣，於是也想實驗看看會有什麼體驗。生活中每次注意到一個值得感激的時刻，我就在後面接上那句話。某天下午抬頭看到天上出現幻日的時候。發現家附近就有一片狗狗可以下水的海灘、帶 Cali 去玩了一個下午的時候。</p>
+    <p>嚴格說，不是這句話讓我變輕盈的。那陣子我本來就在一個比較鬆、比較能感激的狀態裡，這句話比較像是剛好給了那個狀態一個名字。但它讓我開始想一個問題：當一個人常常把某句話掛在嘴邊，那句話會對他產生什麼影響？</p>
+    <p>然後我又在社群上滑到同一類的內容，問題就更具體了：這到底是什麼樣的心理作用？</p>
+  </section>
+
+  <section>
+    <h2>為什麼越講越幸運</h2>
+    <p>不賣關子先說結論：這裡面沒有解釋不了的事。而且正因為每一層都解釋得清楚，這件事才是可靠的、握在自己手上的。</p>
+    <p>「一直滑到同類內容」這一層可以先放一邊。一半可以用頻率錯覺來解釋，這個詞是語言學家 Arnold Zwicky 在 2005 年提出的：當你剛把一個詞變成對自己有意義的標籤，大腦就開始到處撿它，於是你覺得怎麼全世界都在講這個。另一半是推薦演算法：它看的不只是你按了什麼讚，更看你的停留時間。你多停了幾秒，系統就判定你喜歡這樣的內容，把更多同類的東西送到你眼前。這兩個加起來，解釋了「為什麼一直看到」，但它們跟我真正想問的問題無關。</p>
+    <p>我想問的是：覺得自己「幸運」，對生活會有什麼樣的正面影響？</p>
+    <p>第一個機制是注意力有個設定。感官每天送進來的東西遠超過能處理的量，所以會有一套過濾機制在運作。當你把設定調到「找幸運的證據」，你就會編碼進更多本來就在、只是以前被濾掉的東西。幻日這個現象一直都存在，狗海灘也一直都在，變的不是它們，是我現在會看見、而且會標記它。</p>
+    <p>第二個是正向重評。「太幸運了吧」這句話本身就是一次重新記帳：把一個中性的事件重新讀成正的。這在情緒調節的研究裡是很紮實的一塊。</p>
+    <p>第三個是行為真的變了。心理學家 Richard Wiseman 做過一系列關於「幸運的人」的研究，結論很不浪漫：所謂運氣好的人，不是遇到比較多好事，而是比較放鬆、比較開放、焦慮比較低，所以他們更容易注意到擦身而過的機會，也更敢伸手抓住那些機會。</p>
+    <p>整個迴圈就是：框架變了，人鬆了、心打開了，接住更多本來就會經過的機會，結果變好，回頭又強化框架。聽起來是不是很好理解呢？</p>
+  </section>
+
+  <section>
+    <h2>這其實是同一個動作</h2>
+    <p>理解到這裡，我才發現這件事我其實練過。</p>
+    <p>我在冥想裡學過一個技巧，叫 noting，標記：情緒或念頭來了，認出來，在心裡給它一個簡短的標籤——「焦慮」、「煩躁」、「又在想那件事」——然後放掉，回到當下。標記本身就會在你和情緒之間拉開一點空間。不是把它壓下去或把它丟掉，而是不讓自己的注意力黏上去。</p>
+    <p>「太幸運了吧」其實是同一個動作，只是方向多開了一條。本來是給焦慮、給煩躁貼標，現在也給幸運、給好事貼標。<span class="hl">機制一模一樣。</span></p>
+    <p>而這裡有個容易誤會的地方值得講清楚：讓人進入開放狀態的，不是幸運標籤的數量，是標記這個動作本身。因為每一次標記，都是一次「我不等於這個當下的內容」的練習。貼「太幸運了吧」的時候在練習；遇到罰單時也是一種練習，不管你是貼上「憤怒」、「煩惱」還是「焦慮」，貼完了就滑過去，這兩種練習練的就是同一塊肌肉。</p>
+    <p>這件事要是練錯方法，就會變成蒐集：我要湊夠多的幸運標籤，我要維持這個狀態，今天怎麼還沒有出現值得說「太幸運了吧」的事。這樣會從一個練習，悄悄變回一個要維持的績效。我們很容易把任何好東西變成新的計分板，連感激也不例外，所以要避免掉入這樣的陷阱。</p>
+    <p>還有一條線要畫：滑過去的是情緒，不是事件。該處理的問題還是要好好處理，例如罰單那天，我是處理完之後才讓它過去的。noting 是讓人不被情緒綁架，而不是讓我們逃避問題的方式。放鬆帶來的疏漏如果只是小事，滑過去沒關係；但如果同一種疏漏一直發生，反而製造了更多問題，那就是用錯方法了。請記得重點是放開被標記的「負面情緒」，不是把整件事情擱置在旁邊。</p>
+  </section>
+
+  <section>
+    <h2>副產品</h2>
+    <p>這段時間真正的收穫，其實跟運氣沒有直接關係：我發現自己對犯錯的包容度變高了。</p>
+    <p>它的來路是 noting 的副作用。當你能把一張罰單當成一個會生起、也會過去的現象來看，你自然也就能把「犯錯的自己」當成一個現象，而不是一個要被審判的對象。控制、優化、盯著自己有沒有做好，那些都是同一套求生本能。能夠對自己的疏漏鬆手，是那套本能真的鬆開了一格的證據。</p>
+    <p>也因為這樣，罰單才是這段經驗裡最有份量的一段。靠多看好事撐起來的好心情，遇到中性的日子很容易維持，本來就沒什麼阻力。真正的測試是壞事來的時候，那個狀態會不會當場翻成「怎麼又是我」。<span class="hl">無條件的版本不是「壞事不會發生」，是不管發生什麼都能回到當下。</span></p>
+  </section>
+
+  <section>
+    <h2>海邊那天</h2>
+    <p>再說一件那個月的事。一個下午，我送 Cali 去洗澡，自己帶了沙灘椅和書去 Newport Beach。走到水裡，回岸上曬太陽，坐著冥想了一會兒，然後開始讀《流浪者之歌》。光是這樣我就已經覺得很滿。</p>
+    <p>後來我親眼看到好幾隻海豚，還有一隻海獅。這裡有個細節我想記下來：海豚是路人喊我才注意到的。那天不管我有沒有在練什麼，海豚都會經過。差別只在於岸上有人喊的時候，我剛好是一個會抬頭、會走過去、會覺得太幸運了吧的狀態。手是開的，所以別人的注意力也能變成我的入口。</p>
+  </section>
+
+  <section>
+    <h2>手開著，眼閉著</h2>
+    <p>如果要我把這段時間練出來的東西講成一個姿勢，那是這樣的：閉著眼，敞開雙手，迎接未來可能經過的幸運。幸運像水流，它只是在某個時刻經過我，我接住那個時刻，就這樣。</p>
+    <p>敞開跟伸手去抓，差別很大。抓是預設了幸運會在哪裡、以什麼樣子出現，然後朝那裡撲過去。那還是控制，是預期。敞開是零預設：我不知道會經過什麼、什麼時候經過、長什麼樣，但我在這裡，手是開的。抓會落空，因為它在跟現實的隨機性對賭；敞開不會，因為它沒有押注任何特定結果。</p>
+    <p>閉著眼這個部分也不是修辭。睜著眼在等，會變成盯著、掃描、驗證，又滑回「我要抓到證據」那種用力。閉著眼是信任那個接收的狀態本身，不需要一直回頭確認成效。</p>
+
+    <blockquote class="pull">
+      <p>水經過，接住，然後放走。</p>
+    </blockquote>
+
+    <p>我沒有要留住那道水，那道水也不屬於我。我和它的關係只發生在經過的那一瞬，那一瞬圓滿了就夠。心在那個當下生起、接住，然後不停駐在那裡。應無所住而生其心，大概就是這個意思的白話版。</p>
+  </section>
+
+  <section>
+    <h2>唯一要小心的事</h2>
+    <p>我打算把海邊放風固定下來，以後每次 Cali 去洗澡我就去。這件事本身很好，固定一個會讓自己鬆下來的場合是實際的。</p>
+    <p>但要分清楚固定的是場合，還是預期。那天之所以滿，是因為我什麼都沒預設。海豚是意外，海獅是意外，那隻在浪邊跑來跑去、超愛玩水的狗是意外，我只是帶了椅子和書去坐著。如果下次去的時候心裡帶著「上次有海豚」，那就變成在跟上一次比，那個下午還沒開始就先被扣了一半。</p>
+    <p>安排時間去，到了就把上次留在上次。手還是開的，眼還是閉的，水經過就接住，沒經過也就是一個坐在海邊看書的下午。那樣也已經夠了。</p>
+  </section>
+
+  <section>
+    <h2>那句話沒有魔法</h2>
+    <p>回頭看，「太幸運了吧」這句話本身沒有魔法。它只是一個標籤；真正在運作的，是「認出來、貼上、放掉」這個動作。</p>
+    <p>掌握了這個動作，它可以往兩個方向用。好的時刻，標記會強化循環：你看見，你接住，你更鬆，於是接得住更多。不好的時刻，標記讓情緒不把你帶走：事情照樣處理，但你不必住在裡面。同一塊肌肉，兩種用法，而且誰都可以練，不需要先相信任何東西。</p>
+    <p>所以那句「太幸運了吧」到底是心理作用還是演算法？兩個都是，都查得到出處。但這不會讓它變得比較廉價，恰恰相反：宇宙不必寵我，我只是把注意力和姿勢練對了。而那已經夠了。</p>
+  </section>
+
+  <div class="closing">
+    <p class="grace">
+      <span class="small">NAME IT, LET IT PASS</span>
+      幸運會經過，煩惱也會，重點不是留住哪一個。
+    </p>
+  </div>
+
+  <nav class="pager">
+    <a class="prev" href="july-2026.html"><span class="dir">← 上一篇</span><span class="pt">July 2026：把每天都當作一種體驗</span></a>
+  </nav>
+
+  <div class="foot">
+    <div class="dot"></div>
+    <a href="index.html">← 回目錄</a>
+  </div>
+
+</article>
+</body>
+</html>

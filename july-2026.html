@@ -226,6 +226,14 @@
   .pager .pt{ display:block; font-family:var(--serif); font-weight:500; font-size:0.95rem; line-height:1.45; color:var(--ink-soft); margin-top:0.35rem; }
   .pager a:hover .pt{ color:var(--ink); }
 
+  /* ---------- inline link (article-specific) ---------- */
+  section p a{
+    color:var(--accent);
+    text-decoration:none;
+    border-bottom:1px solid rgba(176,122,46,0.45);
+  }
+  section p a:hover{ border-bottom-color:var(--accent); }
+
   /* ---------- prayer + refs (article-specific) ---------- */
   .pull.prayer p{ font-size:1.24rem; line-height:1.95; }
   .pull .attr{ display:block; font-family:var(--serif); font-style:italic; font-weight:400; font-size:0.82rem; line-height:1.7; letter-spacing:0.02em; color:var(--faint); margin-top:1.15rem; }
@@ -241,6 +249,7 @@
       --hair:rgba(236,230,217,0.14); --accent:#D9A24B;
     }
     .hl{ background:linear-gradient(transparent 62%, rgba(217,162,75,0.30) 62%); }
+    section p a{ border-bottom-color:rgba(217,162,75,0.50); }
     .dek{ color:var(--ink-soft); }
     .closing::before{ background:radial-gradient(circle, rgba(217,162,75,0.20) 0%, rgba(217,162,75,0.08) 32%, rgba(26,23,18,0) 68%); }
     .foot a{ color:var(--accent) !important; }
@@ -291,7 +300,7 @@
     <p>如果要為目前在美國的生活做一個總結，我會說：我找到了一塊關於理想生活的拼圖。</p>
     <p>就像我跟朋友們討論的，不論生活在台灣或美國，都有各自的好處跟壞處，重點還是回到我們想要什麼樣的生活，然後去做取捨。對我而言，這次回到美國，像是重新體驗了一次學生生活。但隨著年齡增長，除了有自己的經濟能力、可以做更多選擇之外，我也多了一種能力：看見生活中微小的美好。</p>
     <p>沙灘上的小女孩說，這裡比迪士尼還好玩。無意間看到海豚的驚喜。吃飯時和隔壁桌的客人變成朋友。得到教授的一句讚美。跟同學分享彼此發現的有趣活動。每隔一週到海邊放空冥想的時間。</p>
-    <p>這些小事，充滿了我每天的生活。像我跟朋友分享的，可以把冥想中的 noting 技巧應用在這些事物和感受上，我們會發現生活比我們想像得還要豐盛。noting 是我看 Netflix 的《Headspace 冥想指南》學到的，有興趣的人可以去看看；我自己後來也用出了一些心得，值得另外找機會說。而這樣 noting 練習久了，會感覺自己越來越期待新的一天。這裡的期待，不是說未來不會有壞事發生，而是這些值得感激的生活小事，會慢慢轉化成我們的底氣：明天不管發生好事壞事，都可以敞開手去迎接它。因為我們已經有了一種能力——讓壞事過去，珍惜並感激好事的發生。</p>
+    <p>這些小事，充滿了我每天的生活。像我跟朋友分享的，可以把冥想中的 noting 技巧應用在這些事物和感受上，我們會發現生活比我們想像得還要豐盛。noting 是我看 Netflix 的《Headspace 冥想指南》學到的，有興趣的人可以去看看；我自己後來也用出了一些心得，<a href="let-it-pass.html">值得另外找機會說</a>。而這樣 noting 練習久了，會感覺自己越來越期待新的一天。這裡的期待，不是說未來不會有壞事發生，而是這些值得感激的生活小事，會慢慢轉化成我們的底氣：明天不管發生好事壞事，都可以敞開手去迎接它。因為我們已經有了一種能力——讓壞事過去，珍惜並感激好事的發生。</p>
     <p>而什麼事都沒有發生的時候呢？就像常聽到的那句俗語：平安就是福。</p>
   </section>
 
@@ -304,6 +313,7 @@
 
   <nav class="pager">
     <a class="prev" href="control.html"><span class="dir">← 上一篇</span><span class="pt">控制，是一種過期的求生本能</span></a>
+    <a class="next" href="let-it-pass.html"><span class="dir">下一篇 →</span><span class="pt">幸運會經過，煩惱也會</span></a>
   </nav>
 
   <div class="foot">
