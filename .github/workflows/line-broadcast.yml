@@ -13,59 +13,107 @@ jobs:
   broadcast:
     runs-on: ubuntu-latest
     steps:
+      # fetch-depth: 0 取完整歷史，才能拿 push 之前的 rss.xml 當基準
       - uses: actions/checkout@v5
         with:
-          fetch-depth: 2
+          fetch-depth: 0
 
-      - name: 確認 rss.xml 最新一篇是否為新文章
+      - name: 找出 rss.xml 這次新增了哪些文章
         id: check
+        env:
+          BEFORE_SHA: ${{ github.event.before }}
         run: |
           python3 - <<'PY'
           import xml.etree.ElementTree as ET
-          import subprocess, os
+          import subprocess, os, json
 
-          def first_guid(xml_text):
+          def guid_set(xml_text):
+              """取出整份 rss 的所有 guid（不看順序、不看位置）。"""
               root = ET.fromstring(xml_text)
-              item = root.find('channel').find('item')
-              return item.find('guid').text if item is not None else None
+              channel = root.find('channel')
+              if channel is None:
+                  return set()
+              out = set()
+              for item in channel.findall('item'):
+                  g = item.find('guid')
+                  if g is not None and g.text:
+                      out.add(g.text.strip())
+              return out
 
-          new_guid = first_guid(open('rss.xml', encoding='utf-8').read())
-          try:
-              old_xml = subprocess.check_output(['git', 'show', 'HEAD~1:rss.xml'], text=True)
-              old_guid = first_guid(old_xml)
-          except Exception:
-              old_guid = None
+          def rss_at(ref):
+              try:
+                  return subprocess.check_output(
+                      ['git', 'show', f'{ref}:rss.xml'], text=True,
+                      stderr=subprocess.DEVNULL)
+              except Exception:
+                  return None
 
-          is_new = new_guid != old_guid
+          new_guids = guid_set(open('rss.xml', encoding='utf-8').read())
+
+          # 基準：優先用 push 之前的 SHA（涵蓋整個 push 範圍，一次多個 commit 也不漏），
+          # 取不到再退回 HEAD~1。
+          before = os.environ.get('BEFORE_SHA', '').strip()
+          old_xml = None
+          if before and set(before) != {'0'}:
+              old_xml = rss_at(before)
+          if old_xml is None:
+              old_xml = rss_at('HEAD~1')
+
+          if old_xml is None:
+              # 拿不到基準時不推播。寧可漏推一次，也不要把整份歷史文章重推一遍。
+              added = []
+              print('⚠ 取不到基準版本的 rss.xml，這次不推播')
+          else:
+              added = sorted(new_guids - guid_set(old_xml))
+
+          print(f'新增 {len(added)} 篇：')
+          for g in added:
+              print(f'  - {g}')
+
           with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
-              f.write(f"is_new={'true' if is_new else 'false'}\n")
+              f.write(f"has_new={'true' if added else 'false'}\n")
+              f.write(f"added={json.dumps(added, ensure_ascii=False)}\n")
           PY
 
       - name: 廣播新文章通知
-        if: steps.check.outputs.is_new == 'true'
+        if: steps.check.outputs.has_new == 'true'
         env:
           LINE_TOKEN: ${{ secrets.LINE_CHANNEL_ACCESS_TOKEN }}
+          ADDED: ${{ steps.check.outputs.added }}
         run: |
           python3 - <<'PY'
           import xml.etree.ElementTree as ET
           import os, json, urllib.request
 
+          added = set(json.loads(os.environ['ADDED']))
           root = ET.parse('rss.xml').getroot()
-          item = root.find('channel').find('item')
-          title = item.find('title').text
-          desc = item.find('description').text
-          link = item.find('link').text
 
-          message = f"新文章上線：{title}\n\n{desc}\n\n{link}"
-          req = urllib.request.Request(
-              'https://api.line.me/v2/bot/message/broadcast',
-              data=json.dumps({"messages":[{"type":"text","text":message}]}).encode('utf-8'),
-              headers={
-                  'Content-Type': 'application/json',
-                  'Authorization': f"Bearer {os.environ['LINE_TOKEN']}"
-              },
-              method='POST'
-          )
-          with urllib.request.urlopen(req) as resp:
-              print(resp.status, resp.read().decode())
+          def txt(item, tag):
+              el = item.find(tag)
+              return el.text.strip() if el is not None and el.text else ''
+
+          # 依 rss 內的原始順序送出（最新的在前）
+          sent = 0
+          for item in root.find('channel').findall('item'):
+              g = item.find('guid')
+              if g is None or not g.text or g.text.strip() not in added:
+                  continue
+
+              message = (f"新文章上線：{txt(item, 'title')}\n\n"
+                         f"{txt(item, 'description')}\n\n"
+                         f"{txt(item, 'link')}")
+              req = urllib.request.Request(
+                  'https://api.line.me/v2/bot/message/broadcast',
+                  data=json.dumps({"messages": [{"type": "text", "text": message}]}).encode('utf-8'),
+                  headers={
+                      'Content-Type': 'application/json',
+                      'Authorization': f"Bearer {os.environ['LINE_TOKEN']}"
+                  },
+                  method='POST'
+              )
+              with urllib.request.urlopen(req) as resp:
+                  print(f"[{resp.status}] {txt(item, 'title')} → {resp.read().decode()}")
+              sent += 1
+
+          print(f'共送出 {sent} 則')
           PY

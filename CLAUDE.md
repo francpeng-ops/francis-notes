@@ -42,6 +42,7 @@
 3. 設該頁 `<link rel="canonical">` = `https://francpeng-ops.github.io/francis-notes/<檔名>`。
 4. `index.html`：在對應系列 `<ul class="posts">` **最上面**複製一個 `<li>`，改 href、`.t` 標題、`.d` 簡介、`.meta` 日期（新到舊排序）。
 5. `rss.xml`：在第一個 `<item>` 上面新增一個 `<item>`（檔內已有註解樣板），改 title / link / guid / description / pubDate（RFC822，+0800）。
+   - **插入後務必確認**：它確實是全檔第一個 `<item>`，且 pubDate 為全檔最新；若有其他來源（如 Cowork 週報排程）同時在寫入 `rss.xml`，插入前務必先讀取最新版本再決定插入位置。
 6. 若是**成長雜記**：在新文章底部加 `.pager`（prev = 前一篇），並更新前一篇的「下一篇」指向新文章。知識解碼目前單篇，暫不需 pager。
 7. 本地確認不破版（見下），再 commit + push。
 
@@ -59,6 +60,7 @@
 6. `weekly/index.html`:在 `<ul class="issues">` 最上面加本期 `<li>`(wk 期別日期、t 主軸句、d 一句話簡介)。
 7. 主 `index.html` 入口卡固定連 `weekly/index.html`(週報目錄頁),**不需每期更新**;讀者從目錄頁進入最新一期。
 8. `rss.xml`:第一個 item 上方新增 item。title = `市場週報 WNN｜<主軸句>`;link/guid = `https://francpeng-ops.github.io/francis-notes/weekly/2026-wNN.html`;description = 入口卡那句一句話;pubDate 用 RFC822、+0800。
+   - **插入後務必確認**:它確實是全檔第一個 `<item>`,且 pubDate 為全檔最新;若有其他來源(如手動發布的單篇文章)同時在寫入 `rss.xml`,插入前務必先讀取最新版本再決定插入位置。
 9. 本地預覽:週報頁淺色/深色不破版、numstrip 手機兩欄正常、pager 前後期互通、入口卡與週報目錄頁更新正確。
 10. `git diff` 給 Francis 過目,確認後 commit(訊息格式:`weekly: 2026-wNN <主軸句>`)並 push,提醒 Francis 按 Sync。
 
