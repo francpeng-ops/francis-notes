@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HR79WVR1T3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HR79WVR1T3');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>不知道的時候，選擇多一點善意｜法蘭西斯的學習筆記</title>
+<link rel="canonical" href="https://francpeng-ops.github.io/francis-notes/where-i-can-choose.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F5F0E7;
+    --ink:#2A2520;
+    --ink-soft:#5A5247;
+    --faint:#9A9082;
+    --accent:#B07A2E;
+    --hair:rgba(42,37,32,0.12);
+    --serif:"Noto Serif TC",serif;
+    --sans:"Noto Sans TC",sans-serif;
+    --mono:ui-monospace,"SF Mono",Menlo,monospace;
+  }
+
+  *{box-sizing:border-box;}
+
+  html{ -webkit-text-size-adjust:100%; }
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-weight:400;
+    line-height:2.0;
+    letter-spacing:0.02em;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+
+  .wrap{
+    max-width:39rem;
+    margin:0 auto;
+    padding:0 1.5rem 5rem;
+    opacity:0;
+    animation:rise 0.9s ease-out 0.05s forwards;
+  }
+
+  @keyframes rise{
+    from{opacity:0;transform:translateY(10px);}
+    to{opacity:1;transform:translateY(0);}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .wrap{animation:none;opacity:1;}
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    padding:5rem 0 3.25rem;
+    text-align:center;
+  }
+  .hero .kicker{
+    font-family:var(--sans);
+    font-weight:500;
+    font-size:0.74rem;
+    letter-spacing:0.26em;
+    color:var(--accent);
+    margin:0 0 1.7rem;
+  }
+  .hero h1{
+    font-family:var(--serif);
+    font-weight:700;
+    font-size:2.05rem;
+    line-height:1.45;
+    letter-spacing:0.04em;
+    margin:0 0 1.1rem;
+  }
+  .hero .sub{
+    font-size:0.92rem;
+    color:var(--ink-soft);
+    letter-spacing:0.12em;
+    font-weight:300;
+    margin:0;
+  }
+
+  /* ---------- lead ---------- */
+  .lead p{
+    font-size:1.06rem;
+    margin:0 0 1.55em;
+  }
+  .lead p:first-child{ margin-top:0; }
+  .lead .opening{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:1.5rem;
+    line-height:1.6;
+    letter-spacing:0.03em;
+    color:var(--ink);
+    margin-bottom:1.55em;
+  }
+
+  /* ---------- sections ---------- */
+  section{ margin-top:3.75rem; }
+
+  h2{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:1.32rem;
+    line-height:1.6;
+    letter-spacing:0.03em;
+    margin:0 0 1.3rem;
+  }
+
+  p{
+    font-size:1.0625rem;
+    margin:0 0 1.5em;
+    color:var(--ink);
+  }
+  p:last-child{ margin-bottom:0; }
+
+  .en{ font-family:var(--serif); font-style:italic; letter-spacing:0.01em; }
+
+  .strong{ font-weight:500; color:var(--ink); }
+
+  .hl{
+    font-style:normal;
+    font-weight:500;
+    color:var(--ink);
+    background:linear-gradient(transparent 62%, rgba(176,122,46,0.18) 62%);
+  }
+
+  /* ---------- single pull quote ---------- */
+  .pull{
+    margin:2.75rem 0;
+    padding:0;
+    text-align:center;
+  }
+  .pull p{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:1.42rem;
+    line-height:1.75;
+    letter-spacing:0.04em;
+    color:var(--ink);
+    margin:0;
+  }
+
+  /* ---------- closing (signature glow) ---------- */
+  .closing{
+    position:relative;
+    margin-top:5rem;
+    padding:5.5rem 1rem;
+    text-align:center;
+    overflow:hidden;
+  }
+  .closing::before{
+    content:"";
+    position:absolute;
+    left:50%;top:46%;
+    width:min(120%,30rem);height:30rem;
+    transform:translate(-50%,-50%);
+    background:radial-gradient(circle,
+      rgba(243,219,165,0.85) 0%,
+      rgba(243,219,165,0.35) 32%,
+      rgba(245,240,231,0) 68%);
+    z-index:0;
+  }
+  .closing .grace{
+    position:relative;z-index:1;
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:1.72rem;
+    line-height:1.7;
+    letter-spacing:0.1em;
+    margin:0;
+  }
+  .closing .grace .small{
+    display:block;
+    font-family:var(--mono);
+    font-size:0.68rem;
+    letter-spacing:0.28em;
+    color:var(--accent);
+    margin-bottom:1.4rem;
+    font-weight:400;
+  }
+
+  /* ---------- foot ---------- */
+  .foot{
+    margin-top:3.5rem;
+    text-align:center;
+    color:var(--faint);
+    font-size:0.78rem;
+    letter-spacing:0.16em;
+  }
+  .foot .dot{
+    width:4px;height:4px;border-radius:50%;
+    background:var(--accent);opacity:0.7;
+    margin:0 auto 1.4rem;
+  }
+  .foot a{ color:var(--accent); text-decoration:none; }
+
+  @media (max-width:430px){
+    .hero{ padding:3.75rem 0 2.75rem; }
+    .hero h1{ font-size:1.78rem; }
+    .pull p{ font-size:1.26rem; }
+    .closing .grace{ font-size:1.5rem; }
+    .closing{ padding:4.5rem 0.5rem; }
+  }
+
+  /* ---------- top nav + pager (auto-added) ---------- */
+  .topnav{ padding-top:1.6rem; }
+  .topnav a{ font-family:var(--mono); font-size:0.72rem; letter-spacing:0.16em; color:var(--accent); text-decoration:none; }
+  .topnav a:hover{ opacity:0.65; }
+  .topnav + .hero{ padding-top:2.5rem; }
+  .pager{ display:flex; justify-content:space-between; gap:1.2rem; margin-top:4rem; padding-top:1.6rem; border-top:1px solid var(--hair); }
+  .pager a{ text-decoration:none; color:var(--accent); max-width:48%; }
+  .pager .next{ text-align:right; margin-left:auto; }
+  .pager .dir{ font-family:var(--mono); font-size:0.66rem; letter-spacing:0.14em; }
+  .pager .pt{ display:block; font-family:var(--serif); font-weight:500; font-size:0.95rem; line-height:1.45; color:var(--ink-soft); margin-top:0.35rem; }
+  .pager a:hover .pt{ color:var(--ink); }
+
+  /* ---------- inline link (article-specific) ---------- */
+  .lead a, section p a{
+    color:var(--accent);
+    text-decoration:none;
+    border-bottom:1px solid rgba(176,122,46,0.45);
+  }
+  .lead a:hover, section p a:hover{ border-bottom-color:var(--accent); }
+
+  /* ---------- postscript (article-specific) ---------- */
+  .postscript{ margin-top:4.5rem; padding-top:2.6rem; border-top:1px solid var(--hair); }
+  .postscript h2{ font-family:var(--mono); font-size:0.7rem; font-weight:400; letter-spacing:0.28em; color:var(--accent); margin:0 0 1.6rem; }
+
+  :root{ color-scheme: light dark; }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --paper:#1A1712; --ink:#ECE6D9; --ink-soft:#B7AF9F; --faint:#8C8474;
+      --hair:rgba(236,230,217,0.14); --accent:#D9A24B;
+    }
+    .hl{ background:linear-gradient(transparent 62%, rgba(217,162,75,0.30) 62%); }
+    .lead a, section p a{ border-bottom-color:rgba(217,162,75,0.50); }
+    .dek{ color:var(--ink-soft); }
+    .closing::before{ background:radial-gradient(circle, rgba(217,162,75,0.20) 0%, rgba(217,162,75,0.08) 32%, rgba(26,23,18,0) 68%); }
+    .foot a{ color:var(--accent) !important; }
+  }
+</style>
+</head>
+<body>
+<article class="wrap">
+  <div class="topnav"><a href="index.html">← 回目錄</a></div>
+
+  <header class="hero">
+    <div class="kicker">給自己的成長雜記</div>
+    <h1>不知道的時候，選擇多一點善意</h1>
+    <p class="sub">一個十分鐘的休息，和後來我一直在想的事</p>
+  </header>
+
+  <div class="lead">
+    <p class="opening">我原本以為，這只是一個十分鐘休息裡的小插曲。</p>
+    <p>今天晚上上課，中間休息十分鐘。休息結束，我準備走回教室的時候，看到一位女同學正在校門口跟警衛說話。我走過去問她怎麼了，她說剛剛有一個遊民突然朝她丟了一個水瓶。</p>
+    <p>我第一個反應就是問她：Are you okay?</p>
+    <p>她說沒事，只是想跟警衛說一聲，請他們注意一下。我看她還站在那裡，就叫她先坐一下、喝點水。後來我們一起回到教室，繼續上課、繼續分組討論，事情看起來也就這樣過去了。</p>
+    <p>至少當下我是這樣以為的。</p>
+  </div>
+
+  <section>
+    <h2>停在我確定知道的地方</h2>
+    <p>下課之後，我出去散步。不知道為什麼，走著走著，我突然又想到剛才的事情，開始想如果今天是我，一個人走在路上，突然有陌生人朝我丟東西，我會是什麼感覺。然後腦子就自己往下跑，開始想像她當時可能有多害怕，也想到性別、體型、時間、地點，這些東西在某一個具體的情境裡，可能突然改變一個人的安全感。</p>
+    <p>但想到這裡，我其實也提醒自己要停一下。因為除了我確定知道的事情之外，後面很多都只是我自己補上去的。她實際上怎麼感受，我並不知道；她也許真的被嚇到了，也許回家之後還會想起來，也可能她比我想像中更快就放下了。</p>
+    <p>我不知道。</p>
+    <p>而也就是這個「不知道」，讓我開始想到另一件事。</p>
+  </section>
+
+  <section>
+    <h2>有優勢，不等於不會受傷</h2>
+    <p>我們談種族、性別、階級的時候，很容易把人放進一個相對的位置裡：誰比較有優勢，誰比較弱勢；誰擁有比較多資源，誰比較容易受到傷害。這些結構上的差異當然存在，我也不是想把它們抹掉，只是今天這件事讓我突然意識到，人的脆弱性其實是情境性的，而且可以跟一個人擁有的優勢同時存在。</p>
+    <p>一個人在某些社會結構裡可能比較有優勢，不代表她在每一個場景裡都比較安全。她還是可能因為性別、體型、獨自行走、時間或地點，在某一個具體的時刻變成比較沒有防衛能力的人。有優勢，不等於不會受傷。</p>
+    <p>我後來發現，這可能也是這件事真正讓我停下來想的地方。我並不是突然得出「哪一個族群其實也很弱勢」這樣的結論，那太簡單了，也不是我想說的。我想到的反而是：我們其實很難只靠一個人的身分或外在條件，就知道他此刻有多安全，又有多脆弱。</p>
+  </section>
+
+  <section>
+    <h2>我們好像很不喜歡「不知道」</h2>
+    <p>同樣地，我後來也開始想，那個丟水瓶的人為什麼會這樣做。是不是有精神狀況？是不是對生活累積了很多不滿？是不是把某些情緒投射到一個剛好經過的陌生人身上？都有可能，但也都只是可能。</p>
+    <p>我最近愈來愈覺得，人好像很不喜歡「不知道」這三個字。我們喜歡找一個說法，喜歡有人告訴我們事情為什麼會發生，也很容易在聽到一個解釋之後，就把它當成答案。可是世界好像不是這樣運作的。很多事情就是沒有一個可以簡單說完的原因，即使知道了一個人的成長背景、精神狀態或社會處境，也不代表我們因此就知道了他的全部。</p>
+    <p>但承認事情很複雜，也不代表所有判斷都要跟著消失。我可以想像那個人也有自己的故事，同時還是認為，朝一個完全不認識的人丟東西是不對的。理解一個行為為什麼發生，和替那個行為開脫，本來就是兩件不同的事。</p>
+  </section>
+
+  <section>
+    <h2>傷痕的另一面</h2>
+    <p>我後來也在想，為什麼這件看起來不算太大的事情，會一直留在我腦子裡。可能跟我自己的經歷有關。我曾經歷過家暴，到現在對暴力還是很難忍受，而且我說的暴力不一定只是拳頭或身體上的傷害。有時候是一個人把自己的憤怒丟到另一個人身上，有時候是語言，有時候只是某個突然闖進別人安全範圍的動作。</p>
+    <p>我不知道今天這件事是不是剛好碰到了以前留下來的某個地方，也不太想硬把它解釋成一條完整的因果線。但我確實知道，我對「一個人突然遭到另一個人傷害」這件事很敏感。</p>
+    <p>以前我可能只會把這件事理解成：因為我經歷過，所以我討厭暴力。可是今晚想著想著，我突然看到另一面。有些我們曾經承受過的東西，後來不一定只能以傷痕的形式留下來，它也可能慢慢變成我們理解別人的方式，甚至變成我們選擇如何活著的一部分。</p>
+    <p>我好像一直很習慣做這件事。不只是傷痕，生活裡看到的人、聽到的一句話、發生的一個小插曲，我很容易把它們帶回來想很久，再慢慢變成我理解世界的方式。以前我沒有特別把這件事當成一種能力，現在回頭看，它好像確實讓我更容易去想像別人的位置，也慢慢影響了我怎麼行動、怎麼關心身邊的人。</p>
+  </section>
+
+  <section>
+    <h2>至少，在我能選擇的地方</h2>
+    <p>只是同理到最後，我覺得還是要回到自己身上。因為不管怎麼想，我永遠不可能完全知道另一個人正在經歷什麼。我不知道一句話會不會剛好碰到他的傷口，也不知道一個自己覺得沒什麼的動作，對另一個人而言是不是完全不同的重量。</p>
+    <p>我們當然不可能因此什麼都不做，也不可能預測自己每一個行為會造成什麼結果。但至少我想記得一件事：</p>
+
+    <blockquote class="pull">
+      <p>既然我們不知道一個行為會在另一個人生命裡留下多深的痕跡，那麼至少在自己能選擇的地方，要更慎重地對待別人。</p>
+    </blockquote>
+
+    <p>我很喜歡這個「至少」。它沒有要求我要理解所有人，也沒有要求我預測所有後果。世界有很多不知道，我也不需要急著把每一個不知道都變成答案。我能做的其實很小：在可以選擇的地方，不把自己的痛苦隨便丟給別人；在不知道對方發生過什麼事情的時候，少一點武斷；看到一個人可能需要幫忙的時候，多問一句。</p>
+    <p>今天晚上回家之後，我最後還是傳了一封很短的訊息給那位同學。我沒有跟她說「你一定嚇壞了」，也沒有替她解釋剛才發生了什麼，只是問她現在還好嗎，也跟她說，如果之後下課想找人一起走，可以告訴我。她需不需要，是她的選擇，我只是想讓她知道有這個選項。</p>
+  </section>
+
+  <section>
+    <h2>相信，和真的做出來</h2>
+    <p>上一篇<a href="being-and-doing.html">〈我是什麼，是後來才知道的〉</a>裡，我曾經寫到《流浪者之歌》給我的一個體會：智慧不是知道了什麼，而是那些理解最後有沒有真的進入生活。今晚再回頭想這件事，我突然發現，品格好像也是如此。</p>
+    <p>我可以相信善良，相信同理，相信每個人都應該被好好對待，但那些如果只停在腦子裡，好像都還只是我相信的東西。真正讓它們慢慢變成「我是怎樣的人」的，還是下一次有人真的出現在我面前時，我怎麼做。</p>
+    <p>今晚其實沒有發生什麼很大的事。十分鐘的休息、一個水瓶、一句 Are you okay?，然後是在幾個小時之後，我走在路上，才慢慢發現那十分鐘留下了一些東西。</p>
+    <p>我還是不知道那位同學今晚真正感受到了什麼，不知道丟水瓶的人身上發生過什麼，也不知道我自己的某些感受，到底有多少來自以前的經歷。這些我可能都不會知道。</p>
+    <p>但好像也沒關係。</p>
+    <p>承認不知道，是對世界留一點謙遜；而在不知道裡，還是選擇對別人多一點善意，是我現在想要的生活方式。</p>
+  </section>
+
+  <section class="postscript">
+    <h2>後記</h2>
+    <p>寫到這裡，那位同學剛好回了我的訊息。</p>
+    <p>她跟我說自己沒事，還開玩笑說，也許對方只是覺得她看起來需要補充一點水分。我看到的時候忍不住笑了。</p>
+    <p>我花了這麼多時間想像她可能受到的驚嚇，她卻用一句玩笑把這件事接住了。這當然不代表我因此知道了她真正的感受，但這個小小的反差，反而又提醒了我一次：我們真的不知道一件事情最後會在另一個人身上留下什麼，也不需要替別人決定它應該留下多深的痕跡。</p>
+    <p>也許能做的，本來就只有這些。</p>
+    <p>在不知道裡，多問一句。<br>在可以選擇的地方，多留一點善意。</p>
+  </section>
+
+  <div class="closing">
+    <p class="grace">
+      <span class="small">WHERE I CAN STILL CHOOSE</span>
+      不知道的時候，還是可以，選擇多一點善意。
+    </p>
+  </div>
+
+  <nav class="pager">
+    <a class="prev" href="being-and-doing.html"><span class="dir">← 上一篇</span><span class="pt">我是什麼，是後來才知道的</span></a>
+  </nav>
+
+  <div class="foot">
+    <div class="dot"></div>
+    <a href="index.html">← 回目錄</a>
+  </div>
+
+</article>
+</body>
+</html>
