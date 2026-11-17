@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HR79WVR1T3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HR79WVR1T3');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>美國政經權力版圖（上篇）：期中選舉後研究｜分立政府、部長之爭與本週三大事件</title>
+<meta name="description" content="期中選舉後，美國進入川普握行政權、民主黨握國會的分立政府；Nvidia 事件又把貝森特與盧特尼克的對中路線之爭公開化。一份整理派系、籌碼與觀察時間表的研究筆記。">
+<link rel="canonical" href="https://francpeng-ops.github.io/francis-notes/us-power-map-post-midterms.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     投資筆記 — 沿用知識解碼版型，主色換成靛藍
+     ============================================================ */
+  :root{
+    --paper:#F5F0E7;
+    --ink:#23282B;
+    --ink-soft:#4E575B;
+    --faint:#8C969A;
+    --accent:#0E3F6E;          /* 投資筆記：靛藍 */
+    --accent-soft:#4F659E;
+    --hair:rgba(35,40,43,0.12);
+    --serif:"Noto Serif TC",serif;
+    --sans:"Noto Sans TC",sans-serif;
+    --mono:ui-monospace,"SF Mono",Menlo,monospace;
+  }
+  *{box-sizing:border-box;}
+  html{ -webkit-text-size-adjust:100%; }
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--sans); font-weight:400; line-height:2.0;
+    letter-spacing:0.02em; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  .wrap{ max-width:39rem; margin:0 auto; padding:0 1.5rem 5rem; opacity:0; animation:rise 0.9s ease-out 0.05s forwards; }
+  @keyframes rise{ from{opacity:0;transform:translateY(10px);} to{opacity:1;transform:translateY(0);} }
+  @media (prefers-reduced-motion:reduce){ .wrap{animation:none;opacity:1;} }
+
+  .hero{ padding:5rem 0 2.75rem; text-align:center; }
+  .hero .kicker{ font-weight:500; font-size:0.74rem; letter-spacing:0.26em; color:var(--accent); margin:0 0 1.7rem; }
+  .hero h1{ font-family:var(--serif); font-weight:700; font-size:2.0rem; line-height:1.5; letter-spacing:0.03em; margin:0 0 1.1rem; }
+  .hero .sub{ font-size:0.92rem; color:var(--ink-soft); letter-spacing:0.06em; font-weight:300; line-height:1.85; margin:0; }
+  .hero .asof{ display:inline-block; margin-top:1.4rem; font-family:var(--mono); font-size:0.68rem; letter-spacing:0.12em; color:var(--faint); }
+
+  .tldr{ margin:2.5rem 0 0; padding:1.4rem 1.5rem 1.5rem; background:rgba(58,77,122,0.06); border:1px solid rgba(58,77,122,0.18); border-left:4px solid var(--accent); border-radius:4px; }
+  .tldr .label{ font-family:var(--mono); font-size:0.66rem; letter-spacing:0.24em; color:var(--accent); margin:0 0 0.7rem; }
+  .tldr p{ font-size:0.99rem; line-height:1.95; margin:0 0 0.8em; color:var(--ink); }
+  .tldr ul{ margin:0; padding-left:1.1rem; }
+  .tldr li{ font-size:0.97rem; line-height:1.9; margin:0 0 0.55em; }
+  .tldr li:last-child{ margin-bottom:0; }
+
+  section{ margin-top:3.5rem; }
+  section.intro{ margin-top:0.5rem; }
+  section.intro a{ color:var(--accent); text-decoration:none; border-bottom:1px solid rgba(79,101,158,0.40); }
+  section.intro a:hover{ opacity:0.68; }
+  h2{ font-family:var(--serif); font-weight:600; font-size:1.3rem; line-height:1.6; letter-spacing:0.03em; margin:0 0 1.25rem; padding-bottom:0.5rem; border-bottom:1px solid var(--hair); }
+  h3{ font-family:var(--sans); font-weight:500; font-size:1.02rem; letter-spacing:0.04em; color:var(--accent); margin:1.6rem 0 0.4rem; }
+  p{ font-size:1.0625rem; margin:0 0 1.4em; color:var(--ink); }
+  p:last-child{ margin-bottom:0; }
+  section ul, section ol{ margin:0 0 1.4em; padding-left:1.3rem; }
+  section li{ font-size:1.0625rem; line-height:1.95; margin:0 0 0.7em; }
+
+  .en{ font-family:var(--serif); font-style:italic; letter-spacing:0.01em; }
+  .strong{ font-weight:500; color:var(--ink); }
+  .hl{ font-style:normal; font-weight:500; color:var(--ink); background:linear-gradient(transparent 62%, rgba(58,77,122,0.16) 62%); }
+  .src{ font-size:0.82em; color:var(--faint); letter-spacing:0.02em; }
+
+  /* ---------- callout（推估、更新、揭露等提示框）---------- */
+  .callout{ margin:1.6rem 0; padding:1rem 1.2rem; background:rgba(58,77,122,0.05); border:1px solid rgba(58,77,122,0.14); border-radius:4px; }
+  .callout .label{ display:block; font-family:var(--mono); font-size:0.64rem; letter-spacing:0.2em; color:var(--accent); margin:0 0 0.35rem; }
+  .callout p{ font-size:0.98rem; line-height:1.9; margin:0; }
+
+  /* ---------- timeline（事件時間軸）---------- */
+  .timeline{ list-style:none; margin:1.8rem 0 1.6rem; padding:0 0 0 1.35rem; border-left:2px solid var(--hair); }
+  .timeline li{ position:relative; margin:0 0 1.45rem; font-size:1rem; }
+  .timeline li:last-child{ margin-bottom:0; }
+  .timeline li::before{ content:""; position:absolute; left:calc(-1.35rem - 6px); top:0.55rem; width:10px; height:10px; border-radius:50%; background:var(--paper); border:2px solid var(--accent-soft); }
+  .timeline li.key::before{ background:var(--accent); border-color:var(--accent); }
+  .timeline .date{ display:block; font-family:var(--mono); font-size:0.72rem; letter-spacing:0.14em; color:var(--accent); line-height:1.6; }
+  .timeline .ev{ display:block; font-weight:500; font-size:1.02rem; line-height:1.7; color:var(--ink); }
+  .timeline .note{ display:block; font-size:0.95rem; line-height:1.85; color:var(--ink-soft); margin-top:0.15rem; }
+
+  /* ---------- faction cards（派系卡片）---------- */
+  .factions{ display:grid; gap:0.9rem; margin:1.4rem 0 1.8rem; }
+  .fcard{ padding:1rem 1.15rem 1.05rem; border:1px solid var(--hair); border-left:3px solid var(--accent-soft); border-radius:4px; background:rgba(58,77,122,0.035); }
+  .fcard .fn{ font-family:var(--serif); font-weight:600; font-size:1.06rem; line-height:1.5; margin:0; }
+  .fcard .who{ font-size:0.86rem; color:var(--ink-soft); line-height:1.7; margin:0.1rem 0 0; }
+  .fcard dl{ display:grid; grid-template-columns:3.4em 1fr; gap:0.2rem 0.8rem; margin:0.65rem 0 0; font-size:0.94rem; line-height:1.8; }
+  .fcard dt{ color:var(--accent); font-weight:500; }
+  .fcard dd{ margin:0; color:var(--ink); }
+
+  /* ---------- framework table ---------- */
+  .framework{ margin:1.6rem 0 1.5rem; overflow-x:auto; }
+  table{ width:100%; border-collapse:collapse; font-size:0.94rem; line-height:1.7; }
+  thead th{ background:var(--accent); color:#F5F0E7; font-weight:500; text-align:left; padding:0.55rem 0.85rem; letter-spacing:0.04em; white-space:nowrap; }
+  tbody td{ padding:0.6rem 0.85rem; border-bottom:1px solid var(--hair); vertical-align:top; }
+  tbody td:first-child{ font-weight:600; color:var(--ink); min-width:4.6em; }
+  tbody tr:nth-child(even){ background:rgba(58,77,122,0.05); }
+  .tnote{ font-size:0.82rem; color:var(--faint); line-height:1.8; margin:-0.6rem 0 1.4em; }
+
+  .pull{ margin:2.5rem 0; padding:0 0 0 1.2rem; border-left:3px solid var(--accent-soft); }
+  .pull p{ font-family:var(--serif); font-weight:500; font-size:1.24rem; line-height:1.8; letter-spacing:0.02em; color:var(--ink); margin:0; }
+
+  /* ---------- sources（資料來源小字段落）---------- */
+  .sources h2{ font-size:1.05rem; }
+  .sources h3{ font-size:0.9rem; margin-top:1.4rem; }
+  .sources .intro{ font-size:0.86rem; color:var(--ink-soft); line-height:1.9; margin:0 0 1.2em; }
+  .sources p{ font-size:0.82rem; line-height:1.9; color:var(--faint); margin:0 0 0.95em; }
+  .sources a{ color:var(--accent-soft); text-decoration:none; border-bottom:1px solid rgba(79,101,158,0.35); word-break:break-all; }
+  .sources a:hover{ opacity:0.68; }
+
+  .closing{ position:relative; margin-top:4.5rem; padding:5rem 1rem; text-align:center; overflow:hidden; }
+  .closing::before{ content:""; position:absolute; left:50%; top:46%; width:min(120%,30rem); height:30rem; transform:translate(-50%,-50%);
+    background:radial-gradient(circle, rgba(150,165,210,0.80) 0%, rgba(150,165,210,0.30) 32%, rgba(245,240,231,0) 68%); z-index:0; }
+  .closing .grace{ position:relative; z-index:1; font-family:var(--serif); font-weight:600; font-size:1.6rem; line-height:1.7; letter-spacing:0.08em; margin:0; }
+  .closing .grace .small{ display:block; font-family:var(--mono); font-size:0.66rem; letter-spacing:0.26em; color:var(--accent); margin-bottom:1.3rem; font-weight:400; }
+
+  .foot{ margin-top:3rem; text-align:center; color:var(--faint); font-size:0.76rem; letter-spacing:0.1em; line-height:1.9; }
+  .foot .dot{ width:4px; height:4px; border-radius:50%; background:var(--accent); opacity:0.7; margin:0 auto 1.3rem; }
+  .foot a{ color:var(--accent); text-decoration:none; }
+  .disclaimer{ margin-top:1.4rem; font-size:0.72rem; color:var(--faint); line-height:1.8; letter-spacing:0.04em; }
+
+  @media (max-width:430px){
+    .hero{ padding:3.75rem 0 2.25rem; } .hero h1{ font-size:1.7rem; }
+    .pull p{ font-size:1.14rem; } .closing .grace{ font-size:1.42rem; } .closing{ padding:4rem 0.5rem; }
+    table{ font-size:0.88rem; } thead th, tbody td{ padding:0.5rem 0.6rem; }
+    .fcard dl{ grid-template-columns:3.2em 1fr; font-size:0.9rem; }
+  }
+
+  /* ---------- top nav ---------- */
+  .topnav{ padding-top:1.6rem; }
+  .topnav a{ font-family:var(--mono); font-size:0.72rem; letter-spacing:0.16em; color:var(--accent); text-decoration:none; }
+  .topnav a:hover{ opacity:0.65; }
+  .topnav + .hero{ padding-top:2.5rem; }
+
+  /* ---------- pager ---------- */
+  .pager{ display:flex; justify-content:space-between; gap:1.2rem; margin-top:4rem; padding-top:1.6rem; border-top:1px solid var(--hair); }
+  .pager a{ text-decoration:none; color:var(--accent); max-width:48%; }
+  .pager .next{ text-align:right; margin-left:auto; }
+  .pager .dir{ font-family:var(--mono); font-size:0.66rem; letter-spacing:0.14em; }
+  .pager .pt{ display:block; font-family:var(--serif); font-weight:500; font-size:0.95rem; line-height:1.45; color:var(--ink-soft); margin-top:0.35rem; }
+  .pager a:hover .pt{ color:var(--ink); }
+
+  /* ---------- dark mode ---------- */
+  :root{ color-scheme: light dark; }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --paper:#1A1712; --ink:#ECE6D9; --ink-soft:#B7AF9F; --faint:#8C8474;
+      --hair:rgba(236,230,217,0.14); --accent:#5C93D6; --accent-soft:#7DA9E0;
+    }
+    .hl{ background:linear-gradient(transparent 62%, rgba(128,147,204,0.32) 62%); }
+    .tldr{ background:rgba(128,147,204,0.10); border-color:rgba(128,147,204,0.30); }
+    .callout{ background:rgba(128,147,204,0.08); border-color:rgba(128,147,204,0.24); }
+    .fcard{ background:rgba(128,147,204,0.06); }
+    thead th{ color:#15151A; }
+    tbody tr:nth-child(even){ background:rgba(128,147,204,0.10); }
+    section.intro a{ border-bottom-color:rgba(125,169,224,0.45); }
+    .sources a{ color:var(--accent-soft) !important; border-bottom-color:rgba(125,169,224,0.40); }
+    .closing::before{ background:radial-gradient(circle, rgba(128,147,204,0.20) 0%, rgba(128,147,204,0.08) 32%, rgba(26,23,18,0) 68%); }
+    .foot a{ color:var(--accent) !important; }
+  }
+</style>
+</head>
+<body>
+<article class="wrap">
+  <div class="topnav"><a href="index.html">← 回目錄</a></div>
+
+  <header class="hero">
+    <div class="kicker">投資筆記　·　上篇</div>
+    <h1>美國政經權力版圖：<br>期中選舉後研究</h1>
+    <p class="sub">分立政府、兩位部長的路線之爭，<br>以及本週同時落地的三個事件</p>
+    <span class="asof">資料截至 2026.11.17｜已含 Nvidia Q3 財報</span>
+  </header>
+
+  <section class="intro">
+    <p>好久不見。這幾個月旅行比較多，生活也忙，加上一直在試一些新的研究方法和投資想法，文章就停了一段時間。</p>
+    <p>這段期間，不論是投資市場還是美國的政經局勢，都有不少變化。所以回歸的第一篇，想先來看看期中選舉之後的權力版圖：誰握著哪些牌、彼此怎麼角力，又會怎麼傳導到市場上。這份報告主要透過 Claude 蒐集與整理，提供大家參考。如果發現任何錯誤，歡迎透過 <a href="https://lin.ee/ZKl2GV5" target="_blank" rel="noopener">LINE</a> 留言告訴我、不吝指正。</p>
+    <p>我們很容易覺得政治離自己很遠，但生活從來脫離不了政治，全球經濟也是。接下來還有一連串事件要落地，每一件都可能牽動權力的交接，也替市場帶來波動。這樣的時期，市場又一次在考驗投資人的耐心與判斷力。希望大家都能穩穩走過這段動盪。</p>
+  </section>
+
+  <div class="tldr">
+    <p class="label">TL;DR</p>
+    <p>期中選舉後，美國進入「川普握有行政權、民主黨握有國會」的分立政府，而 Nvidia 事件把行政部門內部的對中路線之爭公開化。</p>
+    <ul>
+      <li><span class="strong">兩位部長的角色對調了。</span>2025 年是盧特尼克強硬、貝森特滅火；2026 年變成貝森特在科技出口上轉鷹，盧特尼克轉趨謹慎。</li>
+      <li><span class="strong">川普沒有選邊。</span>他 11/16 表示不會撤換盧特尼克，把兩人的爭執形容為觀點不同；兩人目前都隨他前往亞洲。</li>
+      <li><span class="strong">國會是新的變數。</span>民主黨在眾院至少 255 席、參院至少 55 席，1 月起掌握調查與傳喚權，但沒有 60 票，也推翻不了否決。</li>
+      <li><span class="strong">兩黨內部都在分裂。</span>共和黨在爭論敗選責任與 2028 接班；民主黨在爭論要與川普合作還是對抗。</li>
+      <li><span class="strong">本週三個事件同時落地：</span>Nvidia 財報（11/17 盤後，已公布）、眾院民主黨領導層選舉（11/18–19）、深圳川習會（11/19）。</li>
+    </ul>
+  </div>
+
+  <div class="callout">
+    <span class="label">閱讀前</span>
+    <p>本文的「傾向推估」是根據公開報導所做的推論，不是預測，也不是投資建議。文中日期除特別註明外皆為 2026 年，時間以美東為準。</p>
+  </div>
+
+  <section>
+    <h2>一、導火線：Nvidia 事件時間軸</h2>
+    <p>從期中選舉到 11/16，不到兩週，事件從一樁企業醜聞，一路升級成內閣的公開衝突。依時間順序排列：</p>
+
+    <ol class="timeline">
+      <li class="key">
+        <span class="date">11/03</span>
+        <span class="ev">期中選舉</span>
+        <span class="note">民主黨拿下參眾兩院。</span>
+      </li>
+      <li>
+        <span class="date">11/05</span>
+        <span class="ev">戰情室會議</span>
+        <span class="note">據報導，貝森特當面質問盧特尼克，為何遲遲不把 Megaspeed 列入實體清單。</span>
+      </li>
+      <li>
+        <span class="date">11/08</span>
+        <span class="ev">黃仁勳承認婚外情</span>
+        <span class="note">對象是前 Megaspeed 主管 Alice Huang。美國情報單位懷疑她與中國情報機構有關，司法部尚無結論，中方否認。<span class="src">（Seoul Economic Daily）</span></span>
+      </li>
+      <li>
+        <span class="date">11/11</span>
+        <span class="ev">Axios 揭露戰情室衝突</span>
+        <span class="note">商務部發言人否認兩人有過這段對話。<span class="src">（Axios）</span></span>
+      </li>
+      <li class="key">
+        <span class="date">11/12</span>
+        <span class="ev">黃仁勳辭任</span>
+        <span class="note">辭去總裁、CEO 與董事，由 CFO Colette Kress 代理；參院銀行委員會主席 Tim Scott 要求黃仁勳與盧特尼克作證。<span class="src">（KTVU）</span></span>
+      </li>
+      <li>
+        <span class="date">11/13</span>
+        <span class="ev">貝森特上 CNBC，公開點名商務部</span>
+        <span class="note">首次公開批評：財政部、國防部門、國務院幾個月前就想限制 Megaspeed，但決定權在商務部。<span class="src">（Washington Post via Inquirer）</span></span>
+      </li>
+      <li>
+        <span class="date">11/14</span>
+        <span class="ev">民主黨參議員 Blumenthal 要求盧特尼克下台</span>
+        <span class="note">指他包庇 Nvidia 規避聯邦監管。<span class="src">（The Hill）</span></span>
+      </li>
+      <li>
+        <span class="date">11/15</span>
+        <span class="ev">貝森特上 Fox</span>
+        <span class="note">主張不需要新立法，要的是執行既有規定；批評 Nvidia 的合規文化，稱董事會應外聘 CEO。<span class="src">（Fortune）</span></span>
+      </li>
+      <li>
+        <span class="date">11/16</span>
+        <span class="ev">川普表態不換盧特尼克</span>
+        <span class="note">稱他做得很好，兩位部長只是觀點不同；兩人同機隨行訪亞。<span class="src">（Newsmax via Yahoo）</span></span>
+      </li>
+      <li class="key">
+        <span class="date">11/16</span>
+        <span class="ev">商務部發布新晶片出口規則</span>
+        <span class="note">全球資料中心若向總部在中國的企業提供大量先進算力，須申請美國許可；出貨到新加坡、馬來西亞、泰國、印尼、巴西也要許可。北京表示將採取必要措施。<span class="src">（AFP）</span></span>
+      </li>
+    </ol>
+
+    <p class="tnote">Megaspeed 表示自己合法營運，已聘外部律師做內部調查，並稱 Alice Huang 已於 2025/8/30 離職。她本人未被起訴。</p>
+  </section>
+
+  <section>
+    <h2>二、貝森特與盧特尼克的恩怨史</h2>
+    <p>兩人的衝突從 2024 年爭財政部長開始，之後每一輪政策爭論，都疊在這筆舊帳上。</p>
+
+    <h3>第一階段：爭財長（2024 年 11 月）</h3>
+    <p>兩人都想當財政部長。盧特尼克當時是交接團隊共同主席，馬斯克公開挺他，說貝森特是「照舊行事」的選擇<span class="src">（Financial Times 轉載）</span>；盧特尼克的盟友則攻擊貝森特的基金績效不佳。貝森特靠一個少見的聯盟反勝：一邊是班農、納瓦羅這些 MAGA 人物，另一邊是與盧特尼克有過節的華爾街大老<span class="src">（Semafor）</span>。</p>
+    <p>盧特尼克最後拿到商務部，而<span class="hl">出口管制正好歸商務部管</span>。這是今天這場衝突的制度根源。</p>
+
+    <h3>第二階段：關稅主導權（2025 年）</h3>
+    <p>貝森特事後承認，他當初反對「解放日」關稅，後來看到各國急著上門談判才改變看法。關稅引發市場動盪後，貝森特成為川普最主要的貿易顧問，盧特尼克則被部分同僚當成代罪羔羊。同年，盧特尼克推出多項強硬的科技出口措施，北京以停供關鍵礦物反制；貝森特出面降溫，談成貿易休戰<span class="src">（New York Times 轉載）</span>。</p>
+
+    <h3>第三階段：地盤戰與私人衝突（2025 年）</h3>
+    <p>貝森特曾與馬斯克為了國稅局主導權當面衝突，也曾在一場晚宴上與住房金融官員 Pulte 幾乎動手。Pulte 與盧特尼克關係密切，報導把這件事歸因於三人之間長期的地盤之爭。另有報導指出，川普樂於看兩位部長在他面前爭辯。</p>
+
+    <h3>第四階段：晶片與 Megaspeed（2026 年）</h3>
+    <p>貝森特的說法是：財政部、國務院、國防部門與貿易代表署幾個月前就主張把 Megaspeed 列入管制清單，但只有商務部能下筆。一位前官員說，川普曾三度指示盧特尼克推動晶片出口限制，盧特尼克則擔心此舉會引爆對中貿易戰<span class="src">（Washington Post via Inquirer）</span>。商務部對戰情室衝突的報導提出否認。</p>
+    <p>11/16 的新規則，是這場角力的最新一手：盧特尼克原本提的是較溫和的版本，而商務部的新聞稿卻寫明，規則是「依財政部與國安會指示」擬定。一位前商務部官員形容，這近乎公開的跨部會失和。</p>
+  </section>
+
+  <section>
+    <h2>三、兩人的立場、利益與盟友</h2>
+    <p>兩人都支持川普的關稅與對中競爭，差別在於<span class="hl">用什麼工具</span>，以及<span class="hl">誰來決定</span>。</p>
+
+    <div class="framework">
+      <table>
+        <thead><tr><th>面向</th><th>貝森特（財政部）</th><th>盧特尼克（商務部）</th></tr></thead>
+        <tbody>
+          <tr><td>出身</td><td>索羅斯基金出身的總體經濟交易員，Key Square 創辦人</td><td>Cantor Fitzgerald 前執行長，2024 年交接團隊共同主席</td></tr>
+          <tr><td>權力基礎</td><td>華爾街＋民粹右翼（班農、納瓦羅）；主導對中談判、聯準會主席遴選</td><td>與川普的私人關係；手握出口管制與關稅執行</td></tr>
+          <tr><td>對中整體</td><td>「去風險，不脫鉤」；對何立峰的主談人</td><td>避免刺激北京，擔心管制引發貿易戰</td></tr>
+          <tr><td>對晶片出口</td><td>今年轉鷹：要求嚴格執法、封堵海外資料中心漏洞</td><td>據報導傾向讓中國依賴美國 AI 硬體，這也是黃仁勳的看法</td></tr>
+          <tr><td>對國會立法</td><td>反對新立法，主張執行現有規定即可</td><td>尚未公開表態</td></tr>
+          <tr><td>對 Nvidia</td><td>質疑合規文化，要求董事會大幅改組、外聘 CEO</td><td>與黃仁勳關係密切，也正因此受調查</td></tr>
+          <tr><td>盟友</td><td>國安會、國務院、國防部門、貿易代表 Greer；國會兩黨對華鷹派</td><td>川普本人；Pulte；2024 年時的馬斯克</td></tr>
+          <tr><td>批評者</td><td>馬斯克、Pulte；川普曾形容其中一方想與中國「鬧翻」</td><td>兩黨參議員（Scott、Kennedy、Blumenthal、Wyden）；保守派評論員 Erickson</td></tr>
+          <tr><td>目前處境</td><td>攻方：主導了 11/16 的新規則</td><td>守方：12 月要到參院作證，部分白宮幕僚已在討論是否該讓他走人</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tnote">來源：Semafor、New York Times 轉載、Washington Post via Inquirer、Fortune。</p>
+
+    <h3>兩個容易誤讀的地方</h3>
+    <p><span class="strong">貝森特不是全面鷹派。</span>他要的是收緊晶片這個單點，同時保住他自己談出來的貿易休戰。他反對國會立法，等於把裁量權留在行政部門。</p>
+    <p><span class="strong">盧特尼克也不是一直鴿派。</span>他 2025 年的強硬措施換來北京的礦物反制，之後才轉趨謹慎。這個轉向可以讀成吃過虧後的修正；批評者則讀成與 Nvidia 過從甚密。</p>
+
+    <blockquote class="pull">
+      <p>兩人的分歧不是「親中與反中」，<br>而是「精準收緊」對上「以交易維持關係」。</p>
+    </blockquote>
+  </section>
+
+  <section>
+    <h2>四、兩人未來可選的路徑</h2>
+    <p>以下是根據各自誘因所做的推論。決定權在川普，而他目前兩邊都留著。</p>
+
+    <h3>貝森特：三個誘因，一個約束</h3>
+    <ol>
+      <li><span class="strong">保住休戰。</span>他是對中主談人，休戰破局算他的帳。所以他的鷹派言論大多鎖定晶片執法與 Nvidia 治理，而不是關稅升級。</li>
+      <li><span class="strong">擴大財政部的地盤。</span>11/16 的規則由財政部與國安會主導，等於把部分出口管制的實質決策權從商務部手上拿走。</li>
+      <li><span class="strong">與國會對華鷹派站在一起，但不讓國會立法。</span>這讓他在兩黨都有政治掩護，又不必被法條綁住。</li>
+      <li><span class="strong">約束：不能被川普看成破壞川習關係的人。</span>川普一再強調目前與中國關係很好。</li>
+    </ol>
+    <div class="callout">
+      <span class="label">推估傾向</span>
+      <p>繼續推「精準執法」，例如把個別公司列入清單、要求 Nvidia 改組；避免全面性的立法或關稅升級。若川習會氣氛良好，他的言詞可能會收斂。</p>
+    </div>
+
+    <h3>盧特尼克：三條路</h3>
+    <div class="framework">
+      <table>
+        <thead><tr><th>路徑</th><th>內容</th><th>會看到的訊號</th></tr></thead>
+        <tbody>
+          <tr><td>轉硬自保</td><td>主動收緊執法，證明商務部沒有放水</td><td>把 Megaspeed 正式列入實體清單；在參院作證時與 Nvidia 切割</td></tr>
+          <tr><td>靠川普撐住</td><td>強調貿易協議與投資承諾的政績，把晶片爭議定調成路線之爭</td><td>白宮持續公開力挺；他在川習會扮演可見的角色</td></tr>
+          <tr><td>體面退場</td><td>若作證失利或出現新證據，由川普安排調職或離任</td><td>白宮的聲明從「完全信任」轉為沉默；共和黨參議員加入要求下台的行列</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>有兩個日期會改變這個平衡：<span class="hl">12 月的參院銀行委員會作證</span>，以及 <span class="hl">2027/1/3 新國會上任</span>。後者之後，民主黨可以用傳票調閱商務部的許可紀錄，Wyden 與 Neal 已先發函要求說明。</p>
+    <p>還有一個變數是黃仁勳本人。報導指他與親信討論過回任，川普也說不介意他回來；但另有報導稱董事會並未考慮，貝森特則公開主張外聘。這件事的走向，會直接反映兩位部長誰的聲音比較大。</p>
+    <div class="callout">
+      <span class="label">更新 11/17</span>
+      <p>黃仁勳發表聲明，承認犯錯、承諾配合董事會調查，並表示若董事會認定符合各方與美國的利益，他願意回任。但董事長當天在財報電話會議上表明，董事會無意讓他復職。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>五、期中選舉結果與新的權力結構</h2>
+    <p>民主黨 11/3 拿下參眾兩院，結束共和黨同時掌握白宮與國會的局面；新國會 2027/1/3 上任。</p>
+
+    <div class="framework">
+      <table>
+        <thead><tr><th>項目</th><th>民主黨</th><th>共和黨</th><th>備註</th></tr></thead>
+        <tbody>
+          <tr><td>眾議院</td><td>至少 255 席</td><td>169 席</td><td>12 席未定；過半需 218</td></tr>
+          <tr><td>參議院</td><td>至少 55 席（含結盟）</td><td>44 席</td><td>阿拉斯加尚在計票</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tnote">席次為 11/15 Reuters 的統計（Korea Times 轉載）。</p>
+
+    <h3>選民為什麼轉向</h3>
+    <ul>
+      <li><span class="strong">伊朗戰爭與油價。</span>美以 2/28 對伊朗開戰，荷姆茲海峽實質封鎖，布蘭特原油 3、4 月曾到 120 美元<span class="src">（Al Jazeera）</span>。</li>
+      <li><span class="strong">生活成本。</span>食物、油價、保險與關稅帶來的漲價，是兩黨都承認的主因。</li>
+      <li><span class="strong">AI 與資料中心。</span>NBC 出口民調中，56% 的選民說這是投票的關鍵或重要因素，主要是電費與在地衝擊<span class="src">（TIME）</span>。</li>
+    </ul>
+
+    <h3>新結構下，誰能做什麼</h3>
+    <div class="framework">
+      <table>
+        <thead><tr><th>權力</th><th>在誰手上</th><th>限制</th></tr></thead>
+        <tbody>
+          <tr><td>行政命令、關稅、出口管制、外交</td><td>川普</td><td>法院與國會監督</td></tr>
+          <tr><td>否決權</td><td>川普</td><td>國會需兩院各三分之二才能推翻，民主黨遠遠不夠</td></tr>
+          <tr><td>調查、聽證、傳票</td><td>民主黨（1 月起）</td><td>行政部門可拖延或主張特權</td></tr>
+          <tr><td>立法議程、預算</td><td>民主黨</td><td>參院不到 60 票，多數法案需要共和黨的票</td></tr>
+          <tr><td>人事同意權</td><td>參院民主黨</td><td>川普可用代理人事繞道</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>實務上，接下來兩年的政策變動會集中在<span class="hl">行政命令與調查</span>兩個戰場，大型立法的機率很低。</p>
+  </section>
+
+  <section>
+    <h2>六、主要派系與勢力比較</h2>
+    <p>目前沒有任何一派能單獨做成事：川普核心圈握有行政權，民主黨建制派握有國會議程，其餘派系靠結盟與輿論施壓。</p>
+
+    <h3>共和黨與行政部門</h3>
+    <div class="factions">
+      <div class="fcard">
+        <p class="fn">川普核心圈</p>
+        <p class="who">川普</p>
+        <dl>
+          <dt>主張</dt><dd>交易優先，維持對中關係穩定</dd>
+          <dt>籌碼</dt><dd>行政權、否決權，還有兩年任期</dd>
+          <dt>弱點</dt><dd>支持度低，黨內開始有人保持距離</dd>
+        </dl>
+      </div>
+      <div class="fcard">
+        <p class="fn">對中科技鷹派</p>
+        <p class="who">貝森特、國安會；國會的 Moolenaar、Kennedy</p>
+        <dl>
+          <dt>主張</dt><dd>收緊晶片與算力出口</dd>
+          <dt>籌碼</dt><dd>跨部會多數、國會兩黨支持</dd>
+          <dt>弱點</dt><dd>不能破壞川普要的川習關係</dd>
+        </dl>
+      </div>
+      <div class="fcard">
+        <p class="fn">商業交易派</p>
+        <p class="who">盧特尼克</p>
+        <dl>
+          <dt>主張</dt><dd>以交易與許可維持關係，讓中國依賴美國硬體</dd>
+          <dt>籌碼</dt><dd>川普的信任、出口許可的簽核權</dd>
+          <dt>弱點</dt><dd>正面臨調查與下台呼聲</dd>
+        </dl>
+      </div>
+      <div class="fcard">
+        <p class="fn">反干預民粹派</p>
+        <p class="who">Vance</p>
+        <dl>
+          <dt>主張</dt><dd>把敗選歸因於伊朗戰爭</dd>
+          <dt>籌碼</dt><dd>2028 初選民調領先（40%）</dd>
+          <dt>弱點</dt><dd>與川普綁得太緊，連他自己都說可能不選</dd>
+        </dl>
+      </div>
+      <div class="fcard">
+        <p class="fn">經濟民生派</p>
+        <p class="who">Cruz</p>
+        <dl>
+          <dt>主張</dt><dd>敗在物價、油價與關稅</dd>
+          <dt>籌碼</dt><dd>德州基本盤、參院資歷</dd>
+          <dt>弱點</dt><dd>早期支持伊朗戰爭</dd>
+        </dl>
+      </div>
+      <div class="fcard">
+        <p class="fn">建制與外交派</p>
+        <p class="who">Rubio</p>
+        <dl>
+          <dt>主張</dt><dd>尚未對敗選表態</dd>
+          <dt>籌碼</dt><dd>國務卿職位，民調 21%</dd>
+          <dt>弱點</dt><dd>同樣背著政府的帳</dd>
+        </dl>
+      </div>
+      <div class="fcard">
+        <p class="fn">黨外挑戰者</p>
+        <p class="who">DeSantis</p>
+        <dl>
+          <dt>主張</dt><dd>稱結果近乎「滅絕級」，要求改路線</dd>
+          <dt>籌碼</dt><dd>不在華府，不用替政府背書</dd>
+          <dt>弱點</dt><dd>1 月卸任州長後沒有舞台</dd>
+        </dl>
+      </div>
+      <div class="fcard">
+        <p class="fn">科技右派與加速派</p>
+        <p class="who">馬斯克、Leading the Future 的金主</p>
+        <dl>
+          <dt>主張</dt><dd>反對 AI 監管、聯邦優先於各州</dd>
+          <dt>籌碼</dt><dd>資金</dd>
+          <dt>弱點</dt><dd>這次選舉花錢效果差，AI 獻金成了負資產</dd>
+        </dl>
+      </div>
+    </div>
+
+    <h3>民主黨</h3>
+    <div class="factions">
+      <div class="fcard">
+        <p class="fn">建制與溫和派</p>
+        <p class="who">Schumer、Jeffries、Shapiro</p>
+        <dl>
+          <dt>主張</dt><dd>聚焦降低生活成本，淡化意識形態</dd>
+          <dt>籌碼</dt><dd>兩院領導職；新民主黨聯盟有 142 名議員</dd>
+          <dt>弱點</dt><dd>被基層批評太軟</dd>
+        </dl>
+      </div>
+      <div class="fcard">
+        <p class="fn">紅州合作派</p>
+        <p class="who">Talarico、Sand</p>
+        <dl>
+          <dt>主張</dt><dd>願意與川普合作換取成果</dd>
+          <dt>籌碼</dt><dd>這次的新增席次多來自紅州</dd>
+          <dt>弱點</dt><dd>人數少、資歷淺</dd>
+        </dl>
+      </div>
+      <div class="fcard">
+        <p class="fn">進步派</p>
+        <p class="who">Sanders、Khanna、Jayapal、Van Hollen</p>
+        <dl>
+          <dt>主張</dt><dd>全民健保、財富稅、聯邦基本工資 25 美元</dd>
+          <dt>籌碼</dt><dd>基層動能；Van Hollen 挑戰 Schumer</dd>
+          <dt>弱點</dt><dd>票數不足以換掉領導層</dd>
+        </dl>
+      </div>
+      <div class="fcard">
+        <p class="fn">對抗監督派</p>
+        <p class="who">Raskin、Holder</p>
+        <dl>
+          <dt>主張</dt><dd>用調查權制衡川普</dd>
+          <dt>籌碼</dt><dd>Raskin 可望接掌眾院司法委員會</dd>
+          <dt>弱點</dt><dd>可能與「拚民生」的訊息打架</dd>
+        </dl>
+      </div>
+    </div>
+
+    <p>民主黨領導層預期不變：Jeffries 無人挑戰（11/18–19 投票）；Schumer 則面對 Van Hollen 的挑戰，目前 12 位參議員公開支持他、至少 10 位表態不支持，12 月以秘密投票決定<span class="src">（Al Jazeera、Punchbowl）</span>。</p>
+    <p class="tnote">共和黨派系資料取自 Al Jazeera，民主黨取自 Reuters via Korea Times。派系名稱是為了方便閱讀所做的歸類，當事人未必這樣自稱。</p>
+
+    <div class="callout">
+      <span class="label">最值得注意的跨黨聯盟</span>
+      <p>對中晶片管制。共和黨鷹派、民主黨領導層與貝森特的方向一致，分歧只在要不要寫成法律。這是目前華府少數有跨黨多數的議題。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>七、AI 政策戰線：加速派與監管派</h2>
+    <p>這次選舉讓監管派佔了上風，但聯邦層級的全面立法仍然很難過關，戰場會轉到聽證會與各州。</p>
+
+    <div class="factions">
+      <div class="fcard">
+        <p class="fn">加速派</p>
+        <p class="who">白宮；超級政治行動委員會 Leading the Future；馬斯克</p>
+        <dl>
+          <dt>主張</dt><dd>少管制，由聯邦統一規則、禁止各州自行立法</dd>
+          <dt>處境</dt><dd>仍握有行政權，但國會這條路變難</dd>
+        </dl>
+      </div>
+      <div class="fcard">
+        <p class="fn">監管派</p>
+        <p class="who">民主黨多數、部分共和黨；Public First 等倡議團體</p>
+        <dl>
+          <dt>主張</dt><dd>前沿模型安全規範、保留各州立法權</dd>
+          <dt>處境</dt><dd>拿到國會議程，但過不了否決</dd>
+        </dl>
+      </div>
+      <div class="fcard">
+        <p class="fn">在地反對者</p>
+        <p class="who">跨黨的地方選民</p>
+        <dl>
+          <dt>主張</dt><dd>反對資料中心帶來的電費與環境負擔</dd>
+          <dt>處境</dt><dd>多地通過禁令或暫停令，有市長因此被罷免</dd>
+        </dl>
+      </div>
+    </div>
+
+    <p>幾個關鍵數字，取自 TIME：</p>
+    <ul>
+      <li>民主黨花了超過 1 億美元的電視廣告，把共和黨對手與科技巨頭、資料中心綁在一起。</li>
+      <li>一項調查顯示，四分之三的可能選民，較不願投給收受 AI 超級政治行動委員會資金的候選人。</li>
+      <li>在關鍵選區，監管派團體的花費超過加速派。</li>
+    </ul>
+    <p>接下來可以預期：國會傳喚 AI 企業主管的聽證會變多；「禁止各州管 AI」的聯邦優先條款更難通過；實質規範會先在加州等地出現。民主黨內部對優先順序也還沒有共識——電費、保險決策、前沿模型安全，各有人推。</p>
+
+    <div class="callout">
+      <span class="label">揭露</span>
+      <p>監管派的 Public First 主要由 Anthropic 出資，而本文的研究整理由 Anthropic 開發的 Claude 協助完成。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>八、美中關係：休戰、晶片管制與川習會</h2>
+    <p>美方試圖把「貿易休戰」與「晶片管制」切成兩條線，北京則把兩者連在一起看。<span class="hl">這是 11/19 川習會最大的不確定性。</span></p>
+    <ul>
+      <li><span class="strong">休戰現況。</span>貿易休戰已延長到 2027/1/10。雙方還在談關稅互降與稀土供應；美方認為中國在農產品採購與關鍵礦物出口上沒有履約，貝森特對何立峰表示，進展要看具體成果。</li>
+      <li><span class="strong">美方立場。</span>官員表示出口管制屬國安事項，不在談判桌上，也不預期川普會向習近平提起 Nvidia 事件<span class="src">（Seoul Economic Daily）</span>。</li>
+      <li><span class="strong">中方反應。</span>外交部對 11/16 新規則表示，將採取必要措施維護權益。2025 年的前例是停供關鍵礦物。</li>
+      <li><span class="strong">川習會議程。</span>重點是落實既有貿易協議，另有核武與伊朗戰爭；報導也提到美中俄三方會談的安排。</li>
+    </ul>
+
+    <h3>三種可能的結果</h3>
+    <div class="framework">
+      <table>
+        <thead><tr><th>情境</th><th>會看到什麼</th><th>對兩位部長的含意</th></tr></thead>
+        <tbody>
+          <tr><td>各談各的</td><td>會後聲明只談貿易，中方對新規則只有口頭抗議</td><td>貝森特的「精準收緊」路線成立</td></tr>
+          <tr><td>中方反制</td><td>北京再次限制稀土，或拖延採購</td><td>盧特尼克「管制會引爆貿易戰」的警告得到印證</td></tr>
+          <tr><td>川普親自鬆綁</td><td>川普以晶片許可交換中方讓步</td><td>鷹派受挫，國會立法的壓力升高</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>第三種情境並非沒有前例：川普 2025 年 12 月批准 Nvidia H200 銷往中國，條件是 25% 的收入交給美國政府<span class="src">（Al Jazeera）</span>。</p>
+  </section>
+
+  <section>
+    <h2>九、市場與資金面</h2>
+    <p>政治事件正透過四條管道傳到市場：出口管制、國會調查、伊朗戰爭的油價，以及 AI 資金的重新分配。</p>
+
+    <div class="framework">
+      <table>
+        <thead><tr><th>指標</th><th>現況（撰文時）</th><th>來源</th></tr></thead>
+        <tbody>
+          <tr><td>Nvidia 股價</td><td>11/17 收盤 155.45 美元，較 10 月高點低近 40%；財報後盤後 163.83 美元（美東 18:14，+5.4%）</td><td>CoinDesk</td></tr>
+          <tr><td>Nvidia Q3 財報</td><td>預期營收約 1,080 億美元、EPS 2.47 美元；實際營收 1,158 億美元、非 GAAP EPS 2.68 美元</td><td>CoinDesk、AFP</td></tr>
+          <tr><td>那斯達克</td><td>自高點最多回檔 15%</td><td>CoinDesk</td></tr>
+          <tr><td>AI 基礎設施股</td><td>CoreWeave、IREN 等最多回檔 70%</td><td>CoinDesk</td></tr>
+          <tr><td>油價</td><td>布蘭特從 3、4 月的 120 美元，降到 11/5 的 93.82 美元</td><td>Al Jazeera</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>四條傳導管道</h3>
+    <ol>
+      <li><span class="strong">出口管制。</span>新規則直接打到東南亞資料中心這條通路。放空機構 Culper Research 宣稱，Nvidia 有高達 20% 的運算營收與中國有關；這是放空方的說法，需要財報會議來驗證。</li>
+      <li><span class="strong">國會調查。</span>12 月起的作證與 1 月後的傳票，會讓許可紀錄陸續曝光。這是一個持續數月的消息面風險，不是一次性事件。</li>
+      <li><span class="strong">伊朗戰爭與油價。</span>選後市場押注川普會收手，油價與殖利率回落。若戰事未如預期降溫，這筆交易會反轉。</li>
+      <li><span class="strong">資金爭奪。</span>CoinDesk 報導 Anthropic 預計 11/19 掛牌、估值約 1.4 兆美元，可能分流既有 AI 持股的資金。此項目前只見單一來源，請自行查證。</li>
+    </ol>
+
+    <p>分立政府對市場的一般含意是：立法僵局通常會降低財政政策的不確定性。但這一次，關稅、出口管制與戰爭都屬於行政權，不受僵局約束。</p>
+
+    <blockquote class="pull">
+      <p>政策風險並沒有因為國會易手而消失，<br>只是來源更集中在白宮。</p>
+    </blockquote>
+  </section>
+
+  <section>
+    <h2>十、接下來的觀察時間表</h2>
+    <p>本週最密集，之後的節點集中在 12 月的作證與 1 月的權力交接。</p>
+
+    <div class="framework">
+      <table>
+        <thead><tr><th>日期</th><th>事件</th><th>要看什麼</th></tr></thead>
+        <tbody>
+          <tr><td>11/17</td><td>Nvidia Q3 財報（盤後）</td><td>已公布：營收 1,158 億美元優於預期，指引上修；逐字稿解讀見下篇</td></tr>
+          <tr><td>11/18–19</td><td>眾院民主黨領導層選舉</td><td>Jeffries 的得票數，進步派拿到哪些承諾</td></tr>
+          <tr><td>11/19</td><td>深圳川習會</td><td>會後是否提到晶片；中方是否對新規則反制</td></tr>
+          <tr><td>12/1–2</td><td>黃仁勳接受眾院三個委員會約談</td><td>是否出席；是否牽出商務部的許可決策</td></tr>
+          <tr><td>12 月</td><td>盧特尼克赴參院銀行委員會作證</td><td>共和黨參議員的提問力道；白宮是否繼續力挺</td></tr>
+          <tr><td>12 月</td><td>參院民主黨領導層投票</td><td>Schumer 的票數；是否承諾不再競選連任</td></tr>
+          <tr><td>2027/1/3</td><td>新國會上任</td><td>民主黨第一批傳票的對象</td></tr>
+          <tr><td>2027/1/10</td><td>美中貿易休戰到期</td><td>延長、升級成大協議，或破局</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <span class="label">下篇預告</span>
+      <p>科技巨頭與 AI 公司在這場博弈中的立場與角色，另寫成下篇〈美國政經權力版圖（下篇）：科技巨頭與 AI 公司的立場與角色〉，整理中，上線後補上連結。</p>
+    </div>
+  </section>
+
+  <div class="closing">
+    <p class="grace">
+      <span class="small">DIVIDED GOVERNMENT, CONCENTRATED RISK</span>
+      國會換了主人，<br>風險卻更集中在白宮。
+    </p>
+  </div>
+
+  <section class="sources">
+    <h2>資料來源</h2>
+    <p class="intro">想自己查證或延伸閱讀的讀者，以下是本文引用的報導。分成兩組：已讀過全文的，以及只看得到標題與摘要的。</p>
+
+    <h3>已閱讀全文</h3>
+    <p>Washington Post via Inquirer：兩位部長的衝突。<a href="https://www.inquirer.com/news/nation-world/nvidia-huang-bessent-lutnick-trump-megaspeed-20261113.html" target="_blank" rel="noopener">inquirer.com</a></p>
+    <p>New York Times 轉載：貝森特轉鷹。<a href="https://10bmnews.com/bessent-takes-hawkish-turn-in-white-house-debate-on-china/" target="_blank" rel="noopener">10bmnews.com</a></p>
+    <p>Semafor：貝森特人物側寫。<a href="https://www.semafor.com/article/12/08/2025/how-scott-bessent-took-over-the-global-economy" target="_blank" rel="noopener">semafor.com</a></p>
+    <p>Fortune：貝森特談 Nvidia。<a href="https://fortune.com/2026/11/15/treasury-secretary-scott-bessent-nvidia-jensen-huang-nvidia-china-spy-scandal/" target="_blank" rel="noopener">fortune.com</a></p>
+    <p>Newsmax via Yahoo：川普不換盧特尼克。<a href="https://yahoo.com/news/politics/articles/trump-wont-fire-commerce-secretary-175129113.html" target="_blank" rel="noopener">yahoo.com</a></p>
+    <p>Reuters via Korea Times：民主黨內部分歧。<a href="https://www.koreatimes.co.kr/amp/world/20261115/after-midterm-sweep-democrats-split-over-trump-cost-cutting-agenda" target="_blank" rel="noopener">koreatimes.co.kr</a></p>
+    <p>Al Jazeera：民主黨領導層。<a href="https://www.aljazeera.com/news-analysis/2026/11/14/why-us-democrats-are-expected-to-keep-schumer-and-jeffries-in-power" target="_blank" rel="noopener">aljazeera.com</a></p>
+    <p>Al Jazeera：共和黨選後路線。<a href="https://www.aljazeera.com/news/2026/11/5/vance-eyes-2028-reset-as-republicans-mull-pivot-after-us-midterms-drubbing" target="_blank" rel="noopener">aljazeera.com</a></p>
+    <p>Punchbowl：Jeffries 與 Schumer。<a href="https://punchbowl.news/article/washington/jeffries-power-play-schumer-2028-dilemma" target="_blank" rel="noopener">punchbowl.news</a></p>
+    <p>TIME：AI 如何影響期中選舉。<a href="https://time.com/article/2026/11/04/midterm-elections-results-ai-industry-data-centers/" target="_blank" rel="noopener">time.com</a></p>
+    <p>Seoul Economic Daily：美方對川習會的說法。<a href="https://en.sedaily.com/world/2026/11/14/us-says-trump-unlikely-to-raise-nvidia-scandal-with-xi" target="_blank" rel="noopener">en.sedaily.com</a></p>
+    <p>AFP via Yahoo：新出口規則與財報前瞻。<a href="https://uk.finance.yahoo.com/news/nvidia-earnings-test-ai-boom-014359814.html" target="_blank" rel="noopener">uk.finance.yahoo.com</a></p>
+    <p>CoinDesk：Nvidia 財報前的市場狀況。<a href="https://www.coindesk.com/markets/2026/11/17/nvidia-faces-first-earnings-test-without-jensen-huang-as-ai-stocks-slide" target="_blank" rel="noopener">coindesk.com</a></p>
+
+    <h3>僅見標題與摘要（網站不開放全文，引用時請留意）</h3>
+    <p>Axios：戰情室衝突。<a href="https://axios.com/2026/11/11/bessent-lutnick-megaspeed-nvidia-china-chips" target="_blank" rel="noopener">axios.com</a></p>
+    <p>CNN：盧特尼克與黃仁勳的關係。<a href="https://www.cnn.com/2026/11/15/politics/lutnick-jensen-alice-huang-trump-nvidia" target="_blank" rel="noopener">cnn.com</a></p>
+    <p>CNBC：共和黨 2028 接班人互相指責。<a href="https://www.cnbc.com/2026/11/10/trump-vance-rubio-republican-desantis-midterms.html" target="_blank" rel="noopener">cnbc.com</a></p>
+    <p>CNBC：Nvidia 財報前瞻。<a href="https://www.cnbc.com/2026/11/17/nvidias-kress-faces-earnings-test-after-stock-drags-wall-street-into-the-red.html" target="_blank" rel="noopener">cnbc.com</a></p>
+    <p>The Hill：Blumenthal 要求盧特尼克下台。<a href="https://thehill.com/homenews/senate/6220891-blumenthal-calls-lutnick-resign-nvidia-scandal/" target="_blank" rel="noopener">thehill.com</a></p>
+    <p>Al Jazeera：川普訪中與 H200 前例。<a href="https://www.aljazeera.com/news/2026/11/12/trump-heads-to-china-amid-nvidia-scandal-will-he-get-tougher-on-beijing" target="_blank" rel="noopener">aljazeera.com</a></p>
+    <p>KTVU：黃仁勳辭任。<a href="https://www.ktvu.com/news/nvidia-ceo-jensen-huang-resigns-amid-affairs-scandal-congressional-scrutiny" target="_blank" rel="noopener">ktvu.com</a></p>
+    <p>Financial Times 轉載：2024 年財長之爭。<a href="https://todayinthemarkets.com/?p=53729" target="_blank" rel="noopener">todayinthemarkets.com</a></p>
+    <p>Erie News Now：貝森特與 Pulte 衝突。<a href="https://www.erienewsnow.com/story/53066002/top-trump-economic-officials-almost-come-to-blows-at-exclusive-maga-club-sources-say" target="_blank" rel="noopener">erienewsnow.com</a></p>
+  </section>
+
+  <nav class="pager">
+    <a class="next" href="reading-the-lei.html"><span class="dir">下一篇 →</span><span class="pt">讀懂領先經濟指標 LEI：水位落後，斜率領先</span></a>
+  </nav>
+
+  <div class="foot">
+    <div class="dot"></div>
+    <a href="index.html">← 回目錄</a>　法蘭的學習筆記｜投資筆記
+    <p class="disclaimer">本文為個人研究筆記，整理自撰文時（2026 年 11 月 17 日，Nvidia Q3 財報公布後）的公開報導，事件仍在快速發展，後續可能與文中描述不同。文中的「傾向推估」與情境分析是根據公開資訊所做的推論，不是預測，也不構成任何投資建議或買賣任何證券的推薦。派系歸類僅為方便閱讀，不代表當事人的自我定位。</p>
+  </div>
+
+</article>
+</body>
+</html>
