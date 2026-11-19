@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HR79WVR1T3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HR79WVR1T3');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>美國政經權力版圖（下篇）：科技巨頭與 AI 公司的立場與角色｜Nvidia 現況、三個陣營與財報解讀</title>
+<meta name="description" content="黃仁勳下台後，科技業在華府最有力的反管制聲音消失了。整理 Nvidia 的處境、AI 實驗室／晶片商／雲端巨頭三個陣營的立場，以及 Q3 財報電話會議與財報後第一個交易日的解讀。">
+<link rel="canonical" href="https://francpeng-ops.github.io/francis-notes/us-power-map-tech-and-ai.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     投資筆記 — 沿用知識解碼版型，主色換成靛藍（與上篇相同）
+     ============================================================ */
+  :root{
+    --paper:#F5F0E7;
+    --ink:#23282B;
+    --ink-soft:#4E575B;
+    --faint:#8C969A;
+    --accent:#0E3F6E;          /* 投資筆記：靛藍 */
+    --accent-soft:#4F659E;
+    --hair:rgba(35,40,43,0.12);
+    --serif:"Noto Serif TC",serif;
+    --sans:"Noto Sans TC",sans-serif;
+    --mono:ui-monospace,"SF Mono",Menlo,monospace;
+  }
+  *{box-sizing:border-box;}
+  html{ -webkit-text-size-adjust:100%; }
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--sans); font-weight:400; line-height:2.0;
+    letter-spacing:0.02em; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  .wrap{ max-width:39rem; margin:0 auto; padding:0 1.5rem 5rem; opacity:0; animation:rise 0.9s ease-out 0.05s forwards; }
+  @keyframes rise{ from{opacity:0;transform:translateY(10px);} to{opacity:1;transform:translateY(0);} }
+  @media (prefers-reduced-motion:reduce){ .wrap{animation:none;opacity:1;} }
+
+  .hero{ padding:5rem 0 2.75rem; text-align:center; }
+  .hero .kicker{ font-weight:500; font-size:0.74rem; letter-spacing:0.26em; color:var(--accent); margin:0 0 1.7rem; }
+  .hero h1{ font-family:var(--serif); font-weight:700; font-size:2.0rem; line-height:1.5; letter-spacing:0.03em; margin:0 0 1.1rem; }
+  .hero .sub{ font-size:0.92rem; color:var(--ink-soft); letter-spacing:0.06em; font-weight:300; line-height:1.85; margin:0; }
+  .hero .asof{ display:inline-block; margin-top:1.4rem; font-family:var(--mono); font-size:0.68rem; letter-spacing:0.12em; color:var(--faint); }
+
+  .tldr{ margin:2.5rem 0 0; padding:1.4rem 1.5rem 1.5rem; background:rgba(58,77,122,0.06); border:1px solid rgba(58,77,122,0.18); border-left:4px solid var(--accent); border-radius:4px; }
+  .tldr .label{ font-family:var(--mono); font-size:0.66rem; letter-spacing:0.24em; color:var(--accent); margin:0 0 0.7rem; }
+  .tldr p{ font-size:0.99rem; line-height:1.95; margin:0 0 0.8em; color:var(--ink); }
+  .tldr ul{ margin:0; padding-left:1.1rem; }
+  .tldr li{ font-size:0.97rem; line-height:1.9; margin:0 0 0.55em; }
+  .tldr li:last-child{ margin-bottom:0; }
+
+  section{ margin-top:3.5rem; }
+  section.intro{ margin-top:0.5rem; }
+  section.intro a{ color:var(--accent); text-decoration:none; border-bottom:1px solid rgba(79,101,158,0.40); }
+  section.intro a:hover{ opacity:0.68; }
+  h2{ font-family:var(--serif); font-weight:600; font-size:1.3rem; line-height:1.6; letter-spacing:0.03em; margin:0 0 1.25rem; padding-bottom:0.5rem; border-bottom:1px solid var(--hair); }
+  h3{ font-family:var(--sans); font-weight:500; font-size:1.02rem; letter-spacing:0.04em; color:var(--accent); margin:1.6rem 0 0.4rem; }
+  p{ font-size:1.0625rem; margin:0 0 1.4em; color:var(--ink); }
+  p:last-child{ margin-bottom:0; }
+  section ul, section ol{ margin:0 0 1.4em; padding-left:1.3rem; }
+  section li{ font-size:1.0625rem; line-height:1.95; margin:0 0 0.7em; }
+
+  .en{ font-family:var(--serif); font-style:italic; letter-spacing:0.01em; }
+  .strong{ font-weight:500; color:var(--ink); }
+  .hl{ font-style:normal; font-weight:500; color:var(--ink); background:linear-gradient(transparent 62%, rgba(58,77,122,0.16) 62%); }
+  .src{ font-size:0.82em; color:var(--faint); letter-spacing:0.02em; }
+
+  /* ---------- callout（推估、更新、揭露等提示框）---------- */
+  .callout{ margin:1.6rem 0; padding:1rem 1.2rem; background:rgba(58,77,122,0.05); border:1px solid rgba(58,77,122,0.14); border-radius:4px; }
+  .callout .label{ display:block; font-family:var(--mono); font-size:0.64rem; letter-spacing:0.2em; color:var(--accent); margin:0 0 0.35rem; }
+  .callout p{ font-size:0.98rem; line-height:1.9; margin:0; }
+
+  /* ---------- framework table ---------- */
+  .framework{ margin:1.6rem 0 1.5rem; overflow-x:auto; }
+  table{ width:100%; border-collapse:collapse; font-size:0.94rem; line-height:1.7; }
+  thead th{ background:var(--accent); color:#F5F0E7; font-weight:500; text-align:left; padding:0.55rem 0.85rem; letter-spacing:0.04em; white-space:nowrap; }
+  tbody td{ padding:0.6rem 0.85rem; border-bottom:1px solid var(--hair); vertical-align:top; }
+  tbody td:first-child{ font-weight:600; color:var(--ink); min-width:4.6em; }
+  tbody tr:nth-child(even){ background:rgba(58,77,122,0.05); }
+  .tnote{ font-size:0.82rem; color:var(--faint); line-height:1.8; margin:-0.6rem 0 1.4em; }
+
+  .pull{ margin:2.5rem 0; padding:0 0 0 1.2rem; border-left:3px solid var(--accent-soft); }
+  .pull p{ font-family:var(--serif); font-weight:500; font-size:1.24rem; line-height:1.8; letter-spacing:0.02em; color:var(--ink); margin:0; }
+
+  /* ---------- sources（資料來源小字段落）---------- */
+  .sources h2{ font-size:1.05rem; }
+  .sources h3{ font-size:0.9rem; margin-top:1.4rem; }
+  .sources .intro{ font-size:0.86rem; color:var(--ink-soft); line-height:1.9; margin:0 0 1.2em; }
+  .sources p{ font-size:0.82rem; line-height:1.9; color:var(--faint); margin:0 0 0.95em; }
+  .sources a{ color:var(--accent-soft); text-decoration:none; border-bottom:1px solid rgba(79,101,158,0.35); word-break:break-all; }
+  .sources a:hover{ opacity:0.68; }
+
+  .closing{ position:relative; margin-top:4.5rem; padding:5rem 1rem; text-align:center; overflow:hidden; }
+  .closing::before{ content:""; position:absolute; left:50%; top:46%; width:min(120%,30rem); height:30rem; transform:translate(-50%,-50%);
+    background:radial-gradient(circle, rgba(150,165,210,0.80) 0%, rgba(150,165,210,0.30) 32%, rgba(245,240,231,0) 68%); z-index:0; }
+  .closing .grace{ position:relative; z-index:1; font-family:var(--serif); font-weight:600; font-size:1.6rem; line-height:1.7; letter-spacing:0.08em; margin:0; }
+  .closing .grace .small{ display:block; font-family:var(--mono); font-size:0.66rem; letter-spacing:0.26em; color:var(--accent); margin-bottom:1.3rem; font-weight:400; }
+
+  .foot{ margin-top:3rem; text-align:center; color:var(--faint); font-size:0.76rem; letter-spacing:0.1em; line-height:1.9; }
+  .foot .dot{ width:4px; height:4px; border-radius:50%; background:var(--accent); opacity:0.7; margin:0 auto 1.3rem; }
+  .foot a{ color:var(--accent); text-decoration:none; }
+  .disclaimer{ margin-top:1.4rem; font-size:0.72rem; color:var(--faint); line-height:1.8; letter-spacing:0.04em; }
+
+  @media (max-width:430px){
+    .hero{ padding:3.75rem 0 2.25rem; } .hero h1{ font-size:1.7rem; }
+    .pull p{ font-size:1.14rem; } .closing .grace{ font-size:1.42rem; } .closing{ padding:4rem 0.5rem; }
+    table{ font-size:0.88rem; } thead th, tbody td{ padding:0.5rem 0.6rem; }
+  }
+
+  /* ---------- top nav ---------- */
+  .topnav{ padding-top:1.6rem; }
+  .topnav a{ font-family:var(--mono); font-size:0.72rem; letter-spacing:0.16em; color:var(--accent); text-decoration:none; }
+  .topnav a:hover{ opacity:0.65; }
+  .topnav + .hero{ padding-top:2.5rem; }
+
+  /* ---------- pager ---------- */
+  .pager{ display:flex; justify-content:space-between; gap:1.2rem; margin-top:4rem; padding-top:1.6rem; border-top:1px solid var(--hair); }
+  .pager a{ text-decoration:none; color:var(--accent); max-width:48%; }
+  .pager .next{ text-align:right; margin-left:auto; }
+  .pager .dir{ font-family:var(--mono); font-size:0.66rem; letter-spacing:0.14em; }
+  .pager .pt{ display:block; font-family:var(--serif); font-weight:500; font-size:0.95rem; line-height:1.45; color:var(--ink-soft); margin-top:0.35rem; }
+  .pager a:hover .pt{ color:var(--ink); }
+
+  /* ---------- dark mode ---------- */
+  :root{ color-scheme: light dark; }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --paper:#1A1712; --ink:#ECE6D9; --ink-soft:#B7AF9F; --faint:#8C8474;
+      --hair:rgba(236,230,217,0.14); --accent:#5C93D6; --accent-soft:#7DA9E0;
+    }
+    .hl{ background:linear-gradient(transparent 62%, rgba(128,147,204,0.32) 62%); }
+    .tldr{ background:rgba(128,147,204,0.10); border-color:rgba(128,147,204,0.30); }
+    .callout{ background:rgba(128,147,204,0.08); border-color:rgba(128,147,204,0.24); }
+    thead th{ color:#15151A; }
+    tbody tr:nth-child(even){ background:rgba(128,147,204,0.10); }
+    section.intro a{ border-bottom-color:rgba(125,169,224,0.45); }
+    .sources a{ color:var(--accent-soft) !important; border-bottom-color:rgba(125,169,224,0.40); }
+    .closing::before{ background:radial-gradient(circle, rgba(128,147,204,0.20) 0%, rgba(128,147,204,0.08) 32%, rgba(26,23,18,0) 68%); }
+    .foot a{ color:var(--accent) !important; }
+  }
+</style>
+</head>
+<body>
+<article class="wrap">
+  <div class="topnav"><a href="index.html">← 回目錄</a></div>
+
+  <header class="hero">
+    <div class="kicker">投資筆記　·　下篇</div>
+    <h1>美國政經權力版圖：<br>科技巨頭與 AI 公司的立場與角色</h1>
+    <p class="sub">Nvidia 的處境、企業的三個陣營，<br>以及財報前後市場怎麼重新定價</p>
+    <span class="asof">資料截至 2026.11.18 收盤｜含 Nvidia Q3 財報與次日走勢</span>
+  </header>
+
+  <section class="intro">
+    <p>這篇接續<a href="us-power-map-post-midterms.html">上篇</a>。上篇看的是華府：分立政府怎麼形成、兩位部長怎麼角力。這篇換個位置，從企業的角度看同一場博弈——黃仁勳下台之後，Nvidia 現在站在哪裡，科技巨頭與 AI 公司又各自想從這個局面拿到什麼。</p>
+    <p>和上篇一樣，這份報告主要透過 Claude 蒐集與整理，提供大家參考。財報與股價寫到 11/18 收盤為止，事件還在快速發展，後續可能與文中不同。如果發現任何錯誤，歡迎透過 <a href="https://lin.ee/ZKl2GV5" target="_blank" rel="noopener">LINE</a> 留言告訴我、不吝指正。</p>
+  </section>
+
+  <div class="tldr">
+    <p class="label">TL;DR</p>
+    <p>黃仁勳下台後，科技業在華府最有力的「反對收緊出口管制」聲音消失了，各家公司正在搶佔他留下的位置。Nvidia 的財報證明需求還在，但市場不打算替它的治理風險買單。</p>
+    <ul>
+      <li><span class="strong">企業分成三個陣營。</span>Anthropic 與 OpenAI 主張收緊晶片出口；Nvidia、AMD、Qualcomm 與設備商反對；雲端巨頭兩邊下注，並在新規則中取得豁免。</li>
+      <li><span class="strong">Nvidia 一半是犧牲者。</span>它同時失去創辦人、華府影響力與東南亞這條通路；但 Megaspeed 的合規問題是它自己的。</li>
+      <li><span class="strong">董事會選了華府這一邊。</span>財報會議上，董事長表明無意讓黃仁勳復職，並要求新 CEO 能處理國安議題，方向與貝森特的公開要求一致。</li>
+      <li><span class="strong">數字很好，股價不買單。</span>Q3 營收 1,158 億美元、上修全年指引；盤後一度漲 5.4%，隔天卻收跌 2.9%，AMD 與 Broadcom 守住了漲幅。</li>
+      <li><span class="strong">最脆弱的是新興雲端業者。</span>Nvidia 對客戶融資轉趨保守，而它 1,180 億美元的擔保中，近九成與 OpenAI 的單一園區有關。</li>
+    </ul>
+  </div>
+
+  <div class="callout">
+    <span class="label">閱讀前</span>
+    <p>文中標為「判讀」的段落，是根據公開報導所做的推論，不是預測，也不是投資建議。日期除特別註明外皆為 2026 年，時間以美東為準。</p>
+  </div>
+
+  <div class="callout">
+    <span class="label">揭露</span>
+    <p>本文的研究整理由 Anthropic 開發的 Claude 協助完成，而 Anthropic 是文中的當事方之一：它是收緊派的主要推手，也在本週掛牌。涉及 Anthropic 的段落只引用第三方報導，請特別對照原始來源。</p>
+  </div>
+
+  <section>
+    <h2>一、Nvidia 是犧牲者嗎</h2>
+    <p>一半是。Nvidia 承受了這場政治角力最大的損失，但起火點在它自己的客戶與治理；其他人是順勢利用，而不是設局。</p>
+
+    <h3>支持「犧牲者」說法的事實</h3>
+    <ul>
+      <li><span class="strong">它成了內閣鬥爭的戰場。</span>貝森特用 Megaspeed 攻擊盧特尼克，並公開要求 Nvidia 董事會大幅改組。兩位部長的舊怨早於這件事（詳見上篇）。</li>
+      <li><span class="strong">對手在它倒下時進場。</span>AMD 加強對華府的接觸，接近該公司的人士說黃仁勳倒台留下「影響力真空」；Anthropic 與 OpenAI 則順勢推動立法<span class="src">（Politico via Yahoo）</span>。</li>
+      <li><span class="strong">它失去的不只是 CEO。</span>黃仁勳花了一年多遊說放寬晶片限制，也是開源模型陣營最有分量的代言人。這兩個政策立場現在都沒有人接手<span class="src">（TechCrunch）</span>。</li>
+      <li><span class="strong">股價跌幅有一部分來自大盤。</span>期中選舉後 AI 類股已先下跌，醜聞是疊加在上面。</li>
+      <li><span class="strong">它比醜聞更早切割過 Megaspeed。</span>商務部 2025 年 5 月向 Nvidia 調閱對 Megaspeed 的銷售紀錄，Nvidia 在 2025 年 6 月就把它列入禁售名單，比醜聞爆發早了一年多<span class="src">（ABC7）</span>。</li>
+    </ul>
+
+    <h3>不支持的事實</h3>
+    <ul>
+      <li><span class="strong">Megaspeed 是 Nvidia 的客戶。</span>美國當局 2024 年就開始調查它涉嫌違反出口管制，比這次醜聞早兩年。</li>
+      <li><span class="strong">Nvidia 是放寬政策的主要受益者。</span>這是 AMD 陣營的說法，但也說明了為何火力集中在它身上。</li>
+      <li><span class="strong">合規問題尚未釐清。</span>貝森特質疑公司是否靠可疑的銷售衝高營收；這是指控，尚無結論。Nvidia 已設立國家安全與出口管制監督委員會<span class="src">（Fox News）</span>。</li>
+    </ul>
+
+    <blockquote class="pull">
+      <p>Nvidia 的漏洞是自己的，<br>但漏洞被放大到什麼程度，是政治決定的。</p>
+    </blockquote>
+    <p>對持股的人來說，這個區分有實際意義：政治壓力會隨議程轉移而消退，合規與中國營收的問題，則要靠調查結果與財報揭露來回答。</p>
+  </section>
+
+  <section>
+    <h2>二、三個陣營</h2>
+    <p>各家的立場大致跟著商業利益走：<span class="hl">賣晶片的想多賣，買晶片的想把供給留在美國，兩樣都做的就兩邊下注。</span></p>
+
+    <h3>收緊派：前沿 AI 實驗室</h3>
+    <p>Anthropic 與 OpenAI 都支持 AI OVERWATCH、MATCH 與 Chip Security 三項法案，這些法案可能併入年度國防法案。兩家的公開理由是維持美國的技術領先。報導也指出商業面的動機：它們依賴高階晶片，限制外銷能把更多供給留在美國，而且它們直接與 DeepSeek 等中國開發者競爭。兩家也都向華府反映中國業者「蒸餾」美國模型的問題。</p>
+    <p>這個陣營在政策上得勢，但在輿論上有代價。黃仁勳下台後，部分開源社群人士指控兩家公司遊說限制開放權重；Anthropic 執行長否認曾主張這種禁令，OpenAI 則簽了支持開放權重的公開信<span class="src">（Decrypt 摘要）</span>。</p>
+
+    <h3>反對派：晶片商與設備商</h3>
+    <p>這個陣營失去了領頭羊。黃仁勳的論點是，賣晶片給中國能讓對方持續依賴美國技術，政府與國會盟友過去也採用這套說法。現在企業和原本支持它們的議員，都很難再公開反對管制。AMD 與 Qualcomm 改為私下遊說，目標從「阻擋管制」縮小為「修改條文」。</p>
+
+    <h3>兩邊下注：雲端巨頭</h3>
+    <p>Microsoft、Alphabet、Amazon、Meta 既是 Nvidia 最大的買家，也在研發自己的晶片。它們的利益是混合的：</p>
+    <ul>
+      <li><span class="strong">新規則對它們有利。</span>據報導，東南亞當地與非美系的資料中心業者要申請許可，美國雲端業者則被排除在外，等於競爭者被設了門檻。</li>
+      <li><span class="strong">它們不喜歡供應鏈管制。</span>今年稍早，Amazon、Google、Meta、Microsoft 等公司的主管曾遊說白宮，反對禁用中國製光收發器，理由是合規可能要花十年。</li>
+      <li><span class="strong">它們是資料中心政治反彈的目標。</span>期中選舉中，選民對電費與在地衝擊的不滿，是衝著興建資料中心的公司來的。</li>
+    </ul>
+
+    <h3>各家公司立場總表</h3>
+    <p>立場只列報導中有明確依據的；沒有公開表態的，標為「未表態」而不去猜。處境一欄為事件當週、財報之前的狀態。</p>
+    <div class="framework">
+      <table>
+        <thead><tr><th>公司</th><th>對晶片出口管制</th><th>在博弈中的角色</th><th>事件後的處境</th></tr></thead>
+        <tbody>
+          <tr><td>Nvidia</td><td>長期反對收緊，主張讓中國依賴美國技術</td><td>風暴中心；失去創辦人與華府影響力</td><td>股價較 10 月高點低近 40%；面臨國會調查</td></tr>
+          <tr><td>AMD</td><td>反對打擊先進晶片銷售的措施，正在調整策略</td><td>填補遊說真空，與川普政府官員建立管道</td><td>股價一度大漲，之後回到財報前水準</td></tr>
+          <tr><td>Qualcomm</td><td>遊說反對國防法案中的部分管制條款</td><td>低調的反對者</td><td>股價在黃仁勳辭任後上漲</td></tr>
+          <tr><td>Broadcom</td><td>未表態</td><td>為雲端巨頭客製晶片，是替代方案的供應商</td><td>事件當週漲 24%</td></tr>
+          <tr><td>ASML 等設備商</td><td>ASML 財務長公開反對 MATCH 法案</td><td>設備管制的潛在受害者（另含 Tokyo Electron、Applied Materials、Lam、KLA）</td><td>法案若過，對中銷售受限</td></tr>
+          <tr><td>Anthropic</td><td>公開籲請國會通過三項管制法案</td><td>收緊派的主要推手；監管派最大金主</td><td>政策面得勢；IPO 已定價，11/19 掛牌</td></tr>
+          <tr><td>OpenAI</td><td>向國會辦公室表態支持三項法案</td><td>收緊派；但在開源議題上簽署了支持開放權重的公開信</td><td>政策面得勢；據報正準備新一波政策與公關攻勢</td></tr>
+          <tr><td>Microsoft、Meta</td><td>未就晶片管制公開表態；今年稍早連署黃仁勳發起的公開信，反對過度限制開放權重模型</td><td>兩邊下注</td><td>美國雲端業者在新規則中獲得豁免（報導點名 Microsoft）</td></tr>
+          <tr><td>Alphabet、Amazon</td><td>未表態</td><td>Nvidia 的大客戶，也是自研晶片的競爭者</td><td>同樣獲得豁免；Alphabet 被視為受惠者</td></tr>
+          <tr><td>馬斯克（SpaceX、xAI）</td><td>未就管制表態</td><td>挺黃仁勳回任的最高調聲音；本屆選舉最大金主</td><td>政治投資失利，他支持的 Paxton 落選</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tnote">來源：Politico via Yahoo、TechCrunch、TIME、Al Jazeera、CoinDesk。豁免一事為 Straits Times 報導的轉述，股價漲幅取自 CNBC 摘要，兩者都未讀到原文。</p>
+  </section>
+
+  <section>
+    <h2>三、誰得利、誰受害</h2>
+    <p>事件當週，資金沒有離開 AI 晶片，而是從 Nvidia 轉向替代供應商；但整個 AI 類股同時在跌，所以「得利」是相對的。</p>
+
+    <div class="framework">
+      <table>
+        <thead><tr><th>對象</th><th>變化</th><th>備註</th></tr></thead>
+        <tbody>
+          <tr><td>Nvidia</td><td>事件當週跌 11%；較 10 月高點低近 40%</td><td>前瞻本益比約 10 倍，有分析師稱估值過度悲觀</td></tr>
+          <tr><td>AMD</td><td>當週漲 30%，之後回到財報前水準</td><td>前瞻本益比約 30 倍；直接競爭 GPU</td></tr>
+          <tr><td>Broadcom</td><td>當週漲 24%</td><td>為 Google、Anthropic、OpenAI 等客戶設計客製晶片</td></tr>
+          <tr><td>Alphabet</td><td>盤後上漲</td><td>自研晶片被視為替代方案</td></tr>
+          <tr><td>CoreWeave、IREN 等新興雲端業者</td><td>最多回檔 70%</td><td>高度依賴 Nvidia 的供貨與資金</td></tr>
+          <tr><td>東南亞資料中心業者</td><td>需申請美國許可</td><td>泰國稱有 120 億美元的資料中心容量受影響</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tnote">數字取自 CoinDesk，以及 CNBC、Bloomberg、Motley Fool 與 Investing.com 的搜尋摘要；後者未讀到全文，請當成線索而非定論。</p>
+
+    <h3>三個結構性的觀察</h3>
+    <ol>
+      <li><span class="strong">Nvidia 的護城河沒有消失。</span>分析師提醒 CUDA 生態系會拖慢客戶轉單；也有分析師指出，AMD 與 Broadcom 在醜聞前就已在拿份額。</li>
+      <li><span class="strong">黃仁勳的個人關係是無形資產。</span>馬斯克說許多交易是跟黃仁勳握手談成的，沒有書面合約。這些承諾會不會延續，財報會議給了一部分答案（見第五節）。</li>
+      <li><span class="strong">管制的受害範圍可能擴大到設備商。</span>MATCH 法案若通過，會要求盟國跟進限制對中設備銷售；ASML 去年有超過四分之一的營收來自中國。</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>四、馬斯克與挺黃仁勳回任的陣營</h2>
+    <p>矽谷有一批人正在推動黃仁勳回任，這件事的成敗，會是「矽谷對上華府鷹派」的一次直接較量。</p>
+
+    <h3>各方立場（11/17 聲明之前）</h3>
+    <div class="framework">
+      <table>
+        <thead><tr><th>立場</th><th>誰</th><th>論點</th></tr></thead>
+        <tbody>
+          <tr><td>支持回任</td><td>馬斯克、Epic Games 的 Tim Sweeney、Y Combinator 的 Garry Tan、YouTube 共同創辦人 Steve Chen、Uber 共同創辦人 Travis Kalanick</td><td>他未經正當程序就被逼退；許多生意靠的是他個人的承諾</td></tr>
+          <tr><td>要求保留選項</td><td>股東 Altimeter（Brad Gerstner）與 Atreides（Gavin Baker）</td><td>董事會應放慢腳步，不排除他回任</td></tr>
+          <tr><td>態度開放</td><td>川普</td><td>表示不介意看到他回來</td></tr>
+          <tr><td>反對</td><td>貝森特；SkyBridge 的 Scaramucci</td><td>董事會應外聘；國安調查結束前不該讓他回任</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>連署信「Stand With Jensen」已有超過 17 萬人簽署。在 11/17 之前，董事會沒有公開表態；Financial Times 報導董事會已接觸 Arm 執行長 Rene Haas，另有報導稱董事會並未考慮讓黃仁勳回任<span class="src">（Al Jazeera、CoinDesk）</span>。</p>
+
+    <h3>11/17：黃仁勳首度公開表態，願意回任</h3>
+    <p>黃仁勳 11/17 上午在 X 發表聲明，這是他辭任後第一次公開發言，由 Wall Street Journal 率先報導。重點有三：</p>
+    <ul>
+      <li><span class="strong">認錯。</span>他承認在私人生活中犯下嚴重錯誤，沒有達到公司對員工的要求，並對給董事會造成的困擾表示後悔。</li>
+      <li><span class="strong">配合調查。</span>他承諾全力配合董事會的獨立調查。</li>
+      <li><span class="strong">願意回任。</span>他說離開後收到員工、投資人、合作夥伴與客戶的大量呼籲；只要董事會認定符合股東、員工、公司與美國的最佳利益，他樂意回任執行長。</li>
+    </ul>
+    <p>董事會的回應來得很快。聲明發表當天下午，董事長 Harvey Jones 在財報電話會議上正式表示，董事會無意讓他復職（見第五節）。黃仁勳不像部分創辦人執行長那樣握有控制性股權，無法推翻董事會的決定。川普則表示，他相信黃仁勳不知道該名女子是間諜的說法。</p>
+    <div class="callout">
+      <span class="label">判讀</span>
+      <p>這份聲明把球丟回給董事會，而且刻意把「美國的利益」列為條件之一，等於同時向白宮喊話。它沒有回應 Megaspeed 與出口管制合規的問題，而那才是國會與貝森特關注的重點。董事會若在調查結束前讓他回任，要承擔的是對國會與財政部的政治風險；不讓他回任，要承擔的是員工與客戶的反彈。</p>
+    </div>
+
+    <h3>馬斯克的處境</h3>
+    <p>馬斯克的處境值得單獨看。他是本屆選舉最大的金主，捐了 4.46 億美元，其中約 1.68 億實質流向德州的 Paxton，而 Paxton 輸給了 Talarico<span class="src">（TIME）</span>。這可能削弱他在華府的分量；挺黃陣營目前主要靠輿論造勢，並尋求白宮支持。</p>
+  </section>
+
+  <section>
+    <h2>五、Nvidia Q3 財報電話會議：逐字稿解讀（11/17）</h2>
+    <p>數字全面優於預期，但這場會議真正的訊息是：<span class="hl">董事會公開關上黃仁勳回任的門，並把公司的姿態轉向配合華府。</span></p>
+    <p>本文對照了兩份逐字稿（Investing.com、StockNow）與 Nvidia 提交 SEC 的新聞稿。兩份逐字稿都是機器轉錄，個別用字可能有誤；下列數字在兩處以上一致時才採用。</p>
+
+    <h3>核心數字</h3>
+    <div class="framework">
+      <table>
+        <thead><tr><th>項目</th><th>實際</th><th>市場預期</th></tr></thead>
+        <tbody>
+          <tr><td>Q3 營收</td><td>1,158 億美元，年增 103%</td><td>約 1,090 億</td></tr>
+          <tr><td>資料中心營收</td><td>1,076 億美元</td><td>1,018.5 億</td></tr>
+          <tr><td>非 GAAP EPS</td><td>2.68 美元</td><td>2.47–2.48 美元</td></tr>
+          <tr><td>Q4 營收指引</td><td>1,300 億美元 ±3%</td><td>約 1,250 億</td></tr>
+          <tr><td>Q4 毛利率指引</td><td>71%–72%（Q3 為 74.8%）</td><td>—</td></tr>
+          <tr><td>FY2028 營收成長</td><td>約 75%，由 70% 上修</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>權力角力：董事會選了華府這一邊</h3>
+    <ul>
+      <li><span class="strong">董事長親自開場。</span>新任董事長 Harvey Jones 說，黃仁勳的個人行為不符公司行為準則，董事會一致接受辭呈，而且無意讓他復職。這距離黃仁勳上午的聲明不到一天。</li>
+      <li><span class="strong">Kress 全程沒有提到黃仁勳。</span>逐字稿中只有董事長提到他的名字，「創辦人」一詞完全沒出現。Kress 的用語是「一切照常」，把成績歸於員工。這是刻意的去個人化。</li>
+      <li><span class="strong">新 CEO 的條件帶有政治色彩。</span>董事會已聘 Heidrick &amp; Struggles 尋找人選，內外部都考慮，不趕時間。Jones 說新 CEO 必須能處理國家安全議題<span class="src">（TheStreet）</span>。</li>
+      <li><span class="strong">新設的監督委員會是對華府的交代。</span>國家安全與出口管制監督委員會的任務之一，是加強與美國政府各機關的往來。</li>
+    </ul>
+    <div class="callout">
+      <span class="label">判讀</span>
+      <p>這與貝森特公開要求的方向一致：外部人選、董事會主導、強化合規。挺黃陣營在這一回合輸了；但董事會用的是「無意」而不是「不會」，調查結果出來前，這件事還不算完全結束。</p>
+    </div>
+
+    <h3>沒說出口的部分：風險藏在沉默裡</h3>
+    <ul>
+      <li><span class="strong">中國營收已歸零，這點講得很清楚。</span>Q3 對中國的授權 Hopper 產品銷售為 24 億美元，約佔資料中心營收 2%；Q4 指引假設為零，Kress 說已不再出貨。</li>
+      <li><span class="strong">新加坡、Megaspeed、新的商務部規則，逐字稿中完全沒有出現。</span>這些正是國會與放空機構質疑的核心。Morgan Stanley 的分析師問到成長假設時，Kress 只說出口管制的影響還在研究。</li>
+      <li><span class="strong">調查不談。</span>Jones 開場就說明不回答辭任經過與調查的問題。當天 Wall Street Journal 報導證管會正在調查 Nvidia 是否違反投資人揭露規定，會議中沒有回應。</li>
+      <li><span class="strong">定價權的問題被繞開。</span>UBS 問客製晶片競爭下的定價能力，Kress 沒有正面回答，只說未來定價仍在考慮。</li>
+      <li><span class="strong">排定出席的技術主管沒有發言。</span>主持人預告 Ian Buck 會回答問題，但逐字稿中沒有他的發言。這只是觀察，原因不明。</li>
+    </ul>
+
+    <h3>財務曝險：Nvidia 正在變成產業的融資者</h3>
+    <div class="framework">
+      <table>
+        <thead><tr><th>項目</th><th>金額</th><th>說明</th></tr></thead>
+        <tbody>
+          <tr><td>採購承諾</td><td>3,900 億美元</td><td>7 月時為 2,790 億，一季增加約 1,100 億（差額為本文計算）</td></tr>
+          <tr><td>資料中心租賃與雲端服務承諾</td><td>1,000 億美元出頭</td><td>其中對新興雲端業者的承諾為 320 億</td></tr>
+          <tr><td>擔保</td><td>1,180 億美元</td><td>其中 1,050 億是為一個將以 20 年租約租給 OpenAI 的園區提供信用支持，2028 年起分階段上線</td></tr>
+          <tr><td>長期負債</td><td>324 億美元</td><td>年初為 75 億</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul>
+      <li><span class="strong">擔保高度集中在單一對象。</span>近九成的擔保與 OpenAI 的單一園區有關。這可能是這場會議中最值得追蹤的數字。</li>
+      <li><span class="strong">文件新增了一句話。</span>Bernstein 的分析師指出，財務長說明文件新增「對新興雲端業者的承諾取決於對方能否取得融資」的文字。Kress 回答這不是新做法，只是寫清楚。選在這個時間點補上這句話，值得留意。</li>
+      <li><span class="strong">融資轉趨保守。</span>被問到對新興雲端業者的融資時，Kress 說優先支持已有土地、電力與建物的對象，並逐一審查交易對手。資金用途的順序是供應商優先，客戶融資其次。</li>
+    </ul>
+    <p>這回應了馬斯克「許多交易是與黃仁勳握手談成」的說法：Kress 的答案，是把口頭關係改成有條件、可審查的合約。這對依賴 Nvidia 資金的新興雲端業者不利。</p>
+
+    <h3>機會面</h3>
+    <ul>
+      <li><span class="strong">需求沒有因為人事動盪而鬆動。</span>新平台 Vera Rubin 第一個出貨季就貢獻近 200 億美元；超大型雲端客戶營收 600 億，其餘 AI 雲端與企業客戶 470 億。</li>
+      <li><span class="strong">全年成長指引在最壞的時間點上修。</span>代理執行長在第一場會議就上修，等於押上自己的信用。</li>
+      <li><span class="strong">回購額度充足。</span>剩餘授權 2,273 億美元，預計在 FY2028 結束前執行完畢；單季自由現金流 438 億。</li>
+      <li><span class="strong">毛利率有底。</span>Kress 稱 Q4 的 71%–72% 是谷底，FY2028 預期回到 72%–73%。但這仍低於過去約 75% 的水準，原因是供應成本上升。</li>
+    </ul>
+
+    <h3>要持續追蹤的五個問題</h3>
+    <ol>
+      <li>獨立調查與證管會調查的結論，是否牽涉營收認列或揭露。</li>
+      <li>新的商務部規則對東南亞出貨的實際影響，公司何時給出數字。</li>
+      <li>OpenAI 相關擔保的條件，以及 OpenAI 自身的籌資狀況。</li>
+      <li>新 CEO 人選，以及選的是技術型，還是能與華府打交道的人。</li>
+      <li>毛利率能否如承諾在 Q4 見底。</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>六、財報後第一個交易日（11/18 收盤）</h2>
+    <p>Nvidia 的盤後漲幅在正式交易時段完全反轉，收在 150.96 美元、下跌 2.9%；對手 AMD 與 Broadcom 卻守住了漲幅。</p>
+
+    <blockquote class="pull">
+      <p>市場買的是 AI 需求，<br>賣的是 Nvidia 自己的治理與監管風險。</p>
+    </blockquote>
+
+    <div class="framework">
+      <table>
+        <thead><tr><th>標的</th><th>11/17 收盤</th><th>11/17 盤後</th><th>11/18 收盤</th><th>11/18 漲跌</th></tr></thead>
+        <tbody>
+          <tr><td>Nvidia（NVDA）</td><td>155.46</td><td>163.83（+5.4%）</td><td>150.96</td><td>−2.9%</td></tr>
+          <tr><td>AMD</td><td>503.41</td><td>531.00（+5.5%）</td><td>530.14</td><td>+5.3%</td></tr>
+          <tr><td>Broadcom（AVGO）</td><td>341.60</td><td>354.38（+3.7%）</td><td>354.08</td><td>+3.7%</td></tr>
+          <tr><td>TSMC ADR（TSM）</td><td>359.69</td><td>386.00（+7.3%）</td><td>約 362.6</td><td>+0.8%</td></tr>
+          <tr><td>Alphabet（GOOGL）</td><td>280.20</td><td>284.78（+1.6%）</td><td>約 282.3</td><td>+0.8%</td></tr>
+          <tr><td>CoreWeave（CRWV）</td><td>49.89</td><td>55.08（+10.3%）</td><td>約 47.9</td><td>−4.1%</td></tr>
+          <tr><td>半導體 ETF（SMH）</td><td>460.10</td><td>—</td><td>約 459.4</td><td>−0.2%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tnote">單位為美元。盤後價為 11/17 美東 18:14 的 Robinhood 即時報價，並與 TradingView 核對；Nvidia、AMD、Broadcom 的 11/18 收盤價取自 Motley Fool，標「約」的是 Robinhood 收盤前最後一筆成交價，與官方收盤價可能差幾分錢。各來源的 11/17 收盤價彼此也有幾分錢的差異。大盤方面，11/18 那斯達克漲 0.42%，標普 500 跌 0.23%，道瓊跌約 1.1%。</p>
+
+    <h3>走勢經過</h3>
+    <ul>
+      <li>盤後（11/17）漲 5.4% 到 163.83 美元；盤前仍漲近 4%；開盤後一路走低，收跌 2.9%。</li>
+      <li>成交量約 3.4 億股，是三個月均量的兩倍多。</li>
+      <li>過去一週累計下跌超過 13%。</li>
+      <li>有統計指出，Nvidia 最近十次財報中有九次在財報後收盤低於開盤，所以這次的形態不全然是新聞造成的。</li>
+    </ul>
+
+    <h3>盤後的第一印象，只維持了一個晚上</h3>
+    <p>11/17 盤後，漲的不只 Nvidia，連競爭對手 AMD、代工廠台積電、依賴 Nvidia 資金的 CoreWeave 都一起漲。那時看起來，市場把這份財報讀成「AI 需求沒有鬆動」，而不是「Nvidia 搶回份額」，事件當週「賣 Nvidia、買對手」的輪動似乎消失了。</p>
+    <p>正式交易時段推翻了這個印象：AMD 與 Broadcom 守住漲幅，Nvidia 與 CoreWeave 翻黑，輪動又回來了。盤後的反應，不該被當成結論。</p>
+
+    <h3>市場在擔心什麼</h3>
+    <ul>
+      <li><span class="strong">接班不確定。</span>董事會關上黃仁勳回任的門，但沒有給出新人選與時間表。</li>
+      <li><span class="strong">監管與調查疊加。</span>Wall Street Journal 報導證管會已對 Nvidia 展開民事調查，範圍包括揭露是否誤導投資人，完整範圍尚不清楚。</li>
+      <li><span class="strong">新興雲端業者被拖累。</span>CoreWeave、IREN 跟著下跌，與 Kress 在會議中對客戶融資轉趨保守的訊息一致。</li>
+      <li><span class="strong">極端空方的聲音。</span>有基金經理人公開稱這檔股票「不可投資」。這是單一意見，不代表共識。</li>
+    </ul>
+
+    <h3>分析師並沒有轉空</h3>
+    <p>UBS、Goldman Sachs 與 Citi 都維持買進評等，目標價在 220 到 225 美元之間；Freedom Broker 把目標價從 305 降到 230 美元，但仍是買進。目前的分布是 3 個強力買進、43 個買進、15 個持有。股價與目標價的差距，反映的是市場給治理與政策風險的折價，而不是對需求的懷疑。</p>
+
+    <h3>當天的新資訊</h3>
+    <ul>
+      <li><span class="strong">司法部與商務部就 Megaspeed 發表聯合聲明。</span>兩部會表示會依法追究任何犯罪行為。調查始於 2024 年，針對先進 Nvidia 晶片涉嫌轉移給中國企業<span class="src">（ABC7）</span>。</li>
+      <li><span class="strong">新委員會的人事。</span>國家安全與出口管制監督委員會由董事 Suzanne Nora Johnson 擔任主席，她是 Goldman Sachs 退休的副董事長；公司的國安與貿易合規團隊改為直接向 Kress 報告。</li>
+      <li><span class="strong">國會約談日程確定。</span>黃仁勳 12/1、法務長 Tim Teter 12/2，都是閉門進行。</li>
+      <li><span class="strong">國會委員會提出新的管制構想。</span>一個跨黨委員會建議，要求對中出口先進 AI 晶片的公司，先證明不會排擠美國市場的產能<span class="src">（SCMP 標題與摘要）</span>。</li>
+      <li><span class="strong">川普抵達深圳。</span>習近平破例到機場迎接；川普先前表示不想在晶片銷售上「冒犯」中國。川習會在 11/19 舉行，分析師預期具體成果有限。</li>
+      <li><span class="strong">Anthropic 的 IPO 定價高於區間。</span>多家媒體引述消息人士報導，定價 83 美元，高於 70 到 78 美元的區間，完全稀釋估值約 1.5 兆美元，11/19 開始交易。Bloomberg 稱發行規模也加大，含私募部分合計超過 940 億美元。基於前述揭露，這一項請直接看原始報導。</li>
+    </ul>
+
+    <h3>這對三個陣營的含意</h3>
+    <ul>
+      <li><span class="strong">晶片商陣營內部分化。</span>同樣反對管制的 AMD 成了受惠者，因為它沒有治理包袱。</li>
+      <li><span class="strong">AI 實驗室的資金面沒有受傷。</span>在 Nvidia 動盪的同一週，資金仍願意以高於區間的價格認購 AI 新股。市場區分了「AI 需求」與「Nvidia 個股風險」。</li>
+      <li><span class="strong">最脆弱的是依賴 Nvidia 資金的新興雲端業者。</span>它們同時承受融資收緊與股價下跌。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>七、接下來要看什麼</h2>
+    <p>政治面的日程見上篇，這裡只列與企業直接相關的訊號。</p>
+
+    <div class="framework">
+      <table>
+        <thead><tr><th>時間</th><th>事件</th><th>訊號</th></tr></thead>
+        <tbody>
+          <tr><td>11/19</td><td>Anthropic 掛牌（代號 ANT）</td><td>已定價 83 美元，高於區間；看首日表現，以及對既有 AI 持股的資金排擠</td></tr>
+          <tr><td>12/1–2</td><td>黃仁勳與法務長 Teter 接受國會閉門約談</td><td>是否牽出商務部的許可決策</td></tr>
+          <tr><td>未定</td><td>Nvidia 董事會的 CEO 決定</td><td>董事會已表明無意讓黃仁勳復職；看外聘或內升，以及人選的背景</td></tr>
+          <tr><td>未定</td><td>董事會獨立調查與證管會調查</td><td>是否牽涉營收認列或揭露</td></tr>
+          <tr><td>年底前</td><td>國防法案是否納入三項管制法案</td><td>納入代表管制法制化，行政部門的裁量空間縮小</td></tr>
+          <tr><td>規則生效後 90 天內</td><td>海外資料中心取得許可的期限</td><td>哪些業者拿不到許可，訂單轉向誰</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>有一點與上篇相扣：貝森特反對國會立法，Anthropic 與 OpenAI 則推動立法。<span class="hl">收緊派內部對「由誰收緊」並不一致</span>，這會是年底前的主要攻防。</p>
+  </section>
+
+  <div class="closing">
+    <p class="grace">
+      <span class="small">DEMAND HOLDS, GOVERNANCE DISCOUNTED</span>
+      需求沒有鬆動，<br>市場折價的是治理。
+    </p>
+  </div>
+
+  <section class="sources">
+    <h2>資料來源</h2>
+    <p class="intro">想自己查證或延伸閱讀的讀者，以下是本文引用的報導與文件。分成兩組：已讀過全文的，以及只看得到標題與摘要的。股價報價另取自 Robinhood 與 TradingView。</p>
+
+    <h3>已閱讀全文</h3>
+    <p>Politico via Yahoo：華府 AI 產業的遊說爭奪。<a href="https://www.yahoo.com/news/politics/articles/five-alarm-fire-nvidia-fall-094500995.html" target="_blank" rel="noopener">yahoo.com</a></p>
+    <p>TechCrunch：黃仁勳離開對開源陣營的影響。<a href="https://techcrunch.com/2026/11/12/jensen-huangs-exit-puts-nvidias-support-for-open-source-in-question/" target="_blank" rel="noopener">techcrunch.com</a></p>
+    <p>Al Jazeera：矽谷為何挺黃仁勳。<a href="https://www.aljazeera.com/news/2026/11/16/why-silicon-valley-is-backing-nvidia-ex-ceo-jensen-huang-after-his-ouster" target="_blank" rel="noopener">aljazeera.com</a></p>
+    <p>Fox News：川普亞洲行即時報導。<a href="https://www.foxnews.com/live-news/trump-ai-china-nvidia-chips-anthropic-stocks-november-17" target="_blank" rel="noopener">foxnews.com</a></p>
+    <p>TIME：AI 如何影響期中選舉。<a href="https://time.com/article/2026/11/04/midterm-elections-results-ai-industry-data-centers/" target="_blank" rel="noopener">time.com</a></p>
+    <p>CoinDesk：Nvidia 財報前的市場狀況。<a href="https://www.coindesk.com/markets/2026/11/17/nvidia-faces-first-earnings-test-without-jensen-huang-as-ai-stocks-slide" target="_blank" rel="noopener">coindesk.com</a></p>
+    <p>Fortune：貝森特談 Nvidia。<a href="https://fortune.com/2026/11/15/treasury-secretary-scott-bessent-nvidia-jensen-huang-nvidia-china-spy-scandal/" target="_blank" rel="noopener">fortune.com</a></p>
+    <p>Forbes：黃仁勳辭任後首度公開聲明。<a href="https://www.forbes.com/sites/alisondurkee/2026/11/17/jensen-huang-says-hed-be-honored-to-return-as-nvidia-ceo-in-first-public-statement-since-resigning-in-scandal/" target="_blank" rel="noopener">forbes.com</a></p>
+    <p>Investing.com：Q3 財報電話會議逐字稿。<a href="https://in.investing.com/news/stock-market-news/earnings-call-transcript-nvidia-tops-q3-2026-estimates-and-lifts-outlook-93CH-5711032" target="_blank" rel="noopener">investing.com</a></p>
+    <p>StockNow：Q3 財報電話會議逐字稿。<a href="https://stocknow.ai/en/calls/eypmi9b1ke1950et1e6wnmoo/nvda_q3-2027-earnings-call" target="_blank" rel="noopener">stocknow.ai</a></p>
+    <p>SEC：Nvidia Q3 財報新聞稿。<a href="https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000088/q3fy27pr.htm" target="_blank" rel="noopener">sec.gov</a></p>
+    <p>Motley Fool：11/18 收盤與財報後走勢。<a href="https://www.fool.com/coverage/stock-market-today/2026/11/18/stock-market-today-nov-18-nvidia-slips-on-strong-results-as-succession-and-china-business-risks-weigh/" target="_blank" rel="noopener">fool.com</a></p>
+    <p>ABC7：Nvidia 新委員會與 Megaspeed 調查。<a href="https://abc7ny.com/story/nvidia-forms-national-security-committee-feds-probe-company-center-scandal/20048239/" target="_blank" rel="noopener">abc7ny.com</a></p>
+
+    <h3>僅見標題與摘要（網站不開放全文，引用時請留意）</h3>
+    <p>TheStreet：財報會議即時更新。<a href="https://www.thestreet.com/latest-news/nvda-nvidia-corporation-q3-2027-earnings-stock-updates" target="_blank" rel="noopener">thestreet.com</a></p>
+    <p>CNBC：晶片股輪動。<a href="https://www.cnbc.com/2026/11/13/nvidia-jensen-huang-affairs-amd-broadcom-tsmc.html" target="_blank" rel="noopener">cnbc.com</a></p>
+    <p>Bloomberg：AMD、Broadcom 受惠。<a href="https://www.bloomberg.com/news/articles/2026-11-12/nvidia-turmoil-lifts-amd-broadcom-on-bets-for-business-gains" target="_blank" rel="noopener">bloomberg.com</a></p>
+    <p>Motley Fool：AMD 估值。<a href="https://www.fool.com/investing/2026/11/16/is-advanced-micro-devices-amd-stock-still-buy-after-post-earnings-jump/" target="_blank" rel="noopener">fool.com</a></p>
+    <p>Investing.com：Broadcom 與客製晶片。<a href="https://ca.investing.com/analysis/broadcoms-23-rally-signals-a-shift-toward-custom-ai-silicon-200629205" target="_blank" rel="noopener">investing.com</a></p>
+    <p>Invezz：CUDA 與轉單摩擦。<a href="https://invezz.com/news/2026/11/12/nvidia-stock-crashes-amd-broadcom-rally-jensen-huang/" target="_blank" rel="noopener">invezz.com</a></p>
+    <p>astig.ph 轉述 Straits Times：東南亞對新規則的反應。<a href="https://astig.ph/us-ai-chip-rule-southeast-asia-singapore-thailand-reaction-2026/" target="_blank" rel="noopener">astig.ph</a></p>
+    <p>Decrypt：科技圈對黃仁勳下台的反應。<a href="https://decrypt.co/383141/massive-mistake-tech-ai-crypto-founders-react-jensen-huang-nvidia-exit" target="_blank" rel="noopener">decrypt.co</a></p>
+    <p>Fox Business：黃仁勳回任遊說。<a href="https://www.foxbusiness.com/technology/jensen-huang-weighs-nvidia-ceo-comeback-ally-plans-war-room-report" target="_blank" rel="noopener">foxbusiness.com</a></p>
+    <p>自由財經：黃仁勳聲明中譯。<a href="https://ec.ltn.com.tw/article/breakingnews/5644332" target="_blank" rel="noopener">ec.ltn.com.tw</a></p>
+    <p>CNBC：黃仁勳聲明。<a href="https://www.cnbc.com/2026/11/17/nvidia-jensen-huang-statement.html" target="_blank" rel="noopener">cnbc.com</a></p>
+    <p>Yahoo 新聞香港：黃仁勳聲明。<a href="https://hk.news.yahoo.com/%E9%BB%83%E4%BB%81%E5%8B%B3%E9%A6%96%E5%BA%A6%E9%96%8B%E8%85%94-%E8%8B%A5%E8%91%A3%E4%BA%8B%E6%9C%83%E8%A8%B1%E5%8F%AF%E9%A1%98%E9%87%8D%E5%87%BA%E4%BB%BB-nvidia-ceo-162936455.html" target="_blank" rel="noopener">hk.news.yahoo.com</a></p>
+    <p>CNBC：財報後第一個交易日。<a href="https://www.cnbc.com/2026/11/18/nvidia-stock-earnings.html" target="_blank" rel="noopener">cnbc.com</a></p>
+    <p>Kiplinger：財報即時評論。<a href="https://www.kiplinger.com/news/live/nvidia-earnings-live-updates-and-commentary-november-2026" target="_blank" rel="noopener">kiplinger.com</a></p>
+    <p>Finbold：分析師目標價調整。<a href="https://finbold.com/wall-street-analysts-update-nvidia-stock-target-after-earnings/" target="_blank" rel="noopener">finbold.com</a></p>
+    <p>MarketBeat：評等分布。<a href="https://www.marketbeat.com/instant-alerts/price-nvidia-nasdaq-nvda-stock-falls-29-following-analyst-downgrade-2026-11-18/" target="_blank" rel="noopener">marketbeat.com</a></p>
+    <p>TECHi：財報後走勢的歷史統計。<a href="https://www.techi.com/nvidia-stock-falls-day-after-earnings-ten-report-record/" target="_blank" rel="noopener">techi.com</a></p>
+    <p>DigiTimes：調查與 CEO 遴選。<a href="https://www.digitimes.com/news/a20261118VL208/nvidia-jensen-huang-investigation-security-ceo.html" target="_blank" rel="noopener">digitimes.com</a></p>
+    <p>SCMP：國會委員會的晶片管制構想。<a href="https://www.scmp.com/news/us/article/3374802/us-panel-proposes-tougher-ai-chip-export-rules-ahead-trump-xi-talks" target="_blank" rel="noopener">scmp.com</a></p>
+    <p>Al Jazeera：川普抵達中國。<a href="https://www.aljazeera.com/amp/economy/2026/11/18/as-trump-arrives-in-china-low-expectations-for-breakthroughs-in-rivalry" target="_blank" rel="noopener">aljazeera.com</a></p>
+    <p>CNBC：Anthropic IPO 指南。<a href="https://www.cnbc.com/2026/11/16/anthropic-ipo-date-price-range.html" target="_blank" rel="noopener">cnbc.com</a></p>
+    <p>TechCrunch：Anthropic IPO 定價。<a href="https://techcrunch.com/2026/11/18/anthropic-reportedly-prices-ipo-at-83-a-share-above-projected-range/" target="_blank" rel="noopener">techcrunch.com</a></p>
+    <p>Bloomberg：Anthropic IPO 規模。<a href="https://www.bloomberg.com/news/newsletters/2026-11-18/anthropic-set-for-record-after-pricing-ipo-at-83-per-share" target="_blank" rel="noopener">bloomberg.com</a></p>
+  </section>
+
+  <nav class="pager">
+    <a class="next" href="us-power-map-post-midterms.html"><span class="dir">下一篇 →</span><span class="pt">美國政經權力版圖（上篇）：期中選舉後研究</span></a>
+  </nav>
+
+  <div class="foot">
+    <div class="dot"></div>
+    <a href="index.html">← 回目錄</a>　法蘭的學習筆記｜投資筆記
+    <p class="disclaimer">本文為個人研究筆記，整理自撰文時（2026 年 11 月 18 日收盤後）的公開報導與財報文件，事件仍在快速發展，後續可能與文中描述不同。文中的「判讀」是根據公開資訊所做的推論，不是預測，也不構成任何投資建議或買賣任何證券的推薦。股價與漲跌幅僅供參考，請以官方數據為準。</p>
+  </div>
+
+</article>
+</body>
+</html>
